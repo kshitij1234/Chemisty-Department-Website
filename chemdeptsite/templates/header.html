@@ -8,16 +8,25 @@
   	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
   	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
   	<style type="text/css">
-  		html,
-  		body,
+      html,
+      body,
       div {
         border: 0;
         margin: 0;
         padding: 0;
   		}
+      #grad {
+        background: #92c1dc; /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(#92c1dc, #ffffff); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#92c1dc, #ffffff); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#92c1dc, #ffffff); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#92c1dc, #ffffff); /* Standard syntax */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
   	</style>
   </head>
-<body class="body" style="background-color:#97c4de">
+<body class="body" id="grad">
   <div class="container" id="header">
     <div class="jumbotron" style="border-radius:0px; background-color:#ffffff; color:#145f80; margin:0px;">
       <div class="row">
@@ -28,7 +37,7 @@
         </div>
         <div class="col-lg-9 col-sm-10" align="center">
           <h2>DEPARTMENT OF CHEMICAL ENGINEERING</h2>
-          <h3>INDIAN INSTITUTE OF TECHNOLOGY</h3>
+          <h3>INDIAN INSTITUTE OF TECHNOLOGY PATNA</h3>
         </div>
       </div>
     </div>
