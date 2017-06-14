@@ -7,7 +7,7 @@
   	{% load staticfiles %}
   	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
   	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="static/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
   	<style type="text/css">
       html,
       body,
@@ -92,7 +92,7 @@
       <div class="row">
         <div id="logo" class="col-lg-3 col-sm-2" align="center" style="padding-left: 20px;">
           <a href="http://www.iitp.ac.in">
-            <img src="static/images/iitp-logo.jpg" alt="IIT Patna LOGO" width="100px" height="100px">
+            <img src="{% static 'images/iitp-logo.jpg' %}" alt="IIT Patna LOGO" width="100px" height="100px">
           </a>
         </div>
         <div class="col-lg-7 col-sm-10 visible-lg-block" align="center">
@@ -329,9 +329,9 @@
         <div class="col-md-3 col-xs-3">
           <h3>Connect</h3>
             <ul>
-            <li><a href="#"><img src="static/images/fb_30x30.png" alt="fb_icon" width="20px" height="20px"/> Facebook</a></li>
-            <li><a href="#"><img src="static/images/twitter_30x30.png" alt="twt_icon" width="20px" height="20px"/> Twitter</a></li>
-            <li><a href="#"><img src="static/images/gplus.png" alt="gplus_icon" width="20px" height="20px"/> Gmail</a></li>
+            <li><a href="#"><img src="{% static 'images/fb_30x30.png' %}" alt="fb_icon" width="20px" height="20px"/> Facebook</a></li>
+            <li><a href="#"><img src="{% static 'images/twitter_30x30.png' %}" alt="twt_icon" width="20px" height="20px"/> Twitter</a></li>
+            <li><a href="#"><img src="{% static 'images/gplus.png' %}" alt="gplus_icon" width="20px" height="20px"/> Gmail</a></li>
           </ul>
         </div>
       </div>
@@ -341,7 +341,7 @@
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="static/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>
