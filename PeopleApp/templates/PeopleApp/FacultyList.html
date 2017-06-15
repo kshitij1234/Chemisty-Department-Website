@@ -1,8 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content %}
+{% load static %}
+   <div class="container">
+       <h3 id="title">Faculty</h3>
+       {% for f in faculty %}
 
-    <h3>Faculty</h3>
+         <div class="faculty-info">
+
+            {{ f.profile_picture }}
+            <img src="{% static f.profile_picture.url %}"/>
+             <h4><a href="{{f.profile_link}}">{{f.name}}</a></h4>
+            <h5>{{f.designation}}</h5>
+            <h5>{{f.additional_info}}</h5>
+            <p>Email: {{f.email}}<br>Phone: {{f.phone}}</p>
+
+         </div>
+
+       {% endfor %}
+   </div>
 
 
 {% endblock %}

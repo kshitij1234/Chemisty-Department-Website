@@ -4,29 +4,30 @@ import shutil
 # Create your models here.
 
 def get_image_path(instance, filename):
-    return os.path.join("UserImages",type(instance).__name__,str(instance.pk),filename)
+    return os.path.join("PeopleApp", "static", "UserImages", type(instance).__name__, str(instance.pk), filename)
 
 class Designations(models.Model):
-    designation = models.CharField(max_length=100,blank=False)
+    designation = models.CharField(max_length=100, blank=False)
 
     def __str__(self):
         return self.designation
 
 class Faculty(models.Model):
 
-    name = models.CharField(max_length=100,blank=False)
+    name = models.CharField(max_length=100, blank=False)
     designation = models.ForeignKey('Designations')
+    additional_info = models.CharField(max_length=200, blank=True, null=True)
     email = models.EmailField(primary_key=True)
     phone = models.CharField(max_length=12)
-    profile_link = models.CharField(max_length=200,default="#")
-    profile_picture = models.ImageField(upload_to=get_image_path,blank=True,null=True)
+    profile_link = models.CharField(max_length=200, default="#")
+    profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
     def delete(self, *args, **kwargs):
         # object is being removed from db, remove the file from storage first
-        shutil.rmtree(os.path.join("UserImages",type(self).__name__,str(self.pk)))
+        shutil.rmtree(os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk)))
         return super(Faculty, self).delete(*args, **kwargs)
 
     def save(self, *args, **kwargs):
