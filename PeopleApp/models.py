@@ -46,3 +46,6 @@ class Faculty(models.Model):
         if obj.profile_picture and self.profile_picture and obj.profile_picture != self.profile_picture:
             # delete the old image file from the storage in favor of the new file
             obj.profile_picture.delete()
+
+    def get_image_path(self):
+        return str(self.profile_picture.url)[16:]
