@@ -2,29 +2,25 @@
 
 {% block content %}
 {% load static %}
-
 <link rel="stylesheet" href="{%  static 'css/liststyles.css' %}">
-   <div class="main">
-       <h3 id="title" class="text-center">Faculty</h3>
-       {% for f in faculty %}
-
-         <div class="faculty-info">
-             <div class="row">
-                <img class="img img-responsive col-md-2 col-xs-3 col-md-offset-1 col-xs-offset-1 profile"  src="{% static f.get_image_path %}">
-                 <div class="col-md-8 col-xs-5">
-                     <h4><a href="{{f.profile_link}}">{{f.name}}</a></h4>
-                    <h5>{{f.designation}}<br>
-                        {% if f.additional_info != None %}
-                            {{f.additional_info}}
-                        {% endif %}
-                    </h5>
-                    <p>Email: {{f.email}}<br>Phone: {{f.phone}}</p>
-                </div>
-             </div>
+<div class="main">
+   <h3 id="title" class="text-center">Faculty</h3>
+   {% for f in faculty %}
+     <div class="faculty-info">
+         <div class="row">
+            <img class="img img-responsive col-md-2 col-xs-3 col-md-offset-1 col-xs-offset-1 profile"  src="{% static f.get_image_path %}">
+             <div class="col-md-8 col-xs-5">
+                 <h4><a href="{{f.profile_link}}">{{f.name}}</a></h4>
+                  <h5>{{f.designation}}<br>
+                      {% if f.additional_info != None %}
+                          {{f.additional_info}}
+                      {% endif %}
+                  </h5>
+                <p>Email: {{f.email}}<br>Phone: {{f.phone}}</p>
+            </div>
          </div>
+     </div>
 
-       {% endfor %}
-   </div>
-
-
+   {% endfor %}
+</div>
 {% endblock %}
