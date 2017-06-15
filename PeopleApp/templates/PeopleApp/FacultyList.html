@@ -7,9 +7,7 @@
        {% for f in faculty %}
 
          <div class="faculty-info">
-
-            {{ f.profile_picture }}
-            <img src="{% static f.profile_picture.url %}"/>
+            <img src="{% static 'UserImages/Faculty/amitkr@iitp.ac.in/Amit Kumar.jpg' %}">
              <h4><a href="{{f.profile_link}}">{{f.name}}</a></h4>
             <h5>{{f.designation}}</h5>
             <h5>{{f.additional_info}}</h5>
