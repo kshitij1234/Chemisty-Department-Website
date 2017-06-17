@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
+{% load staticfiles %}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators" style="margin-bottom: -15px;">
@@ -38,5 +39,91 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+<div class="row" style="margin: 0;">
+  <!-- Left side bar -->
+  <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block" style="padding:0 10px 0 0;">
+    <div style="background-color: #ff8a80;">
+      <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px;">
+      <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+      </ul>
+      <hr style="margin: 0 10px 10px 10px;">
+      <a href="/notice"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+    </div>
+  </div>
+  <!-- middle bar -->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
+    <div style="background-color: #ffbb00;">
+      <h4 style="padding: 10px 0 0 10px">News</h4><hr style="margin: 0 10px 10px 10px;">
+      <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+      </ul>
+      <hr style="margin: 0 10px 10px 10px;">
+      <a href="/news"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+    </div>
+    <div class="row" style="margin: 0; padding: 0;">
+
+      <div class="col-sm-6 col-xs-6 visible-sm-block visible-xs-block" style="padding:0;">
+        <div style="background-color: #ff8a80;">
+          <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px;">
+          <ul>
+            <li>First</li>
+            <li>Second</li>
+            <li>Second</li>
+            <li>Second</li>
+            <li>Second</li>
+            <li>Second</li>
+          </ul>
+          <hr style="margin: 0 10px 10px 10px;">
+          <a href="/notice"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xs-6 visible-sm-block visible-xs-block" style="padding:0 0 0 10px;">
+        <div style="background-color: #00d8c5;">
+          <h4 style="padding: 10px 0 0 10px">Events</h4><hr style="margin: 0 10px 10px 10px;">
+          <ul>
+            <li>First</li>
+            <li>Second</li>
+            <li>Second</li>
+            <li>Second</li>
+            <li>Second</li>
+            <li>Second</li>
+          </ul>
+          <hr style="margin: 0 10px 10px 10px;">
+          <a href="/events"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Right side bar -->
+  <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block" style="padding:0 0 0 10px;">
+    <div style="background-color: #00d8c5;">
+      <h4 style="padding: 10px 0 0 10px">Events</h4><hr style="margin: 0 10px 10px 10px;">
+      <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+        <li>Second</li>
+      </ul>
+      <hr style="margin: 0 10px 10px 10px;">
+      <a href="/events"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+    </div>
+  </div>
+</div> <!-- Row container ends here -->
+<div style="height: 10px">
 </div>
 {% endblock %}
