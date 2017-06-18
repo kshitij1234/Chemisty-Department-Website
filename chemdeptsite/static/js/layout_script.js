@@ -4,10 +4,10 @@ $(document).ready(function () {
     //alert(loc);
     $("#home").addClass("active");
 
-    if(loc.contains("people")){
+    if(loc.indexOf("people")!=-1){
         PeopleClicked();
     }
-    
+
 });
 
 function PeopleClicked() {
