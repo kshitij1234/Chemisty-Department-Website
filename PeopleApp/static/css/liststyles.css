@@ -11,6 +11,22 @@
 
 .profile{
     width:120px;
-    height: auto;
-    margin-top: 10px;
+    height: 80px;
+    margin-top: 35px;
+}
+
+.fac-name{
+    font-size: 20px;
+}
+
+.fac-designation{
+    font-size: 17px;
+}
+
+.btn{
+    margin-top: 5px;
+}
+
+.research-areas{
+    padding-top: 32px;
 }
