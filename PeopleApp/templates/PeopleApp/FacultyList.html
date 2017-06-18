@@ -9,11 +9,11 @@
    <h3 id="title" class="text-center">Faculty</h3>
     <script>var i=0;</script>
    {% for f in faculty %}
-       <script> i=i+1;</script>
+     <script> i=i+1;</script>
      <div class="faculty-info">
          <div class="row">
             <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static f.get_image_path %}">
-             <div class="col-md-4 col-xs-6">
+             <div class="col-md-4 col-xs-5">
                  <h4 class="fac-name"><a href="{{f.profile_link}}" target="_blank">{{f.name}}</a></h4>
                  <h5 class="fac-designation"><strong>{{f.designation}}</strong><br>
                       {% if f.additional_info != None %}
