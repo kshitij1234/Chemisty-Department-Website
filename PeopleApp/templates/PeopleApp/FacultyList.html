@@ -17,11 +17,11 @@
                       {% endif %}
                   </h5>
                 <p class="contact-info">Email: {{f.email}}<br>Phone: {{f.phone}}</p>
-                <button class="btn btn-info btn-xs">More info</button>
-                 <a href="{{f.profile_link}}" target="_blank"><button class="btn btn-primary btn-xs">View Profile</button></a>
+                <button class="btn btn-info btn-xs prof-btn">More info</button>
+                 <a href="{{f.profile_link}}" target="_blank"><button class="btn btn-primary btn-xs prof-btn">View Profile</button></a>
             </div>
 
-            <div class="col-md-4 col-xs-4 research-areas ">
+            <div class="col-md-4 col-xs-5 research-areas ">
 
                 {% if f.research_areas != None %}
                     <h4><strong>Research Areas</strong></h4>
