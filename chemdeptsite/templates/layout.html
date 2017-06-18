@@ -15,83 +15,8 @@
       <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
       <link rel="stylesheet" href="{%  static 'css/footer_style.css' %}">
+      <link rel="stylesheet" href="{%  static 'css/header_style.css' %}">
 
-  	<style type="text/css">
-      html,
-      body,
-      div {
-        border: 0;
-        margin: 0;
-        padding: 0;
-  		}
-      #grad {
-        background: #92c1dc; /* For browsers that do not support gradients */
-        background: -webkit-linear-gradient(#92c1dc, #ffffff); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(#92c1dc, #ffffff); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(#92c1dc, #ffffff); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(#92c1dc, #ffffff); /* Standard syntax */
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-      }
-      #header {
-        border-radius:0px;
-        padding-top:10px;
-        padding-bottom:10px;
-        background-color:#ffffff;
-        color:#145f80;
-        margin:0px;
-      }
-      #footer {
-        border-radius:0px;
-        margin:0px;
-      }
-      .navbar-toggle.navbar-left {
-        float: left;
-        margin-left: 10px;
-      }
-      .navbar-form.navbar-right {
-        float: right;
-        margin-right: 10px;
-      }
-      #row2 h3 {
-      color:white;
-      padding:5px;
-      position:relative;
-      left:25px;
-      }
-      #row2 {
-      background: #383838; /* For browsers that do not support gradients */
-      background: -webkit-linear-gradient(#383838,#282828); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(#383838,#282828); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(#383838,#282828); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(#383838,#282828); /* Standard syntax */
-      background:linear-gradient(#383838,#282828);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      margin-left: 0;
-      margin-right: 0;
-      }
-      #row3 {
-         background:#b3edff;
-         height: 50px;
-         margin-left: 0;
-         margin-right: 0;
-      }
-      #row2 ul {
-          list-style:none;
-      }
-      #row2 li {
-          padding:5px;
-      }
-      #row2 li a {
-          color:white;
-      }
-      #row2 li a:hover {
-          color:grey;
-          font-size:larger;
-          text-decoration:none;
-      }
-  	</style>
   </head>
 <body class="body" id="grad">
   <!-- Header -->
@@ -116,7 +41,7 @@
   </div><!-- container ends -->
   <!-- Navbar -->
   <div class="container visible-lg-block" style="position: relative; height: 52px; z-index: 999;">
-    <nav class="navbar navbar-default" style="border-radius: 0px; color: #ffffff;">
+    <nav class="navbar navbar-light bg-info" style="border-radius: 0px; color: #ffffff;">
       <div class="container-fluid">
         <!-- Toggle navbar for mobile devices -->
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -125,9 +50,9 @@
               <span class="icon-bar"></span>
         </button>
         <ul class="nav navbar-nav">
-          <li><a href="#">Home<span class="sr-only">(current)</span></a></li>
+          <li class="menu-item"><a class="active" href="#">Home<span class="sr-only">(current)</span></a></li>
           <!-- People -->
-          <li class="dropdown">
+          <li class="dropdown" class="menu-item">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">People <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#">Faculty</a></li>
@@ -206,18 +131,18 @@
   </div>
   <!-- Navbar -->
   <div class="container hidden-lg" style="position: relative; height: 52px; z-index: 999;">
-    <nav class="navbar navbar-default" style="border-radius: 0px; color: #ffffff;">
+    <nav class="navbar navbar-light bg-info" style="border-radius: 0px; color: #ffffff;">
       <div class="container-fluid">
         <!-- Toggle navbar for mobile devices -->
         <button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target=".navbar-collapse" style="margin-left:0px;">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+              <span class="icon-bar" style="background-color: #0f0f0f"></span>
+              <span class="icon-bar" style="background-color: #0f0f0f"></span>
+              <span class="icon-bar" style="background-color: #0f0f0f"></span>
         </button>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-right: 0px;">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home<span class="sr-only">(current)</span></a></li>
+            <li class="menu-item"><a class="active" href="#">Home<span class="sr-only">(current)</span></a></li>
             <!-- People -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">People <span class="caret"></span></a>
