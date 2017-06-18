@@ -46,18 +46,9 @@
     <div style="background-color: #81d4fa; color: #01579b;">
       <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul>
-        <li>First</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>First</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
+        {% for note in notice %}
+        <li><b>{{note.title}}</b>{% if note.body != None %}<br>{{note.body}}{% endif %}<h6>(Posted on : {{note.date|date:"d-m-Y"}})</h6></li>
+        {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <a href="/notice"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
@@ -68,12 +59,9 @@
     <div style="background-color: #81d4fa; color: #01579b;">
       <h4 style="padding: 10px 0 0 10px">News</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul>
-        <li>First</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
+        {% for n in news %}
+        <li><a target="_blank" href="{{ n.link }}">{{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}</li>
+        {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <a href="/news"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
@@ -83,18 +71,9 @@
         <div style="background-color: #81d4fa; color: #01579b;">
           <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
           <ul>
-            <li>First</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>First</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
+            {% for note in notice %}
+            <li><b>{{note.title}}</b>{% if note.body != None %}<br>{{note.body}}{% endif %}<h6>(Posted on : {{note.date|date:"d-m-Y"}})</h6></li>
+            {% endfor %}
           </ul>
           <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
           <a href="/notice"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
@@ -105,18 +84,9 @@
         <div style="background-color: #81d4fa; color: #01579b;">
           <h4 style="padding: 10px 0 0 10px">Events</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
           <ul>
-            <li>First</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>First</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
-            <li>Second</li>
+            {% for event in events %}
+            <li><a target="_blank" href="{{ event.link }}">{{ event.title }}</a> - {{ event.date|date:"d-m-Y" }}</li>
+            {% endfor %}
           </ul>
           <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
           <a href="/events"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
@@ -126,12 +96,9 @@
     <div style="background-color: #81d4fa; color: #01579b;">
       <h4 style="padding: 10px 0 0 10px">Research Highlights</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul>
-        <li>First</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
+        {% for r in research %}
+        <li><a target="_blank" href="{{ r.link }}">{{ r.title }}</a> - {{ r.date|date:"d-m-Y" }}</li>
+        {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <a href="/research"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
@@ -142,14 +109,9 @@
     <div style="background-color: #81d4fa; color: #01579b;">
       <h4 style="padding: 10px 0 0 10px;">Events</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul>
-        <li>First</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>Second</li>
-        <li>First</li>
-        <li>Second</li>
+        {% for event in events %}
+        <li><a target="_blank" href="{{ event.link }}">{{ event.title }}</a> - {{ event.date|date:"d-m-Y" }}</li>
+        {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <a href="/events"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
@@ -157,15 +119,14 @@
     <div style="background-color: #81d4fa; color: #01579b;">
       <h4 style="padding: 10px 0 0 10px;">Quick Links</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul>
-        <li><a traget="_blank" href="https://www.iitp.ac.in/">Website of IITP</a></li>
-        <li><a traget="_blank" href="#">Directory</a></li>
-        <li><a traget="_blank" href="https://www.iitp.ac.in/index.php/departments/school-of-basic-sciences/chemistry/chemistry.html">Old Website</a></li>
+        {% for link in quicklinks %}
+        <li><a target="_blank" href="{{ link.link }}">{{ link.title }}</a></li>
+        {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <a href="/events"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+      <div style="height: 10px"></div>
     </div>
   </div>
 </div> <!-- Row container ends here -->
-<div style="height: 10px">
-</div>
+<div style="height: 10px"></div>
 {% endblock %}
