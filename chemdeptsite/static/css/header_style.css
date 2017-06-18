@@ -88,7 +88,7 @@ html,
 
     }
 
-    .nav  > li >.active{
+    .active{
         background-color: #92c1dc;
         color: #0f0f0f;
     }
