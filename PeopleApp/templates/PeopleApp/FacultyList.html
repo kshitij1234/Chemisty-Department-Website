@@ -21,11 +21,11 @@
                  <a href="{{f.profile_link}}" target="_blank"><button class="btn btn-primary btn-xs prof-btn">View Profile</button></a>
             </div>
 
-            <div class="col-md-4 col-xs-5 research-areas ">
+            <div class="col-md-5 col-xs-10 research-areas">
 
                 {% if f.research_areas != None %}
                     <h4><strong>Research Areas</strong></h4>
-                    <p>{{ f.research_areas }}</p>
+                    <p >{{ f.research_areas }}</p>
                 {% else %}
                     <p>No more info to show</p>
                 {% endif %}
