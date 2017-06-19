@@ -17,8 +17,8 @@ class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=False)
     designation = models.ForeignKey('Designations')
     additional_info = models.CharField(max_length=200, blank=True, null=True)
-    email = models.EmailField(primary_key=True)
-    phone = models.CharField(max_length=12)
+    email = models.CharField(primary_key=True, max_length=50)
+    phone = models.CharField(max_length=12, blank=True, null=True)
     profile_link = models.CharField(max_length=200, default="#")
     profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     research_areas = models.TextField(max_length=300, blank=True, null=True)
@@ -55,8 +55,8 @@ class Staff(models.Model):
 
     name = models.CharField(max_length=100, blank=False)
     designation = models.ForeignKey('Designations')
-    email = models.EmailField(primary_key=True)
-    phone = models.CharField(max_length=12)
+    email = models.CharField(primary_key=True, max_length=50)
+    phone = models.CharField(max_length=12, blank=True, null=True)
     profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
 
 

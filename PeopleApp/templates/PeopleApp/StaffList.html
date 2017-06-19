@@ -3,7 +3,31 @@
 {% block content %}
 {% load static %}
 
+<link rel="stylesheet" href="{%  static 'css/liststyles.css' %}">
 
+<div class="main">
+    <h3 id="title" class="text-center">Staff</h3>
+    <p class="text-center" style="font-size: 20px;">Please append Email with "@iitp.ac.in" .<br>Please use the prefix "0612-302" with the Phone number.</p>
 
+    {% for s in staff %}
+
+        <div class="staff-info">
+            <div class="row">
+                <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static s.get_image_path %}" style="margin-top: 20px;">
+                <div class="col-md-4 col-xs-5">
+                    <h4 class="name"><a>{{s.name}}</a></h4>
+                    <h5 class="designation"><strong>{{s.designation}}</strong><br></h5>
+                    <p class="contact-info">Email: {{s.email}}<br>
+                    {% if s.phone != None %}
+                        Phone: {{s.phone}}
+                    {% endif %}</p>
+                </div>
+            </div>
+        </div>
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+</div>
+<div style="height: 10px">
+</div>
 
 {% endblock %}
