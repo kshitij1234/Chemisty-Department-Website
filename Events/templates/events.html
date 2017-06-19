@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'events.css' %}" type = "text/css"/>
+<div class="panel panel-default">
+  <div class="panel-heading">Ongoing</div>
+  <!-- <div class="panel-body">
+    <p>...</p>
+  </div> -->
+
+  <!-- Table -->
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Speaker</th>
+        <th>Topic</th>
+        <!-- <th>Status</th> -->
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in events %}
+        {% if event.status == 'ON' %}
+          <tr>
+            <td>{{event.date|date}}</td>
+            <td>{{event.speaker}}</td>
+            <td>{{event.topic}}</td>
+            <!-- <td>{{event.status}}</td> -->
+            <td>{{event.additional_info}}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Upcoming</div>
+  <!-- <div class="panel-body">
+    <p>...</p>
+  </div> -->
+
+  <!-- Table -->
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Speaker</th>
+        <th>Topic</th>
+        <!-- <th>Status</th> -->
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in events %}
+        {% if event.status == 'UP' %}
+          <tr>
+            <td>{{event.date|date}}</td>
+            <td>{{event.speaker}}</td>
+            <td>{{event.topic}}</td>
+            <!-- <td>{{event.status}}</td> -->
+            <td>{{event.additional_info}}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Past</div>
+  <!-- <div class="panel-body">
+    <p>...</p>
+  </div> -->
+
+  <!-- Table -->
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Speaker</th>
+        <th>Topic</th>
+        <!-- <th>Status</th> -->
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in events %}
+        {% if event.status == 'PA' %}
+          <tr>
+            <td>{{event.date|date}}</td>
+            <td>{{event.speaker}}</td>
+            <td>{{event.topic}}</td>
+            <!-- <td>{{event.status}}</td> -->
+            <td>{{event.additional_info}}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

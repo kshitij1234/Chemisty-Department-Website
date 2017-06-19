@@ -53,6 +53,7 @@
               <span class="icon-bar"></span>
         </button>
         <ul class="nav navbar-nav navbar1">
+          <!-- Home -->
           <li class="menu-item" style="margin-right:5px;"><a class="active navigator" href="{% url 'home' %}" id="home">Home<span class="sr-only">(current)</span></a></li>
           <!-- People -->
           <li class="dropdown" class="menu-item" style="margin-right:5px;">
@@ -102,14 +103,7 @@
             </ul>
           </li>
           <!-- Events -->
-          <li class="dropdown" style="margin-right:5px;">
-            <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Seminars</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Workshops</a></li>
-            </ul>
-          </li>
+          <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'events' %}" id="events">Events<span class="sr-only">(current)</span></a></li>
           <!-- Directory -->
           <li class="dropdown" style="margin-right:5px;">
             <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Directory <span class="caret"></span></a>
@@ -195,14 +189,7 @@
               </ul>
             </li>
             <!-- Events -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Seminars</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Workshop</a></li>
-              </ul>
-            </li>
+            <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'events' %}" id="events">Events<span class="sr-only">(current)</span></a></li>
             <!-- Directory -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Directory <span class="caret"></span></a>
