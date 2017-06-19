@@ -90,7 +90,7 @@
             {% endfor %}
           </ul>
           <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-          <a href="/events"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+          <a href="{% url 'events' %}"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
         </div>
       </div>
     </div>
@@ -115,7 +115,7 @@
         {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <a href="/events"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+      <a href="{% url 'events' %}"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
     </div>
     <div style="background-color: #81d4fa; color: #01579b;">
       <h4 style="padding: 10px 0 0 10px;">Quick Links</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
