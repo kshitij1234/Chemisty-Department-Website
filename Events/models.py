@@ -1,13 +1,14 @@
 from django.db import models
 
 class Events(models.Model):
-    ONGOING = 'ON'
-    UPCOMING = 'UP'
-    PAST = 'PA'
     STATUS = (
-            (ONGOING, 'Ongoing'),
-            (UPCOMING, 'Upcoming'),
-            (PAST, 'Past')
+            ('ON', 'Ongoing'),
+            ('UP', 'Upcoming'),
+            ('PA', 'Past')
+    )
+    S_W = (
+            ('SM', 'Seminar'),
+            ('WS', 'Workshop')
     )
     topic = models.CharField(max_length=400)
     date = models.DateTimeField()
@@ -16,6 +17,11 @@ class Events(models.Model):
         max_length=2,
         choices=STATUS,
         default='UP'
+    )
+    s_w = models.CharField(
+        max_length=2,
+        choices=S_W,
+        default='SM'
     )
     additional_info = models.CharField(max_length=500, blank=True, null=True)
 
