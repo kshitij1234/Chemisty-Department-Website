@@ -44,9 +44,9 @@
 <div class="row" style="margin: 0;">
   <!-- Left side bar -->
   <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block" style="padding:0 10px 0 0;">
-    <div style="background-color: #81d4fa; color: #01579b;">
+    <div style="background-color: #81d4fa; color: #01579b; height:410px;">
       <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <ul>
+      <ul style="height: 316px; overflow:auto;">
         {% for note in notice %}
         <li><b>{{note.title}}</b>{% if note.body != None %}<br>{{note.body}}{% endif %}<h6>(Posted on : {{note.date|date:"d-m-Y"}})</h6></li>
         {% endfor %}
@@ -57,7 +57,7 @@
   </div>
   <!-- middle bar -->
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
-    <div style="background-color: #81d4fa; color: #01579b;">
+    <div style="background-color: #81d4fa; color: #01579b; height:200px; position: relative;">
       <h4 style="padding: 10px 0 0 10px">News</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul>
         {% for n in news %}
@@ -65,13 +65,13 @@
         {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <a href="/news"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+      <a href="/news"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="position:absolute; left:10px; bottom: 10px;"></a>
     </div>
     <div class="row" style="margin: 0; padding: 0;">
       <div class="col-sm-6 col-xs-6 visible-sm-block visible-xs-block" style="padding:0;">
-        <div style="background-color: #81d4fa; color: #01579b;">
+        <div style="background-color: #81d4fa; color: #01579b; height:300px;">
           <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-          <ul>
+          <ul style="height: 206px; overflow:auto;">
             {% for note in notice %}
             <li><b>{{note.title}}</b>{% if note.body != None %}<br>{{note.body}}{% endif %}<h6>(Posted on : {{note.date|date:"d-m-Y"}})</h6></li>
             {% endfor %}
@@ -82,9 +82,9 @@
       </div>
 
       <div class="col-sm-6 col-xs-6 visible-sm-block visible-xs-block" style="padding:0 0 0 10px;">
-        <div style="background-color: #81d4fa; color: #01579b;">
+        <div style="background-color: #81d4fa; color: #01579b; height:300px;">
           <h4 style="padding: 10px 0 0 10px">Events</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-          <ul>
+          <ul style="height: 206px; overflow:auto;">
             {% for event in events %}
             <li><a target="_blank" href="{{ event.link }}">{{ event.title }}</a> - {{ event.date|date:"d-m-Y" }}</li>
             {% endfor %}
@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-    <div style="background-color: #81d4fa; color: #01579b;">
+    <div style="background-color: #81d4fa; color: #01579b; height:200px;">
       <h4 style="padding: 10px 0 0 10px">Research Highlights</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul>
         {% for r in research %}
