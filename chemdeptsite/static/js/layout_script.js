@@ -1,17 +1,8 @@
 $(document).ready(function () {
     var loc = window.location.href;
-    //alert(loc);
-    $("#home").addClass("active");
-    if(loc.indexOf("people")!=-1){
-        PeopleClicked();
-    }
+    var str = loc.split("/")[3];
+    if(str.localeCompare("") == 0)
+      $("#home").addClass("active");
+    else
+      $("#" + str).addClass("active");
 });
-
-function PeopleClicked() {
-    RemoveActive();
-    $("#people").addClass("active");
-}
-
-function RemoveActive() {
-    $(".navigator").removeClass("active");
-}
