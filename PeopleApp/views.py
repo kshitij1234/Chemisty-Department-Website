@@ -15,10 +15,10 @@ def staff_list(request):
 
 
 def undergraduate_list(request):
-    students13 = UndergraduateStudents.objects.filter(batch="B.Tech 2013").order_by('rollno')
-    students14 = UndergraduateStudents.objects.filter(batch="B.Tech 2014").order_by('rollno')
-    students15 = UndergraduateStudents.objects.filter(batch="B.Tech 2015").order_by('rollno')
-    students16 = UndergraduateStudents.objects.filter(batch="B.Tech 2016").order_by('rollno')
+    students13 = UndergraduateStudents.objects.filter(batch__batch="B.Tech 2013").order_by('rollno')
+    students14 = UndergraduateStudents.objects.filter(batch__batch="B.Tech 2014").order_by('rollno')
+    students15 = UndergraduateStudents.objects.filter(batch__batch="B.Tech 2015").order_by('rollno')
+    students16 = UndergraduateStudents.objects.filter(batch__batch="B.Tech 2016").order_by('rollno')
     return render(request, 'PeopleApp/UndergraduateList.html', {'students13': students13,
                                                                 'students14': students14,
                                                                 'students15': students15,

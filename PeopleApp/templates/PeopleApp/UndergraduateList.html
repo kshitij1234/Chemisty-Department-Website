@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% load static %}
+
+    <style>
+        .tab-pane{
+            background-color: white;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+    .student-tab{
+        background-color: #bce8f1;
+    }
+    </style>
+
+    <ul class="nav nav-tabs nav-justified" style="margin-top: 10px;">
+        <li class="active student-tab"><a data-toggle="tab" href="#btech16">B.Tech 2016</a></li>
+        <li class="student-tab"><a data-toggle="tab" href="#btech15">B.Tech 2015</a></li>
+        <li class="student-tab"><a data-toggle="tab" href="#btech14">B.Tech 2014</a></li>
+        <li class="student-tab"><a data-toggle="tab" href="#btech13">B.Tech 2013</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div id="btech16" class="tab-pane fade in active">
+            <table class="table table-hover text-centered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students16 %}
+
+                        <tbody>
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+                        </tbody>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="btech15" class="tab-pane fade in">
+            <table class="table table-hover text-centered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students15 %}
+
+                        <tbody>
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+                        </tbody>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="btech14" class="tab-pane fade in">
+            <table class="table table-hover text-centered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students14 %}
+
+                        <tbody>
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+                        </tbody>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="btech13" class="tab-pane fade in">
+            <table class="table table-hover text-centered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students13 %}
+
+                        <tbody>
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+                        </tbody>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
