@@ -87,3 +87,19 @@ class Staff(models.Model):
 
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
+
+
+class Batch(models.Model):
+    batch = models.CharField(max_length=20,blank=False)
+
+    def __str__(self):
+        return self.batch
+
+
+class UndergraduateStudents(models.Model):
+    rollno = models.CharField(max_length=12, primary_key=True)
+    name = models.CharField(max_length=50, blank=False)
+    batch = models.ForeignKey('Batch')
+
+    def __str__(self):
+        return self.rollno
