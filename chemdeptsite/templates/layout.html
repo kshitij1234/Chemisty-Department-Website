@@ -82,9 +82,9 @@
           </li>
           <!-- Research -->
           <li class="dropdown" style="margin-right:5px;">
-            <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Research <span class="caret"></span></a>
+            <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" id="research">Research <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Program 1</a></li>
+              <li><a href="{% url 'projects' %}">Projects</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#">Program 2</a></li>
             </ul>
@@ -162,7 +162,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" id="research" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Program 1</a></li>
+                <li><a href="{% url 'projects' %}">Projects</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">Program 2</a></li>
               </ul>

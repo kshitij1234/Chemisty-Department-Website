@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^directory/', include('directory.urls')),
     url(r'^people/', include('PeopleApp.urls')),
     url(r'^events/', include('Events.urls')),
+    url(r'^research/', include('research.urls')),
 ]
