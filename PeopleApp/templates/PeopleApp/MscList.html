@@ -4,6 +4,7 @@
 {% load static %}
 
 <link rel="stylesheet" href="{%  static 'css/liststyles.css' %}">
+<link rel="stylesheet" href="{% static 'css/studentstyle.css' %}">
 
 <div class="main">
 
@@ -28,8 +29,8 @@
                                 Email: {{student.email}}</p>
                         </div>
                     </div>
-                </div>
                 {% if not forloop.last %}<hr>{% endif %}
+                </div>
             {% endfor %}
 
         </div>
