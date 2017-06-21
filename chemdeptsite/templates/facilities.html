@@ -1,0 +1,481 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+  }
+</style>
+<div class="main" style="padding: 0;">
+  <h4 class="text-center" style="padding: 10px;font-size: 30px">Facilities</h4>
+  <div class="container">
+    <h4 style="width: 80%; margin: 0 auto; padding-top:20px;">Laboratories</h4>
+    <p style="width: 80%; margin: 0 auto; padding-bottom:20px;">Research in the Chemistry Department is conducted in separate laboratories viz.
+      Chemistry Instrument Lab, Chemistry Wet Research Lab, Materials Research Lab, Bioscience Laboratory and GC-MS Laboratory.
+      All these labs are equipped with state of the art equipment for high quality research.
+      There is a separate Lab for B-Tech Chemistry laboratory for freshmen B-Tech students. </p>
+  </div>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width: 80%; margin: 0 auto;">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            B-Tech Chemistry laboratory
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <img src="{% static 'images/facilities/Chemistry.jpg' %}" style="float: right; margin-left: 10px;"/>
+          This Lab is equipped with all necessary equipment required for 1st year B-Tech students.
+          New equipments and relevant interesting experiments are being added every year.
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Chemistry Instrument Laboratory
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          Research in Chemistry Instrument Laboratory focuses on various aspects of
+          Chemistry with particular emphasis on High Resolution Spectroscopy,
+          Bio-Spectroscopy and Fluorescence Spectroscopy. <br/><br/>
+          <strong>Facilities</strong>
+          <ul>
+            <li>UV &amp;  Visible Spectrophotometer from Shimadzu</li>
+            <li>FTIR from  Shimadzu</li>
+            <li>Spectrofluorometer  from Horiba Jobin Yuon</li>
+            <li>Digital  Polarimeter from Jasco</li>
+            <li>Particle  size and zeta potential analyzer from Beckman Coulter</li>
+            <li>Viscometer  from Brookfield </li>
+            <li>Microwave synthesizer from  Anritsu</li>
+          </ul>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>FTIR from Shimadzu:</strong> Organic and Inorganic  compounds are synthesized and characterized for different functional groups</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/cilab1.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Particle size and zeta potential analyzer from Beckman Coulter:</strong> This equipment uses photon correlation spectroscopy (PCS) and  capable of measurement of <em>particle</em>sizes in the range of few angstroms up  to microns in addition to measurement of zeta potential and size distribution.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/cilab2.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Digital Polarimeter from Jasco:</strong> This automatic   digital polarimeter is used to measure the angle of rotation caused by    passing polarized light through optically active compounds.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/cilab3.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Spectrofluorometer from Horiba Jobin Yuon:</strong> Provide    information regarding concentration and chemical environment in a sample   and  equipped with a range of selectable excitation wavelengths and   temperature  controller.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/cilab4.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>UV &amp; Visible Spectrophotometer from Shimadzu:</strong> Equipped with double blazed grating, double monochromator design,  this   instrument provides a high energy throughput optical system with ultra   low  stray light for precise measurement of Absorbance.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/cilab5.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                <p><strong>Viscometer from Brookfield</strong>: continuous sensing  Digital Viscometer measures viscosity and temperature and with PC interface for  direct export of data.</p>
+                </td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/cilab6.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Time Resolved Fluorescence Spectrophotometer from Edinburgh Instruments</strong>: study of fluorescence dynamics of relevant chemical reactions in femtosecond time scale</td>
+                <td align="right" valign="top"><img alt="time resolved fluorescence" src="{% static 'images/facilities/time_resolved_fluorescence.jpg' %}"     height="104" width="174" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                <p><b>Isothermal Calorimeter from GE microcal:</b> Measures thermodynamic parameters for chemical reactions in the microliter scale.</p>
+                </td>
+                <td align="right" valign="top"><img alt="isothermal calorimeter" src="{% static 'images/facilities/isothermal_calorimeter.jpg' %}"     height="110" width="177" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                <p><b>Osmometer from Knauer: </b>Used for measuring osmotic strength of solution, colloids and for other osmometric measurements</p>
+                </td>
+                <td align="right" valign="top"><img alt="osmometer" src="{% static 'images/facilities/osmometer.jpg' %}"     height="124" width="179" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                <p><b>Arbitrary waveform generator from Tektronix: </b>For research in signal stimulus solution and for generation of complex signals.</p>
+                </td>
+                <td align="right" valign="top"><img alt="arbitrary function generator" src="{% static 'images/facilities/arbitrary_function_generator.jpg' %}"     height="121" width="180" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                <p><em><b>Microwave generator</b></em><b> from Aniritsu</b>: used for generating microwave and are designed to provide stable and controllable microwave power required by many heating processes and industrial application</p>
+                </td>
+                <td align="right" valign="top"><img alt="microwave generator" src="{% static 'images/facilities/microwave_generator.jpg' %}"     height="107" width="184" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Chemistry Wet Research Laboratory
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+          This Laboratory is dedicated for organic and Inorganic synthesis. Research in this Lab focuses on Multi component Reactions, Domino Reactions, construction of Metal Organic Frameworks, Supramolecular Chemistry, catalysis and Quantum dot synthesis etc.  <br /><br /> <strong>Facilities</strong>
+          <ul>
+            <li>Glove box from Jacomex</li>
+            <li>&nbsp;Rotary evaporator from Buchi</li>
+            <li>Microwave reactor from Metrohm</li>
+            <li>Millipore water purification  system</li>
+            <li>Hot air Oven from Sonara</li>
+            <li>Multiple Fume Hoods equipped with   Magnetic stirrers, hot plates and amenities  required for organic and   inorganic reaction set up. </li>
+          </ul>
+          <br/>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Glove Box from Jacomex</strong>: To maintain inert atmosphere and to do reactions under specific gaseous conditions and also for storage of hazardous moisture sensitive chemicals.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/Glove.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Microwave Reactor from Metrohm:</strong> Microwave  irradiation   produced from the reactor gives efficient internal heating thereby    accelerating many reactions; also unique products are formed under   certain  reaction conditions.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/Microwave.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Fume Hoods</strong> equipped with all amenities required for  Organic and Inorganic reaction set up.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/Fume.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong> </strong>
+                <p><strong>Low Temperature Reactor from Operon</strong>:Used for organic and inorganic synthesis at ultra low temperatures</p>
+                <strong> </strong></td>
+                <td align="right" valign="top" width="20%"><img alt="low temperature reactor" src="{% static 'images/facilities/low_temperature_reactor.jpg' %}"     height="133" width="172" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Materials Research Laboratory
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">
+          This Lab has state of the art research equipments for research in Polymer Chemistry and Material Science.
+          Research in this Lab includes development of specialized Elastomers, Nanocomposites, Polymer Blends and other smart materials.<br /><br /> <strong>Facilities</strong>
+          <ul>
+            <li>SDT (simultaneous  DTA-TGA) from TA</li>
+            <li>Dynamic Mechanical Analysis (DMA) from TA </li>
+            <li>FTIR with  spotlight 200 microscope from Perkin Elmer</li>
+            <li>Atomic Force  Microscope</li>
+            <li>Contact Angle Goniometer from Rame-hart</li>
+          </ul>
+          <br />
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Atomic Force Microscope:</strong> High-resolution <a href="http://en.wikipedia.org/wiki/Scanning_probe_microscopy"     title="Scanning probe microscopy">scanning probe microscopy</a>, with resolution  on the order of a <a href="http://en.wikipedia.org/wiki/Nanometer"     title="Nanometer">nanometer</a>, this equipment being simultaneously used by  Chemists, Material Scientists and Physicists.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/Atomic.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>FTIR with spotlight-200 microscope from Perkin Elmer:</strong> Fitted with powerful microscope, this instrument can determine functional groups present in a particular section of polymers and other surfaces.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/Perkin.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Contact Angle Goniometer from Rame-hart:</strong> This equipment finds use in precise determination  of &nbsp;<a href="http://en.wikipedia.org/wiki/Contact_angle"     title="Contact angle">contact angle</a>, <a href="http://en.wikipedia.org/wiki/Surface_energy"     title="Surface energy">surface  energy</a> and <a href="http://en.wikipedia.org/wiki/Surface_tension"     title="Surface tension">surface tension</a>.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/Angle.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Simultaneous DTA –TGA instrument (SDT)</strong> in  the materials Research Lab. Being used extensively by Polymer Chemists. <strong>Dynamic Mechanical Analysis (DMA)</strong></td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/Simultaneous.jpg' %}"     /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFive">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Bioscience Laboratory
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+        <div class="panel-body">
+          This Laboratory has equipments required for basic research in Biochemistry and Molecular Biology.
+          Research in this Lab is centered on DNA Damage and repair study and construction of
+          Nanostructures from DNA self Assembly process. <br /> <br />
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>UV-Vis  spectrophotometer with Peltier Element from Cecil, UK:</strong> Specially pre-programmed for Biochemistry and molecular Biology and   used for  Quantitative Analysis, Reaction Kinetics, Protein Analysis,   DNA Thermal Melt  and other applications.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/biolab.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Transilluminator  from Pacific Images, Taiwan:</strong> Dual   wavelength UV transilluminator for  visualization of DNA in gels stained   with Ethidium Bromide, Sybr Green and  other dyes.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/biolab2.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Mini  Submarine Gel Electrophoresis from Hoefer,  USA: </strong>Used   for rapid electrophoresis of DNA (between 1-10  Kbsize) including   plasmid DNA in agarose gels. These along with other electrophoresis    unit are hooked to Hoefer’s high power current supply for constant   voltage or  current supply.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab3.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top" width="80%"></td>
+                <td align="right" height="20" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Vertical  midi gel from Hoefer, USA:</strong> Vertical midi gel   units are intended for electrophoretic separation of proteins  and   nucleic acids (under 1 Kb) under both denaturing and native conditions.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/biolab4.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Vertical  slab dual minigel from Hoefer, USA:</strong> Vertical slab dual mini gel unit is being used for rapid electrophoresis of  protein or nucleic acid samples.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/biolab5.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top" width="20%"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                <p><strong>PCR  Thermalcycler from G-Biosciences, UK:</strong> Dual slot Thermal  cycler equipped with a heated lid,  used for Polymerase Chain Reaction to amplify DNA.</p>
+                </td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab6.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top"></td>
+                <td align="right" height="20" valign="top"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Minicentrifuge  from Dynamica, Australia and Vortex mixer from Jeiotech, Korea:</strong> Centrifuge used for  wide range of applications in routine Biochemistry   works including quick spin  down while variable speed, intermittent    and continuous mode vortex mixer being used for gentle mixing as well as    vigorous agitation for DNA, protein and other biomaterial mixing.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab7.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Vertical  Laminar air flow from ESCO, Singapore:</strong> Vertical Laminar  Flow with ULPA filter is used in the Lab for cell   culture procedures. Some  sensitive reactions with DNA/proteins are also   being carried out here.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab8.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Gel documentation System from UVP, UK:</strong> Equipped with   CCD camera and Gel Capture software,  this instrument is routinely used   to get pictures and quantitative analysis of  DNA and protein gels.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab9.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Double  distillation water plant from Borosil:</strong> This double  distilled water is used for all routine experiments in biochemistry.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab10.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" height="20" valign="top"></td>
+                <td align="right" height="20" valign="top"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>CO2  incubators from ESCO, Singapore:</strong> For mammalian cell culture, tissue engineering.  Can be fitted with orbital shaker for bacterial culture also.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab11.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Circulating  Chiller from Jeiotech, Korea:</strong> Circulating   chiller is hooked up with UV visible  spectrophotometer for cooling the   Peltier Element in the system while working  with biological samples.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab12.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Vertical Automatic Autoclave from Tuttnauer, </strong><strong>Israel:</strong> Used for  sterilization of instruments, glasswares, liquids, culture media and other  materials in the Bioscience Lab.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab13.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><strong>Vertical -30 0C freezer from </strong><strong>Jeiotech, Korea:</strong> This Freezer has  range of diverse applications and primarily being   used in the lab to store  Biomaterials like DNA, proteins, some enzymes,   specific chemicals and other  Biosamples.</td>
+                <td align="right" valign="top"><img src="{% static 'images/facilities/biolab14.jpg' %}"     /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">&nbsp;</td>
+                <td align="right" valign="top">&nbsp;</td>
+              </tr>
+              </tbody>
+            </table>
+              <br />
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="left" valign="top" width="80%"><strong>Rotary evaporator (Eppendorf)</strong> used for solvent evaporation and sample concentrating.</td>
+                  <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/concentrator.jpg' %}"     height="137" width="172" /></td>
+                </tr>
+              </tbody>
+            </table>
+              <br />
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="left" valign="top" width="80%"><strong>Chemiluminesecence (Syngene)</strong> used for western Blotting.</td>
+                  <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/chemi.jpg' %}"     height="137" width="172" /></td>
+                </tr>
+              </tbody>
+            </table>
+              <br />
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="left" valign="top" width="80%"><strong>PCR Thermalcycler (ESCO) </strong>for Polymerase Chain Reaction.</td>
+                  <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/pcr2.jpg' %}"     height="137" width="172" /></td>
+                </tr>
+              </tbody>
+            </table>
+              <br />
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="left" valign="top" width="80%"><strong>Orbital Shaker (Jeiotech)</strong> for reactions and sample preparation.</td>
+                  <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/shaker.jpg' %}"     height="137" width="172" /></td>
+                </tr>
+              </tbody>
+            </table>
+              <br />
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Thermalblock (Techne)</strong> for constant temperature incubation.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/thermal.jpg' %}"     height="137" width="172" /></td>
+              </tr>
+              </tbody>
+            </table>
+              <br />
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>PH meter with micro electrode (Thermo)</strong> for measuring pH of solution as low as 30 uL.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/ph.jpg' %}"     height="137" width="172" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingSix">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            Chromatography Laboratory
+          </a>
+        </h4>
+      </div>
+      <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+        <div class="panel-body">
+          This Laboratory is dedicated to Chromatography for characterization of organic &amp; Inorganic compounds, polymer and Biomaterials and being extensively used by research scholars involved in organic, inorganic and polymer synthesis for characterization of their compounds. <br /> <br />
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Gas Chromatography-Mass Spectrometry</strong> facility in the Chemistry Department being used for characterization of  compounds</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/Chromatography.jpg' %}"     /></td>
+              </tr>
+            </tbody>
+          </table>
+              <br />
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>HPLC</strong> (Shimadzu) facility in the Chemistry Department being used for organic compounds and as well as characterization and purification of DNA and proteins.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/hplc.jpg' %}"     height="137" width="172" /></td>
+              </tr>
+            </tbody>
+          </table>
+            <br />
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="80%"><strong>Gel Permeation Chromatography</strong> (Agilant) facility in the Chemistry department being used for characterization of Polymers.</td>
+                <td align="right" valign="top" width="20%"><img src="{% static 'images/facilities/gpc.jpg' %}"     height="137" width="172" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 20px"></div>
+</div>
+{% endblock %}

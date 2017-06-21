@@ -99,14 +99,7 @@
             </ul>
           </li>
           <!-- Facilities -->
-          <li class="dropdown" style="margin-right:5px;">
-            <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Facilities <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Program 1</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Program 2</a></li>
-            </ul>
-          </li>
+          <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'facilities' %}" id="facilities">Facilities<span class="sr-only">(current)</span></a></li>
           <!-- Events -->
           <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'events' %}" id="events">Events<span class="sr-only">(current)</span></a></li>
           <!-- Directory -->
@@ -184,14 +177,7 @@
               </ul>
             </li>
             <!-- Facilities -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" id="facilities" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Facilities <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Program 1</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Program 2</a></li>
-              </ul>
-            </li>
+            <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'facilities' %}" id="facilities">Facilities<span class="sr-only">(current)</span></a></li>
             <!-- Events -->
             <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'events' %}" id="events">Events<span class="sr-only">(current)</span></a></li>
             <!-- Directory -->
