@@ -130,7 +130,7 @@ class MscStudents(models.Model):
     def remove_on_image_update(self):
         try:
             # is the object in the database yet?
-            obj = Staff.objects.get(pk=self.pk)
+            obj = MscStudents.objects.get(pk=self.pk)
         except MscStudents.DoesNotExist:
             # object is not in db, nothing to worry about
             return
@@ -138,3 +138,6 @@ class MscStudents(models.Model):
         if obj.profile_picture and self.profile_picture and obj.profile_picture != self.profile_picture:
             # delete the old image file from the storage in favor of the new file
             obj.profile_picture.delete()
+
+    def get_image_path(self):
+        return str(self.profile_picture.url)[16:]
