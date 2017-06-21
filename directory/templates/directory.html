@@ -3,6 +3,11 @@
 {% block content %}
 {% load staticfiles %}
 <style>
+  .main{
+      background-color: white;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+  }
   .tab-pane{
       background-color: white;
       padding-bottom: 20px;
@@ -20,79 +25,80 @@
       float: none;
   }
 </style>
-<div style="height: 10px"></div>
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#faculty">Faculty</a></li>
-  <li><a data-toggle="tab" href="#staff">Staff</a></li>
-  <li><a data-toggle="tab" href="#lab">Laboratory &amp; Offices</a></li>
-</ul>
+<div class="main">
+  <h4 class="text-center" style="padding: 10px;font-size: 30px">Directory</h4>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#faculty">Faculty</a></li>
+    <li><a data-toggle="tab" href="#staff">Staff</a></li>
+    <li><a data-toggle="tab" href="#lab">Laboratory &amp; Offices</a></li>
+  </ul>
 
-<div class="tab-content">
-  <div id="faculty" class="tab-pane fade in active">
-    <!-- Faculty table -->
-    <table class="table table-hover text-centered table-responsive">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Designation</th>
-          <th>Phone extension(0612-302-)</th>
-          <th>E-mail ID(@iitp.ac.in)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for f in faculty %}
+  <div class="tab-content">
+    <div id="faculty" class="tab-pane fade in active">
+      <!-- Faculty table -->
+      <table class="table table-hover text-centered table-responsive">
+        <thead>
           <tr>
-            <td>{{f.name}}</td>
-            <td>{{f.designation}}</td>
-            <td>{{f.phone}}</td>
-            <td>{{f.email}}</td>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Phone extension(0612-302-)</th>
+            <th>E-mail ID(@iitp.ac.in)</th>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-  <div id="staff" class="tab-pane fade">
-    <!-- Staff table -->
-    <table class="table table-hover text-centered table-responsive">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Designation</th>
-          <th>Phone extension(0612-302-)</th>
-          <th>E-mail ID(@iitp.ac.in)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for s in staff %}
+        </thead>
+        <tbody>
+          {% for f in faculty %}
+            <tr>
+              <td>{{f.name}}</td>
+              <td>{{f.designation}}</td>
+              <td>{{f.phone}}</td>
+              <td>{{f.email}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="staff" class="tab-pane fade">
+      <!-- Staff table -->
+      <table class="table table-hover text-centered table-responsive">
+        <thead>
           <tr>
-            <td>{{s.name}}</td>
-            <td>{{s.designation}}</td>
-            <td>{{s.phone}}</td>
-            <td>{{s.email}}</td>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Phone extension(0612-302-)</th>
+            <th>E-mail ID(@iitp.ac.in)</th>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-  <div id="lab" class="tab-pane fade">
-    <!-- Laboratory & Offices table -->
-    <table class="table table-hover text-centered table-responsive" style="width: 50%">
-      <thead>
-        <tr>
-          <th>Laboratory &amp; Offices</th>
-          <th>Phone extension(0612-302-)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for l in lab %}
+        </thead>
+        <tbody>
+          {% for s in staff %}
+            <tr>
+              <td>{{s.name}}</td>
+              <td>{{s.designation}}</td>
+              <td>{{s.phone}}</td>
+              <td>{{s.email}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="lab" class="tab-pane fade">
+      <!-- Laboratory & Offices table -->
+      <table class="table table-hover text-centered table-responsive" style="width: 50%">
+        <thead>
           <tr>
-            <td>{{l.name}}</td>
-            <td>{{l.phone}}</td>
+            <th>Laboratory &amp; Offices</th>
+            <th>Phone extension(0612-302-)</th>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {% for l in lab %}
+            <tr>
+              <td>{{l.name}}</td>
+              <td>{{l.phone}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-<div style="height: 10px"></div>
 {% endblock %}
