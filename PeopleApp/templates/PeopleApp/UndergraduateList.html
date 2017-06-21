@@ -8,7 +8,7 @@
     <div class="main">
     <h4 class="text-center" style="padding: 10px;font-size: 30px">UG Students</h4>
 
-    <ul class="nav nav-tabs" style="margin-top: 10px;">
+    <ul class="nav nav-tabs" data-tabs="tabs" style="margin-top: 10px;">
         <li class="active student-tab"><a data-toggle="tab" href="#btech16">B.Tech 2016</a></li>
         <li class="student-tab"><a data-toggle="tab" href="#btech15">B.Tech 2015</a></li>
         <li class="student-tab"><a data-toggle="tab" href="#btech14">B.Tech 2014</a></li>
@@ -28,12 +28,12 @@
                 <tbody>
                     {% for student in students16 %}
 
-                        <tbody>
+
                             <tr>
                                 <td>{{ student.name }}</td>
                                 <td>{{ student.rollno }}</td>
                             </tr>
-                        </tbody>
+
 
                     {% endfor %}
                 </tbody>
@@ -50,12 +50,12 @@
                 <tbody>
                     {% for student in students15 %}
 
-                        <tbody>
+
                             <tr>
                                 <td>{{ student.name }}</td>
                                 <td>{{ student.rollno }}</td>
                             </tr>
-                        </tbody>
+
 
                     {% endfor %}
                 </tbody>
@@ -73,12 +73,12 @@
                 <tbody>
                     {% for student in students14 %}
 
-                        <tbody>
+
                             <tr>
                                 <td>{{ student.name }}</td>
                                 <td>{{ student.rollno }}</td>
                             </tr>
-                        </tbody>
+
 
                     {% endfor %}
                 </tbody>
@@ -96,12 +96,12 @@
                 <tbody>
                     {% for student in students13 %}
 
-                        <tbody>
+
                             <tr>
                                 <td>{{ student.name }}</td>
                                 <td>{{ student.rollno }}</td>
                             </tr>
-                        </tbody>
+
 
                     {% endfor %}
                 </tbody>
