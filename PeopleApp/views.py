@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Faculty, Staff, UndergraduateStudents
+from .models import Faculty, Staff, UndergraduateStudents, MscStudents
 
 
 # Create your views here.
@@ -23,3 +23,8 @@ def undergraduate_list(request):
                                                                 'students14': students14,
                                                                 'students15': students15,
                                                                 'students16': students16})
+
+
+def msc_list(request):
+    students16 = MscStudents.objects.filter(batch__batch="M.Sc. 2016").order_by('rollno')
+    return render(request, 'PeopleApp/MscList.html', {'students16': students16})
