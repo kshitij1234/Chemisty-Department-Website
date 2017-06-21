@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+  }
+</style>
+<div class="main" style="padding:0 0 20px 0;">
+  <h4 class="text-center" style="padding: 10px;font-size: 30px">Projects</h4>
+  <p style="width:90%; margin: 0 auto;">Ongoing research includes design and synthesis of
+    metallo-supramolecular networks (Metal-Organic Frameworks - MOFs),
+    development of new heterogeneous catalysts and methodologies for organic transformations,
+    target and diversity oriented synthesis of biologically important natural compounds with
+    emphasis on novel multicomponent reactions (MCRs), high resolution Spectroscopy,
+    Bio-Spectroscopy, Spectroscopy of Ions, Spectroscopy of organic solutes in Ionic liquids
+    and applications to explore optical properties of Ionic liquids and their characterization,
+    development of smart polymeric materials, Thermoplastic Elastomers, Polymer blends and
+    Nanocomposites, study of DNA damage repair mechanism and DNA-self assembly to produce
+    Nanoscale constructs.</p>
+  <table class="table table-responsive table-hover" style="width:90%; margin: 0 auto;">
+    <col width="30%">
+    <col width="40%">
+    <col width="12%">
+    <col width="18%">
+    <thead>
+      <tr>
+        <th>Name of the Investigator</th>
+        <th>Title of the project</th>
+        <th>Budget(Rs.)</th>
+        <th>Sponsoring Agency</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for project in projects %}
+        <tr>
+          <td>{{project.principal_investigator|linebreaksbr}}</td>
+          <td>{{project.title}}</td>
+          <td>{{project.budget}}</td>
+          <td>{{project.sponsoring_agency|linebreaksbr}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
