@@ -8,6 +8,3 @@ def index(request):
     quicklinks = QuickLinks.objects.all().order_by("date")
     object_list = {'notice': notice, 'news': news, 'research': research, 'quicklinks': quicklinks}
     return render(request, 'home.html', object_list)
-
-def directory(request):
-    return render(request, 'directory.html')
