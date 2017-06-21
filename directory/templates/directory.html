@@ -8,6 +8,11 @@
       padding-bottom: 20px;
       margin-bottom: 10px;
   }
+  .nav-tabs>li>a {
+     margin-right: 0;
+     border: 0 solid transparent;
+     border-radius: 0;
+  }
   .tab-pane{
       background-color: white;
       padding-bottom: 20px;
@@ -27,30 +32,33 @@
 </style>
 <div class="main">
   <h4 class="text-center" style="padding: 10px;font-size: 30px">Directory</h4>
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#faculty">Faculty</a></li>
-    <li><a data-toggle="tab" href="#staff">Staff</a></li>
+  <ul class="nav nav-tabs" >
+    <li class="active"><a data-toggle="tab" href="#menu1">Faculty</a></li>
+    <li><a data-toggle="tab" href="#menu2">Staff</a></li>
     <li><a data-toggle="tab" href="#lab">Laboratory &amp; Offices</a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="faculty" class="tab-pane fade in active">
-      <!-- Faculty table -->
-      <script>
-        $(document).ready(function(){
-          $(".nav a").click(function(){
-              $("#faculty").load("directory.html", function(responseTxt, statusTxt, xhr){
-                  if(statusTxt == "success")
-                      alert("External content loaded successfully!");
-                  if(statusTxt == "error")
-                      alert("Error: " + xhr.status + ": " + xhr.statusText);
-              });
-          });
-        });
-      </script>
-      <p>Table is empty.</p>
+    <div id="lab" class="tab-pane fade">
+      <!-- Laboratory & Offices table -->
+      <table class="table table-hover text-centered table-responsive" style="width: 50%">
+        <thead>
+          <tr>
+            <th>Laboratory &amp; Offices</th>
+            <th>Phone extension(0612-302-)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for l in lab %}
+            <tr>
+              <td>{{l.name}}</td>
+              <td>{{l.phone}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-    <div id="staff" class="tab-pane fade">
+    <div id="menu2" class="tab-pane fade">
       <!-- Staff table -->
       <table class="table table-hover text-centered table-responsive">
         <thead>
@@ -73,20 +81,24 @@
         </tbody>
       </table>
     </div>
-    <div id="lab" class="tab-pane fade">
-      <!-- Laboratory & Offices table -->
-      <table class="table table-hover text-centered table-responsive" style="width: 50%">
+    <div id="menu1" class="tab-pane fade in active">
+      <!-- Faculty table -->
+      <table class="table table-hover text-centered table-responsive">
         <thead>
           <tr>
-            <th>Laboratory &amp; Offices</th>
+            <th>Name</th>
+            <th>Designation</th>
             <th>Phone extension(0612-302-)</th>
+            <th>E-mail ID(@iitp.ac.in)</th>
           </tr>
         </thead>
         <tbody>
-          {% for l in lab %}
+          {% for f in faculty %}
             <tr>
-              <td>{{l.name}}</td>
-              <td>{{l.phone}}</td>
+              <td>{{f.name}}</td>
+              <td>{{f.designation}}</td>
+              <td>{{f.phone}}</td>
+              <td>{{f.email}}</td>
             </tr>
           {% endfor %}
         </tbody>
