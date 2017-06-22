@@ -4,6 +4,9 @@ import shutil
 
 
 # Create your models here.
+def get_image_path_phd(instance, filename):
+    return os.path.join("PeopleApp", "static", "UserImages", type(instance).__name__, filename)
+
 
 def get_image_path(instance, filename):
     return os.path.join("PeopleApp", "static", "UserImages", type(instance).__name__, str(instance.pk), filename)
@@ -31,7 +34,9 @@ class Faculty(models.Model):
 
     def delete(self, *args, **kwargs):
         # object is being removed from db, remove the file from storage first
-        shutil.rmtree(os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk)))
+        path = os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk))
+        if os.path.exists(path):
+            shutil.rmtree(path)
         return super(Faculty, self).delete(*args, **kwargs)
 
     def save(self, *args, **kwargs):
@@ -67,7 +72,9 @@ class Staff(models.Model):
 
     def delete(self, *args, **kwargs):
         # object is being removed from db, remove the file from storage first
-        shutil.rmtree(os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk)))
+        path = os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk))
+        if os.path.exists(path):
+            shutil.rmtree(path)
         return super(Staff, self).delete(*args, **kwargs)
 
     def save(self, *args, **kwargs):
@@ -119,7 +126,9 @@ class MscStudents(models.Model):
 
     def delete(self, *args, **kwargs):
         # object is being removed from db, remove the file from storage first
-        shutil.rmtree(os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk)))
+        path = os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk))
+        if os.path.exists(path):
+            shutil.rmtree(path)
         return super(MscStudents, self).delete(*args, **kwargs)
 
     def save(self, *args, **kwargs):
@@ -144,10 +153,11 @@ class MscStudents(models.Model):
 
 
 class PhdStudents(models.Model):
+    broadcast_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, blank=False)
     batch = models.ForeignKey('Batch')
     email = models.CharField(max_length=50, blank=True, null=True)
-    profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
+    profile_picture = models.ImageField(upload_to=get_image_path_phd, blank=True, null=True)
 
     # At first thought of making it as ForeignKey of Faculty model but what if a faculty leaves
     # and this particular student has already passed out ?
@@ -163,11 +173,6 @@ class PhdStudents(models.Model):
 
     def __str__(self):
         return self.name
-
-    def delete(self, *args, **kwargs):
-        # object is being removed from db, remove the file from storage first
-        shutil.rmtree(os.path.join("PeopleApp", "static", "UserImages", type(self).__name__, str(self.pk)))
-        return super(PhdStudents, self).delete(*args, **kwargs)
 
     def save(self, *args, **kwargs):
         # object is possibly being updated, if so, clean up.
