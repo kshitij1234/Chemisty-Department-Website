@@ -3,10 +3,26 @@
 {% block content %}
 {% load staticfiles %}
 <style>
-  -webkit-scrollbar-track {
+  body *::-webkit-scrollbar-track {
   	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  	border-radius: 5px;
-  	background-color: #5c6b74;
+  	border-radius: 4px;
+  	background-color: rgba(0, 0, 0, 0);
+  }
+
+  body *::-webkit-scrollbar {
+  	width: 8px;
+  	background-color: rgba(0, 0, 0, 0);
+  }
+
+  body *::-webkit-scrollbar-thumb {
+  	border-radius: 4px;
+  	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  	background-color: rgba(92, 107, 116, 0.5);
+  }
+  @media (max-width: 768px) {
+      #research-section{
+        padding: 0;
+    }
   }
 </style>
 <div style="height: 10px"></div>
@@ -102,6 +118,42 @@
     </div>
   </div>
 </div><!-- Row container ends here -->
+<div class="row visible-xs-block visible-sm-block">
+  <div class="col-sm-6 col-xs-12">
+    <div style="background-color: #81d4fa; color: #01579b;">
+      <h4 style="padding: 10px 0 0 10px">Head's Desk</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <ul style="padding-bottom:10px;">
+        <li><a href="#">HOD's Message</a></li>
+        <li><a href="#">HOD's Profile</a></li>
+      </ul>
+    </div>
+    <div style="background-color: #81d4fa; color: #01579b; height:223px;">
+      <h4 style="padding: 10px 0 0 10px;">Events</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <ul style="height: 129px; overflow: auto;">
+        {% for event in events %}
+          {% if event.status != 'PA' %}
+            <li><a target="_blank" href="{{ event.link }}">{{ event.topic }}</a> - {{ event.date }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <a href="{% url 'events' %}"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xs-12">
+    <!-- Notice Board -->
+    <div style="background-color: #81d4fa; color: #01579b; height:333px;">
+      <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <ul style="height: 239px; overflow:auto;">
+        {% for note in notice %}
+        <li><b>{{note.title}}</b>{% if note.body != None %}<br>{{note.body}}{% endif %}<h6>(Posted on : {{note.date|date:"d-m-Y"}})</h6></li>
+        {% endfor %}
+      </ul>
+      <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <a href="/notice"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+    </div>
+  </div>
+</div>
 <div class="row" style="margin:0;">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:0;">
     <div style="background-color: #81d4fa; color: #01579b; height:230px;">
@@ -115,7 +167,7 @@
       <a href="/news"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
     </div>
   </div>
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:0 0 0 10px;">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="research-section">
     <div style="background-color: #81d4fa; color: #01579b; height:230px;">
       <h4 style="padding: 10px 0 0 10px">Research Highlights</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul style="height: 136px; overflow: auto;">
