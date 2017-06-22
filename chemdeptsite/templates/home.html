@@ -2,6 +2,13 @@
 
 {% block content %}
 {% load staticfiles %}
+<style>
+  -webkit-scrollbar-track {
+  	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	background-color: #5c6b74;
+  }
+</style>
 <div style="height: 10px"></div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -44,9 +51,48 @@
 <div class="row" style="margin: 0;">
   <!-- Left side bar -->
   <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block" style="padding:0 10px 0 0;">
-    <div style="background-color: #81d4fa; color: #01579b; height:410px;">
+    <div style="background-color: #81d4fa; color: #01579b;">
+      <h4 style="padding: 10px 0 0 10px">Head's Desk</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <ul style="padding-bottom:10px;">
+        <li><a href="#">HOD's Message</a></li>
+        <li><a href="#">HOD's Profile</a></li>
+      </ul>
+    </div>
+    <div style="background-color: #81d4fa; color: #01579b; height:223px;">
+      <h4 style="padding: 10px 0 0 10px;">Events</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <ul style="height: 129px; overflow: auto;">
+        {% for event in events %}
+          {% if event.status != 'PA' %}
+            <li><a target="_blank" href="{{ event.link }}">{{ event.topic }}</a> - {{ event.date }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <a href="{% url 'events' %}"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+    </div>
+  </div>
+  <!-- middle bar -->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
+    <div style="background-color: #81d4fa; color: #01579b; height:330px;">
+      <h4 style="padding: 10px 0 0 10px">Welcome</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
+      <p style="width:95%; margin: 0 auto; padding-bottom:10px; font-size:15px; height:273px; overflow: auto;">
+        Welcome to the Department of Chemistry at IIT Patna.<br/><br/>The Department of Chemistry in IIT Patna has
+        been established since the setting up of the Institute in 2008. The department started the PhD
+        program in Chemistry from July 2009. A vibrant multidisciplinary research program in the Department
+        of Chemistry at IIT Patna is supported by energetic faculty members and state-of-the-art research
+        facilities. The faculty members of the department are committed to quality teaching and research.
+        With a strong foundation in the conventional areas and quest for emerging areas of Chemistry,
+        faculty and students are engaged in a range of dynamic research programs that include Supramolecular
+        Chemistry, Target and Diversity oriented Organic synthesis, Nanochemistry, Catalysis, high resolution
+        and Bio-Spectroscopy, Polymer and Biochemistry.</p>
+    </div>
+  </div>
+  <!-- Right side bar -->
+  <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block" style="padding:0 0 0 10px;">
+    <!-- Notice Board -->
+    <div style="background-color: #81d4fa; color: #01579b; height:333px;">
       <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <ul style="height: 316px; overflow:auto;">
+      <ul style="height: 239px; overflow:auto;">
         {% for note in notice %}
         <li><b>{{note.title}}</b>{% if note.body != None %}<br>{{note.body}}{% endif %}<h6>(Posted on : {{note.date|date:"d-m-Y"}})</h6></li>
         {% endfor %}
@@ -55,48 +101,24 @@
       <a href="/notice"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
     </div>
   </div>
-  <!-- middle bar -->
-  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
-    <div style="background-color: #81d4fa; color: #01579b; height:200px; position: relative;">
+</div><!-- Row container ends here -->
+<div class="row" style="margin:0;">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:0;">
+    <div style="background-color: #81d4fa; color: #01579b; height:230px;">
       <h4 style="padding: 10px 0 0 10px">News</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <ul>
+      <ul style="height: 136px; overflow: auto;">
         {% for n in news %}
         <li><a target="_blank" href="{{ n.link }}">{{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}</li>
         {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <a href="/news"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="position:absolute; left:10px; bottom: 10px;"></a>
+      <a href="/news"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
     </div>
-    <div class="row" style="margin: 0; padding: 0;">
-      <div class="col-sm-6 col-xs-6 visible-sm-block visible-xs-block" style="padding:0;">
-        <div style="background-color: #81d4fa; color: #01579b; height:300px;">
-          <h4 style="padding: 10px 0 0 10px">Notice Board</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-          <ul style="height: 206px; overflow:auto;">
-            {% for note in notice %}
-            <li><b>{{note.title}}</b>{% if note.body != None %}<br>{{note.body}}{% endif %}<h6>(Posted on : {{note.date|date:"d-m-Y"}})</h6></li>
-            {% endfor %}
-          </ul>
-          <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-          <a href="/notice"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-xs-6 visible-sm-block visible-xs-block" style="padding:0 0 0 10px;">
-        <div style="background-color: #81d4fa; color: #01579b; height:300px;">
-          <h4 style="padding: 10px 0 0 10px">Events</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-          <ul style="height: 206px; overflow:auto;">
-            {% for event in events %}
-            <li><a target="_blank" href="{{ event.link }}">{{ event.title }}</a> - {{ event.date|date:"d-m-Y" }}</li>
-            {% endfor %}
-          </ul>
-          <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-          <a href="{% url 'events' %}"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
-        </div>
-      </div>
-    </div>
-    <div style="background-color: #81d4fa; color: #01579b; height:200px;">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:0 0 0 10px;">
+    <div style="background-color: #81d4fa; color: #01579b; height:230px;">
       <h4 style="padding: 10px 0 0 10px">Research Highlights</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <ul>
+      <ul style="height: 136px; overflow: auto;">
         {% for r in research %}
         <li><a target="_blank" href="{{ r.link }}">{{ r.title }}</a> - {{ r.date|date:"d-m-Y" }}</li>
         {% endfor %}
@@ -105,21 +127,11 @@
       <a href="/research"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
     </div>
   </div>
-  <!-- Right side bar -->
-  <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block" style="padding:0 0 0 10px;">
-    <div style="background-color: #81d4fa; color: #01579b;">
-      <h4 style="padding: 10px 0 0 10px;">Events</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <ul>
-        {% for event in events %}
-        <li><a target="_blank" href="{{ event.link }}">{{ event.title }}</a> - {{ event.date|date:"d-m-Y" }}</li>
-        {% endfor %}
-      </ul>
-      <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <a href="{% url 'events' %}"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
-    </div>
-    <div style="background-color: #81d4fa; color: #01579b;">
+  <!-- Quick Links -->
+  <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" style="padding:0;">
+    <div style="background-color: #81d4fa; color: #01579b; height:230px;">
       <h4 style="padding: 10px 0 0 10px;">Quick Links</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <ul>
+      <ul style="height: 136px; overflow: auto;">
         {% for link in quicklinks %}
         <li><a target="_blank" href="{{ link.link }}">{{ link.title }}</a></li>
         {% endfor %}
@@ -127,7 +139,7 @@
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <div style="height: 10px"></div>
     </div>
-  </div>
+  </div> -->
 </div> <!-- Row container ends here -->
 <div style="height: 10px"></div>
 {% endblock %}
