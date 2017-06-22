@@ -154,9 +154,12 @@ class PhdStudents(models.Model):
     # We would want to delete the faculty from our Faculty database but at the same time would want
     # to show the faculty as supervisor of this student.
     # It is only possible if this is an independent field.
+    # On second thoughts making it a foreign key so that profile of faculty
+    # can be visited from there itself. If faculty is no longer in institute,
+    # it will simply be set to null, which can be updated to point to another faculty if needed.
 
-    supervisor = models.CharField(max_length=50, blank=True, null=True)
-    research = models.TextField(max_length=300, blank=True, null=True)
+    supervisor = models.ForeignKey('Faculty', on_delete=models.SET_NULL, blank=True, null=True)
+    research = models.TextField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -185,5 +188,3 @@ class PhdStudents(models.Model):
 
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
-
-
