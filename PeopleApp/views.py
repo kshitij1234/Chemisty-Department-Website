@@ -29,5 +29,21 @@ def msc_list(request):
     students16 = MscStudents.objects.filter(batch__batch__contains="2016").order_by('rollno')
     return render(request, 'PeopleApp/MscList.html', {'students16': students16})
 
+
 def phd_list(request):
-    students17 = PhdStudents.objects.filter(batch__batch__contains="2017")
+    students17 = PhdStudents.objects.filter(batch__batch__contains="2017").order_by('name')
+    students16 = PhdStudents.objects.filter(batch__batch__contains="2016").order_by('name')
+    students15 = PhdStudents.objects.filter(batch__batch__contains="2015").order_by('name')
+    students14 = PhdStudents.objects.filter(batch__batch__contains="2014").order_by('name')
+    students13 = PhdStudents.objects.filter(batch__batch__contains="2013").order_by('name')
+    students11 = PhdStudents.objects.filter(batch__batch__contains="2011").order_by('name')
+    students10 = PhdStudents.objects.filter(batch__batch__contains="2010").order_by('name')
+    students9 = PhdStudents.objects.filter(batch__batch__contains="2009").order_by('name')
+    return render(request, 'PeopleApp/PhdList.html', {'students17': students17,
+                                                      'students16': students16,
+                                                      'students15': students15,
+                                                      'students14': students14,
+                                                      'students13': students13,
+                                                      'students11': students11,
+                                                      'students10': students10,
+                                                      'students9': students9})

@@ -146,7 +146,7 @@ class MscStudents(models.Model):
 class PhdStudents(models.Model):
     name = models.CharField(max_length=100, blank=False)
     batch = models.ForeignKey('Batch')
-    email = models.CharField(primary_key=True, max_length=50, blank=False)
+    email = models.CharField(max_length=50, blank=True, null=True)
     profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
 
     # At first thought of making it as ForeignKey of Faculty model but what if a faculty leaves
