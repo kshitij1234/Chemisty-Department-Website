@@ -67,6 +67,307 @@
 
         </div>
 
+        <div id="phd16" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students16 %}
+                <script> i=i+1;</script>
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">
+                                {% if student.email != None %}
+                                    Email: {{student.email}}<br>
+                                {% endif %}
+
+                            </p>
+                            <script>
+                                document.write('<button class="btn btn-info btn-xs phd-btn info-btn" id=info'+i+'>More info</button>');
+                            </script>
+                        </div>
+
+                        <div class="col-md-5 col-xs-11 research-areas hidden" style="padding-top: 0px;">
+
+                            {% if student.research != None and student.research != "" %}
+                                <h4><strong>Research Areas</strong></h4>
+                                <p >{{ student.research }}</p>
+                            {% else %}
+                                <p style="padding-top: 12px;">No Research Areas to show</p>
+                            {% endif %}
+                            {% if student.supervisor != None %}
+                                <p><strong>Supervisor :</strong> <a href="{{ student.supervisor.profile_link }}" target="_blank">{{ student.supervisor.name }}</a></p>
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="phd15" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students15 %}
+                <script> i=i+1;</script>
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">
+                                {% if student.email != None %}
+                                    Email: {{student.email}}<br>
+                                {% endif %}
+
+                            </p>
+                            <script>
+                                document.write('<button class="btn btn-info btn-xs phd-btn info-btn" id=info'+i+'>More info</button>');
+                            </script>
+                        </div>
+
+                        <div class="col-md-5 col-xs-11 research-areas hidden" style="padding-top: 0px;">
+
+                            {% if student.research != None and student.research != "" %}
+                                <h4><strong>Research Areas</strong></h4>
+                                <p >{{ student.research }}</p>
+                            {% else %}
+                                <p style="padding-top: 12px;">No Research Areas to show</p>
+                            {% endif %}
+                            {% if student.supervisor != None %}
+                                <p><strong>Supervisor :</strong> <a href="{{ student.supervisor.profile_link }}" target="_blank">{{ student.supervisor.name }}</a></p>
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="phd14" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students14 %}
+                <script> i=i+1;</script>
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">
+                                {% if student.email != None %}
+                                    Email: {{student.email}}<br>
+                                {% endif %}
+
+                            </p>
+                            <script>
+                                document.write('<button class="btn btn-info btn-xs phd-btn info-btn" id=info'+i+'>More info</button>');
+                            </script>
+                        </div>
+
+                        <div class="col-md-5 col-xs-11 research-areas hidden" style="padding-top: 0px;">
+
+                            {% if student.research != None and student.research != "" %}
+                                <h4><strong>Research Areas</strong></h4>
+                                <p >{{ student.research }}</p>
+                            {% else %}
+                                <p style="padding-top: 12px;">No Research Areas to show</p>
+                            {% endif %}
+                            {% if student.supervisor != None %}
+                                <p><strong>Supervisor :</strong> <a href="{{ student.supervisor.profile_link }}" target="_blank">{{ student.supervisor.name }}</a></p>
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="phd13" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students13 %}
+                <script> i=i+1;</script>
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">
+                                {% if student.email != None %}
+                                    Email: {{student.email}}<br>
+                                {% endif %}
+
+                            </p>
+                            <script>
+                                document.write('<button class="btn btn-info btn-xs phd-btn info-btn" id=info'+i+'>More info</button>');
+                            </script>
+                        </div>
+
+                        <div class="col-md-5 col-xs-11 research-areas hidden" style="padding-top: 0px;">
+
+                            {% if student.research != None and student.research != "" %}
+                                <h4><strong>Research Areas</strong></h4>
+                                <p >{{ student.research }}</p>
+                            {% else %}
+                                <p style="padding-top: 12px;">No Research Areas to show</p>
+                            {% endif %}
+                            {% if student.supervisor != None %}
+                                <p><strong>Supervisor :</strong> <a href="{{ student.supervisor.profile_link }}" target="_blank">{{ student.supervisor.name }}</a></p>
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="phd11" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students11 %}
+                <script> i=i+1;</script>
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">
+                                {% if student.email != None %}
+                                    Email: {{student.email}}<br>
+                                {% endif %}
+
+                            </p>
+                            <script>
+                                document.write('<button class="btn btn-info btn-xs phd-btn info-btn" id=info'+i+'>More info</button>');
+                            </script>
+                        </div>
+
+                        <div class="col-md-5 col-xs-11 research-areas hidden" style="padding-top: 0px;">
+
+                            {% if student.research != None and student.research != "" %}
+                                <h4><strong>Research Areas</strong></h4>
+                                <p >{{ student.research }}</p>
+                            {% else %}
+                                <p style="padding-top: 12px;">No Research Areas to show</p>
+                            {% endif %}
+                            {% if student.supervisor != None %}
+                                <p><strong>Supervisor :</strong> <a href="{{ student.supervisor.profile_link }}" target="_blank">{{ student.supervisor.name }}</a></p>
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="phd10" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students10 %}
+                <script> i=i+1;</script>
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">
+                                {% if student.email != None %}
+                                    Email: {{student.email}}<br>
+                                {% endif %}
+
+                            </p>
+                            <script>
+                                document.write('<button class="btn btn-info btn-xs phd-btn info-btn" id=info'+i+'>More info</button>');
+                            </script>
+                        </div>
+
+                        <div class="col-md-5 col-xs-11 research-areas hidden" style="padding-top: 0px;">
+
+                            {% if student.research != None and student.research != "" %}
+                                <h4><strong>Research Areas</strong></h4>
+                                <p >{{ student.research }}</p>
+                            {% else %}
+                                <p style="padding-top: 12px;">No Research Areas to show</p>
+                            {% endif %}
+                            {% if student.supervisor != None %}
+                                <p><strong>Supervisor :</strong> <a href="{{ student.supervisor.profile_link }}" target="_blank">{{ student.supervisor.name }}</a></p>
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="phd9" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students9 %}
+                <script> i=i+1;</script>
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">
+                                {% if student.email != None %}
+                                    Email: {{student.email}}<br>
+                                {% endif %}
+
+                            </p>
+                            <script>
+                                document.write('<button class="btn btn-info btn-xs phd-btn info-btn" id=info'+i+'>More info</button>');
+                            </script>
+                        </div>
+
+                        <div class="col-md-5 col-xs-11 research-areas hidden" style="padding-top: 0px;">
+
+                            {% if student.research != None and student.research != "" %}
+                                <h4><strong>Research Areas</strong></h4>
+                                <p >{{ student.research }}</p>
+                            {% else %}
+                                <p style="padding-top: 12px;">No Research Areas to show</p>
+                            {% endif %}
+                            {% if student.supervisor != None %}
+                                <p><strong>Supervisor :</strong> <a href="{{ student.supervisor.profile_link }}" target="_blank">{{ student.supervisor.name }}</a></p>
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
 
     </div>
 
