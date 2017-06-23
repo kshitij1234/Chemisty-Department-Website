@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{%  static 'css/liststyles.css' %}">
+<script src="{% static 'scripts/faculty_script.js'  %}"></script>
+
+<div class="main">
+
+    <h3 id="title" class="text-center" style="padding-bottom: 50px;">Ph.D Alumni</h3>
+
+    {% for a in alumni %}
+
+        <div class="alumni-info">
+            <div class="row">
+                <img class="img img-responsive col-md-1 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static a.get_image_path %}" style="margin-top: 20px;">
+                <div class="col-md-2 col-xs-5">
+                    <h4 class="name"><a>{{a.name}}</a></h4>
+                    <p class="contact-info">
+                        {% if a.emails != None and a.emails != "" %}
+                            Email : <br>{{ a.emails }}
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="col-md-2 col-xs-10 col-xs-offset-1">
+                    <p>
+                        Thesis Title : <a href="{{ a.thesis_link }}" target="_blank">{{ a.thesis_title }}</a><br><br>
+                        {% if a.date_defended != None %}
+                        Date defended : {{ a.date_defended }}<br><br>
+                        {% endif %}
+                        Supervisor : <a href="{{ a.phd_supervisor_link }}" target="_blank">{{ a.phd_supervisor }}</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-xs-10 col-xs-offset-1">
+                    <p>
+                        Current Position : {{ a.current_position }}<br><br>
+                        Post Doc. Supervisor :  <a href="{{ a.current_supervisor_link }}" target="_blank">{{ a.current_supervisor }}</a>
+                    </p>
+                    <p>
+                        {{ a.extra_info }}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+
+</div>
+
+{% endblock %}

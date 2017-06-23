@@ -193,3 +193,41 @@ class PhdStudents(models.Model):
 
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
+
+
+class PhdAlumni(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    emails = models.CharField(max_length=300, blank=True, null=True)
+    profile_picture = models.ImageField(upload_to=get_image_path_phd, blank=True, null=True)
+    thesis_title = models.TextField(max_length=400, blank=True)
+    thesis_link = models.CharField(max_length=200, blank=True, default="#")
+    date_defended = models.DateField(blank=True, null=True)
+    phd_supervisor = models.CharField(max_length=100, blank=True)
+    phd_supervisor_link = models.CharField(max_length=200, blank=True, default="#")
+    current_position = models.TextField(max_length=400, blank=True)
+    current_supervisor = models.CharField(max_length=100, blank=True)
+    current_supervisor_link = models.CharField(max_length=200, blank=True, default="#")
+    extra_info = models.TextField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        # object is possibly being updated, if so, clean up.
+        self.remove_on_image_update()
+        return super(PhdAlumni, self).save(*args, **kwargs)
+
+    def remove_on_image_update(self):
+        try:
+            # is the object in the database yet?
+            obj = PhdAlumni.objects.get(pk=self.pk)
+        except PhdAlumni.DoesNotExist:
+            # object is not in db, nothing to worry about
+            return
+        # is the save due to an update of the actual image file?
+        if obj.profile_picture and self.profile_picture and obj.profile_picture != self.profile_picture:
+            # delete the old image file from the storage in favor of the new file
+            obj.profile_picture.delete()
+
+    def get_image_path(self):
+        return str(self.profile_picture.url)[16:]

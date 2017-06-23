@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents
+from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents, PhdAlumni
 
 
 # Create your views here.
@@ -18,11 +18,12 @@ def undergraduate_list(request):
     students13 = UndergraduateStudents.objects.filter(batch__batch__contains="2013").order_by('rollno')
     students14 = UndergraduateStudents.objects.filter(batch__batch__contains="2014").order_by('rollno')
     students15 = UndergraduateStudents.objects.filter(batch__batch__contains="2015").order_by('rollno')
-    students16 = UndergraduateStudents.objects.filter(batch__batch__contains="2016").order_by('rollno')
+    # students16 = UndergraduateStudents.objects.filter(batch__batch__contains="2016").order_by('rollno')
     return render(request, 'PeopleApp/UndergraduateList.html', {'students13': students13,
                                                                 'students14': students14,
                                                                 'students15': students15,
-                                                                'students16': students16})
+                                                                #             'students16': students16
+                                                                })
 
 
 def msc_list(request):
@@ -47,3 +48,8 @@ def phd_list(request):
                                                       'students11': students11,
                                                       'students10': students10,
                                                       'students9': students9})
+
+
+def phd_alumni_list(request):
+    alumni = PhdAlumni.objects.all().order_by('name')
+    return render(request, 'PeopleApp/PhdAlumniList.html', {'alumni': alumni})

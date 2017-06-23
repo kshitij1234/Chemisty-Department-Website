@@ -4,19 +4,20 @@
 {% load static %}
 
     <link rel="stylesheet" href="{% static 'css/studentstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/liststyles.css' %}">
 
     <div class="main">
-    <h4 class="text-center" style="padding: 10px;font-size: 30px">UG Students</h4>
+    <h3 id="title" class="text-center" >UG Students</h3>
 
     <ul class="nav nav-tabs" data-tabs="tabs" style="margin-top: 10px;">
-        <li class="active student-tab"><a data-toggle="tab" href="#btech16">B.Tech 2016</a></li>
-        <li class="student-tab"><a data-toggle="tab" href="#btech15">B.Tech 2015</a></li>
+       <!-- <li class="active student-tab"><a data-toggle="tab" href="#btech16">B.Tech 2016</a></li>-->
+        <li class="student-tab active"><a data-toggle="tab" href="#btech15">B.Tech 2015</a></li>
         <li class="student-tab"><a data-toggle="tab" href="#btech14">B.Tech 2014</a></li>
         <li class="student-tab"><a data-toggle="tab" href="#btech13">B.Tech 2013</a></li>
     </ul>
 
     <div class="tab-content">
-
+<!--
         <div id="btech16" class="tab-pane fade in active">
             <table class="table table-hover text-centered table-responsive">
                 <thead>
@@ -39,7 +40,8 @@
                 </tbody>
             </table>
         </div>
-        <div id="btech15" class="tab-pane fade in">
+        -->
+        <div id="btech15" class="tab-pane fade in active">
             <table class="table table-hover text-centered table-responsive">
                 <thead>
                     <tr>
