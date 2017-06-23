@@ -200,6 +200,7 @@ class PhdAlumni(models.Model):
     emails = models.CharField(max_length=300, blank=True, null=True)
     profile_picture = models.ImageField(upload_to=get_image_path_phd, blank=True, null=True)
     thesis_title = models.TextField(max_length=400, blank=True)
+    thesis_link = models.CharField(max_length=200, blank=True, default="#")
     date_defended = models.DateField(blank=True, null=True)
     phd_supervisor = models.CharField(max_length=100, blank=True)
     phd_supervisor_link = models.CharField(max_length=200, blank=True, default="#")
