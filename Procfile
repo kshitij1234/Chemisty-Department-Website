@@ -1,1 +1,1 @@
-web: gunicron chemdeptsite.wsgi
+web: gunicron chemdeptsite.wsgi --log-file -
