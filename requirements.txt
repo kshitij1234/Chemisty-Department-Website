@@ -3,3 +3,5 @@ Django==1.11.1
 gunicorn==19.7.1
 Pillow==4.1.1
 whitenoise==3.3.0
+bower==0.9.x
+grunt==1.2.0
