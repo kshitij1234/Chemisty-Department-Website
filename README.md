@@ -17,4 +17,4 @@ Go to the local repository and run the following commands:
    1. cd Chemisty-Department-Website-master
    1. python manage.py runserver
 
-Now you can access the project on browser at localhost:8000
+Now you can access the project on browser at 127.0.0.1:8000
