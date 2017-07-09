@@ -20,6 +20,8 @@
       <link rel="stylesheet" href="{%  static 'css/animate.css' %}" type = "text/css">
       <!-- Font Awesome -->
       <link rel="stylesheet" href="{%  static 'css/font-awesome.min.css' %}" type = "text/css">
+      <!-- FreeFind search result overlay -->
+      <!-- <script src="//inc.freefind.com/inc/ffse-overlay.min.js" async></script> -->
     	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
       <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
       <script src="{% static 'js/layout_script.js' %}"></script>
@@ -112,7 +114,7 @@
           <li>
             <!-- Search Bar -->
             <div class="navbar-form hidden-md" style="border: none; padding-right: 0px; margin-right: 0px; padding-left: 0px; margin-left: 70px; width:80%;">
-              <form class="navbar-form navbar-left" style="margin:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
+              <form class="navbar-form navbar-left" style="margin:0;padding:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search for..." name="query">
               		<input type="hidden" name="si" value="37493057">
