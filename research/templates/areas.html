@@ -6,27 +6,47 @@
 
 {% block content %}
 {% load static %}
+
+    <style>
+
+        .main{
+            background-color: white;
+
+        }
+        .research-area-title{
+            font-size: 30px;
+            padding: 20px;
+        }
+        .area-title{
+            font-size: 25px;
+        }
+    .area-detail{
+        padding-bottom: 10px;
+    }
+    </style>
+
 <div style="height: 10px"></div>
      <div class="main">
 
-        <h3>Areas of Research</h3>
+        <h3 class="research-area-title text-center">Areas of Research</h3>
 
         {% for area in areas %}
             <div class="research-area">
                 <div class="row">
                     <div class="col-md-4 col-md-offset-1">
                         <figure>
-                        <img class="img-responsive" src="{% static area.get_image_url %}">
-                            <figcaption>{{ area.picture_text }}</figcaption>
+                        <img class="img-responsive area-pic" src="{% static area.get_image_url %}">
+                            <figcaption class="area-pic-title">{{ area.picture_text }}</figcaption>
                         </figure>
                     </div>
-                    <div class="col-md-6 col-md-offset-1">
-                        <h5>{{ area.title }}</h5><br>
-                        <p>{{ area.detail }}</p>
+                    <div class="col-md-6">
+                        <h4 class="area-title"><strong>{{ area.title }}</strong></h4>
+                        <p class="area-detail">{{ area.detail }}</p>
                     </div>
                 </div>
             </div>
+            {% if not forloop.last %}<hr>{% endif %}
         {% endfor %}
      </div>
-
+<div style="height: 10px"></div>
 {% endblock %}
