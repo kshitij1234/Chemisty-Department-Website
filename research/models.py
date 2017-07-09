@@ -4,7 +4,7 @@ from django.db import models
 
 
 def get_image_path(self, file):
-    return os.path.join("research", "images", type(self).__name__, file)
+    return os.path.join("research", "static", "images", type(self).__name__, file)
 
 
 class Projects(models.Model):
@@ -47,7 +47,7 @@ class ResearchAreas(models.Model):
             obj.picture.delete()
 
     def get_image_url(self):
-        return str(self.picture.url)[16:]
+        return str(self.picture.url)[15:]
 
     class Meta:
         verbose_name_plural = "Research Areas"
