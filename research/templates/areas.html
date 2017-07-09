@@ -6,30 +6,25 @@
 
 {% block content %}
 {% load static %}
-
-    <style>
-
-        .main{
-            background-color: white;
-
-        }
-        .research-area-title{
-            font-size: 30px;
-            padding: 20px;
-        }
-        .area-title{
-            font-size: 20px;
-        }
-    .area-detail{
-        padding-bottom: 10px;
-    }
-    </style>
-
+<style>
+  .main{
+      background-color: white;
+  }
+  .research-area-title{
+      font-size: 30px;
+      padding: 20px;
+      margin-top: 0;
+  }
+  .area-title{
+      font-size: 20px;
+  }
+  .area-detail{
+      padding-bottom: 10px;
+  }
+</style>
 <div style="height: 10px"></div>
      <div class="main">
-
         <h3 class="research-area-title text-center">Areas of Research</h3>
-
         {% for area in areas %}
             <div class="research-area">
                 <div class="row">
