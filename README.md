@@ -34,6 +34,6 @@ You can visit the website at [cryptic-bayou-93861](https://cryptic-bayou-93861.h
 <!-- Everything between the navbar and footer -->
 {% endblock %}
 ```
-### While developing the project, keep checking search bar position in different browser.
+### While developing the project, keep checking search bar position in different browsers.
 
-### Pages facilties.html is hard coded.
+### Page facilties.html is hard coded.
