@@ -111,11 +111,18 @@
           <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'directory' %}" id="directory">Directory<span class="sr-only">(current)</span></a></li>
           <li>
             <!-- Search Bar -->
-            <div class="navbar-form hidden-md" style="border: none; padding-right: 0px; margin-right: 0px; padding-left: 0px; margin-left: 75px; width: 80%">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span>
-              </div>
+            <div class="navbar-form hidden-md" style="border: none; padding-right: 0px; margin-right: 0px; padding-left: 0px; margin-left: 70px; width:80%;">
+              <form class="navbar-form navbar-left" style="margin:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for..." name="query">
+              		<input type="hidden" name="si" value="37493057">
+              		<input type="hidden" name="pid" value="r">
+              		<input type="hidden" name="n" value="0">
+              		<input type="hidden" name="_charset_" value="">
+              		<input type="hidden" name="bcd" value="&#247;">
+                  <span class="input-group-btn"><button class="btn btn-default" type="submit">Go!</button></span>
+                </div>
+              </form>
             </div>
           </li>
         </ul>
@@ -190,11 +197,18 @@
           </ul>
         </div><!-- /.navbar-collapse -->
         <!-- Search Bar -->
-        <div class="navbar-form visible-xs-block" style="border: none; padding-top:0; padding-bottom:0;">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span>
-          </div>
+        <div class="navbar-form visible-xs-block" style="border: none; padding-top:0; padding-bottom:0; margin:0;">
+          <form class="navbar-form navbar-left" style="margin:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for..." name="query">
+              <input type="hidden" name="si" value="37493057">
+              <input type="hidden" name="pid" value="r">
+              <input type="hidden" name="n" value="0">
+              <input type="hidden" name="_charset_" value="">
+              <input type="hidden" name="bcd" value="&#247;">
+              <span class="input-group-btn"><button class="btn btn-default" type="submit">Go!</button></span>
+            </div>
+          </form>
         </div>
       </div><!-- /.container-fluid -->
     </nav>
