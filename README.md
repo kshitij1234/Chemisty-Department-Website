@@ -21,3 +21,19 @@ Now you can access the project on browser at 127.0.0.1:8000
 
 ### Website is currently live on heroku
 You can visit the website at [cryptic-bayou-93861](https://cryptic-bayou-93861.herokuapp.com/)
+
+### If you want to create a new html page, use this format :
+```
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Chemical Engineering | IIT Patna</title>
+{% endblock %}
+
+{% block content %}
+<!-- Everything between the navbar and footer -->
+{% endblock %}
+```
+### While developing the project, keep checking search bar position in different browser.
+
+### Pages facilties.html is hard coded.
