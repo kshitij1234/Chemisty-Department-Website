@@ -8,7 +8,7 @@ def get_image_path(self, file):
 
 
 class Projects(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
     principal_investigator = models.TextField(max_length=200)
     sponsoring_agency = models.CharField(max_length=100)
     budget = models.CharField(max_length=20)
