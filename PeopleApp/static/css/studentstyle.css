@@ -1,32 +1,6 @@
-
-    .main{
-        background-color: white;
-        padding-bottom: 20px;
-        margin-bottom: 10px;
-    }
-
-    .tab-pane{
-        background-color: white;
-        margin-top: 20px;
-    }
-
-    .student-tab{
-
-    }
-
-    .table{
-        border-radius: 5px;
-        width: 50%;
-        margin: 0px auto;
-        float: none;
-    }
-
-    .tab-content,.student-info{
-    background-color: white;
-    }
-
-    .phd-btn{
-        padding: 4px;
-    }
-
-
+.main{background-color:white;padding-bottom:20px;margin-bottom:10px;}
+.tab-pane{background-color:white;margin-top:20px;}
+.student-tab{}
+.table{border-radius:5px;width:50%;margin:0px auto;float:none;}
+.tab-content,.student-info{background-color:white;}
+.phd-btn{padding:4px;}
