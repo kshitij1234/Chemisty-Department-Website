@@ -8,11 +8,9 @@
 {% load static %}
 <link rel="stylesheet" href="{%  static 'css/liststyles.css' %}">
 <script src="{% static 'scripts/faculty_script.js'  %}"></script>
-<div style="height: 10px"></div>
 <div class="main">
-   <h3 id="title" class="text-center" >Faculty</h3>
+   <h4 class="text-center" style="padding: 20px;font-size: 30px">Faculty</h4>
     <p id="head-info"class="text-center">Please append Email with "@iitp.ac.in" .<br>Please use the prefix "0612-302" with the Phone number.</p>
-
     <script>var i=0;</script>
    {% for f in faculty %}
      <script> i=i+1;</script>
