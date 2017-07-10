@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>404 : Page Not Found</title>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 30px;
+  }
+  #error {
+    font-size: 110px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    font-weight: 600;
+  }
+  #error-msg {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .home-btn {
+    background-color:#d9edf7;
+    color:#4383b9;
+  }
+  .btn:hover,
+  .btn:focus,
+  .btn:active,
+  .btn.active {
+    background-color:#d9edf7;
+    color:#4383b9;
+  }
+</style>
+<div class="main">
+  <p id="error" class="text-center">404</p>
+  <p id="error-msg" class="text-center">The requested URL/page was not found on this server.</p>
+  <div style="text-align:center; padding-bottom: 20px;">
+    <a href="{% url 'home' %}"><button type="button" class="btn btn-default btn-lg home-btn">Go back to home page</button></a>
+  </div>
+  <div>
+    <img class="img img-responsive" src="{% static 'images/404_reduce_your_payments.png' %}" alt="Reduce your payments" style="margin:0 auto;">
+  </div>
+</div>
+{% endblock %}

@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^people/', include('PeopleApp.urls')),
     url(r'^events/', include('Events.urls')),
     url(r'^research/', include('research.urls')),
+    url(r'^', views.error_404, name="error_404"),
 ]

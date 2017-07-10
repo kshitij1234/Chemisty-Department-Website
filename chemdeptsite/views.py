@@ -13,3 +13,6 @@ def index(request):
 
 def facilities(request):
     return render(request, 'facilities.html')
+
+def error_404(request):
+    return render(request, 'error_404.html')
