@@ -202,11 +202,11 @@
       <h4 style="padding: 10px 0 0 10px">Research Highlights</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul style="height: 136px; overflow: auto;">
         {% for r in research %}
-        <li><a target="_blank" href="{{ r.link }}">{{ r.title }}</a> - {{ r.date|date:"d-m-Y" }}</li>
+        <li>{{ r.title }}</li>
         {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
-      <a href="/research"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
+      <a href="{% url 'areas' %}"><img src="{% static 'images/view_all.gif' %}" alt="view all" style="margin: 0 0 10px 10px;"></a>
     </div>
   </div>
   <!-- Quick Links -->
