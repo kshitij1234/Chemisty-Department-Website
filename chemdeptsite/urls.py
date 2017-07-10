@@ -25,5 +25,7 @@ urlpatterns = [
     url(r'^people/', include('PeopleApp.urls')),
     url(r'^events/', include('Events.urls')),
     url(r'^research/', include('research.urls')),
+
+    # please keep this url at the end, this needs to be last in the list
     url(r'^', views.error_404, name="error_404"),
 ]

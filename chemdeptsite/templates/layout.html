@@ -11,6 +11,9 @@
            font-family: "Times New Roman", Times, serif;
            font-size: 16px;
         }
+        .ffse-ov0-ifd {
+          z-index: 1000;
+        }
       </style>
       <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
       <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -22,7 +25,7 @@
       <!-- Font Awesome -->
       <link rel="stylesheet" href="{%  static 'css/font-awesome.min.css' %}" type = "text/css">
       <!-- FreeFind search result overlay -->
-      <!-- <script src="//inc.freefind.com/inc/ffse-overlay.min.js" async></script> -->
+      <script src="//inc.freefind.com/inc/ffse-overlay.min.js" async></script>
     	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
       <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
       <script src="{% static 'js/layout_script.js' %}"></script>
@@ -115,7 +118,7 @@
           <li>
             <!-- Search Bar -->
             <div class="navbar-form hidden-md" style="border: none; padding-right: 0px; margin-right: 0px; padding-left: 0px; margin-left: 70px;">
-              <form class="navbar-form navbar-left" style="margin:0;padding:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_blank">
+              <form class="navbar-form navbar-left" style="margin:0;padding:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search for..." name="query">
               		<input type="hidden" name="si" value="37493057">
@@ -201,7 +204,7 @@
         </div><!-- /.navbar-collapse -->
         <!-- Search Bar -->
         <div class="navbar-form visible-xs-block" style="border: none; padding-top:0; padding-bottom:0; margin:0;">
-          <form class="navbar-form navbar-left" style="margin:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_blank">
+          <form class="navbar-form navbar-left" style="margin:0;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search for..." name="query">
               <input type="hidden" name="si" value="37493057">
