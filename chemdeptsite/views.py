@@ -3,7 +3,6 @@ from .models import NoticeBoard, News, QuickLinks
 from research.models import ResearchAreas
 from Events.models import Events
 
-
 def index(request):
     notice = NoticeBoard.objects.all().order_by("-date")
     new_article = News.objects.order_by("-date")[:5]

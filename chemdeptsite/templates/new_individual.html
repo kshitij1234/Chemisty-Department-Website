@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>News | Chemical Engineering | IIT Patna</title>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      margin-top: 10px;
+  }
+</style>
+<div class="main">
+  <div class="jumbotron" style="background-color:white; margin-bottom:10px;">
+    <h3>{{ news.title }}</h3>
+    <h6>{{ news.date }}</h6>
+    <p>{{ news.more_info }}</p>
+  </div>
+</div>
+{% endblock %}

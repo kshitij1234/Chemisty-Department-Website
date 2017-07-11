@@ -190,7 +190,7 @@
       <h4 style="padding: 10px 0 0 10px">News</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul style="height: 136px; overflow: auto;">
         {% for n in news %}
-        <li><a target="_blank" href="{{ n.link }}">{{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}</li>
+        <li><a href="{% url 'news' %}{{ n.id }}">{{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}</li>
         {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
