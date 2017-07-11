@@ -20,6 +20,7 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name="home"),
+    url(r'^sitemap/$', views.sitemap, name="sitemap"),
     url(r'^facilities/$', views.facilities, name="facilities"),
     url(r'^directory/', include('directory.urls')),
     url(r'^people/', include('PeopleApp.urls')),

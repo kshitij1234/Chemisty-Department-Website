@@ -36,4 +36,4 @@ You can visit the website at [cryptic-bayou-93861](https://cryptic-bayou-93861.h
 ```
 ### While developing the project, keep checking search bar position in different browsers.
 
-### Page facilties.html is hard coded.
+### Pages facilties.html and sitemap.html(needs to be changed every time a link is added) are hard coded.

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>SiteMap | Chemical Engineering | IIT Patna</title>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      margin-top: 10px;
+  }
+  .sitemap-list {
+    border-left: 5px solid #4383b9;
+    background-color: #f1f1f1;
+    list-style-type: none;
+    padding: 10px 20px;
+  }
+</style>
+<div class="main">
+  <h4 class="text-center" style="padding: 20px;font-size: 30px">SiteMap</h4>
+  <div class="jumbotron" style="background-color: white; margin-bottom:10px; padding-top:0;">
+    <ul class="sitemap-list">
+      <li><a href="#">All News</a></li>
+      <li><a href="{% url 'directory' %}">Directory</a></li>
+      <li><a href="{% url 'events' %}">Events</a></li>
+      <li><a href="{% url 'facilities' %}">Facilities</a></li>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li>People
+        <ul>
+          <li><a href="{% url 'faculty_list' %}">Faculty</a></li>
+          <li><a href="{% url 'staff_list' %}">Staff</a></li>
+          <li><a href="{% url 'undergraduate_list' %}">UG Students</a></li>
+          <li><a href="{% url 'msc_list' %}">M.Sc. Students</a></li>
+          <li><a href="{% url 'phd_list' %}">Ph.D. Students</a></li>
+          <li><a href="{% url 'phd_alumni_list' %}">Ph.D. Alumni</a></li>
+        </ul>
+      </li>
+      <li>Research
+        <ul>
+          <li><a href="{% url 'areas' %}">Research Areas</a></li>
+          <li><a href="{% url 'projects' %}">Sponsored Projects</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

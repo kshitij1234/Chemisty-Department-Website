@@ -18,3 +18,6 @@ def facilities(request):
 
 def error_404(request):
     return render(request, 'error_404.html')
+
+def sitemap(request):
+    return render(request, 'sitemap.html')
