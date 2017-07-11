@@ -6,10 +6,23 @@
 
 {% block content %}
 {% load staticfiles %}
+    <style>
+    .page-title{font-size: 30px;padding: 20px;margin-top: 0;}
+    .main{background-color: white;padding-bottom: 10px;}
 
-
-
-
-
-
+    </style>
+    <div style="height: 10px"></div>
+    <div class="main">
+        <h3 class="page-title text-center">News</h3>
+        <div class="row">
+            <div class="news-list col-xs-12 col-md-offset-3">
+                <ul>
+                {% for n in news %}
+                    <li><a target="_blank" href="{{ n.link }}" style="color: #343434">{{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+<div style="height: 10px"></div>
 {% endblock %}
