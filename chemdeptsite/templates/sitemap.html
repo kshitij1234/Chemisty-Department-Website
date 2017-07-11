@@ -22,19 +22,15 @@
   <h4 class="text-center" style="padding: 20px;font-size: 30px">SiteMap</h4>
   <div class="jumbotron" style="background-color: white; margin-bottom:10px; padding-top:0;">
     <ul class="sitemap-list">
-      <li><a href="#">All News</a></li>
-      <li><a href="{% url 'directory' %}">Directory</a></li>
-      <li><a href="{% url 'events' %}">Events</a></li>
-      <li><a href="{% url 'facilities' %}">Facilities</a></li>
       <li><a href="{% url 'home' %}">Home</a></li>
       <li>People
         <ul>
           <li><a href="{% url 'faculty_list' %}">Faculty</a></li>
+          <li><a href="{% url 'msc_list' %}">M.Sc. Students</a></li>
+          <li><a href="{% url 'phd_alumni_list' %}">Ph.D. Alumni</a></li>
+          <li><a href="{% url 'phd_list' %}">Ph.D. Students</a></li>
           <li><a href="{% url 'staff_list' %}">Staff</a></li>
           <li><a href="{% url 'undergraduate_list' %}">UG Students</a></li>
-          <li><a href="{% url 'msc_list' %}">M.Sc. Students</a></li>
-          <li><a href="{% url 'phd_list' %}">Ph.D. Students</a></li>
-          <li><a href="{% url 'phd_alumni_list' %}">Ph.D. Alumni</a></li>
         </ul>
       </li>
       <li>Research
@@ -43,6 +39,11 @@
           <li><a href="{% url 'projects' %}">Sponsored Projects</a></li>
         </ul>
       </li>
+      <li><a href="{% url 'facilities' %}">Facilities</a></li>
+      <li><a href="{% url 'events' %}">Events</a></li>
+      <li><a href="{% url 'directory' %}">Directory</a></li>
+      <li><a href="#">All News</a></li>
+      <li><a href="https://search.freefind.com/find.html?id=37493057&map=0&page=0&ics=1">Search</a></li>
     </ul>
   </div>
 </div>

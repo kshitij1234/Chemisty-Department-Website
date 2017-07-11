@@ -21,3 +21,6 @@ def error_404(request):
 
 def sitemap(request):
     return render(request, 'sitemap.html')
+
+def head_msg(request):
+    return render(request, 'head_msg.html')

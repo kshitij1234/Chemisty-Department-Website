@@ -31,6 +31,7 @@ You can visit the website at [cryptic-bayou-93861](https://cryptic-bayou-93861.h
 {% endblock %}
 
 {% block content %}
+{% load staticfiles %}
 <!-- Everything between the navbar and footer -->
 {% endblock %}
 ```
