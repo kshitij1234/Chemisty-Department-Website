@@ -12,6 +12,7 @@ def get_image_path(self, file):
     return os.path.join("chemdeptsite", "static", "images", type(self).__name__, file)
 
 class HeadsDesk(models.Model):
+    name = models.CharField(max_length=100, blank=False) # need for alt tag of image
     picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     message = models.TextField()
     profile = models.TextField()
@@ -37,7 +38,7 @@ class HeadsDesk(models.Model):
         return str(self.picture.url)[19:]
 
     def __str__(self):
-        return 'Entry : ' + str(self.id)
+        return "Entry : " + str(self.id)
 
     # def clean(self):
     #     validate_only_one_instance(self)

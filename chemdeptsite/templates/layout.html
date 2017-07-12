@@ -7,13 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
   	{% load staticfiles %}
       <style>
-        * {
-           font-family: "Times New Roman", Times, serif;
-           font-size: 16px;
-        }
-        .ffse-ov0-ifd {
-          z-index: 1000;
-        }
+        * {font-family: "Times New Roman", Times, serif;font-size: 16px;}
+        .ffse-ov0-ifd {z-index: 1000;}
+        #iitp-logo{padding-top: 10px;}
+        @media (max-width:880px){#iitp-logo{display: none;}}
       </style>
       <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
       <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -30,7 +27,7 @@
     	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
       <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
       <!-- Google Analytics Script -->
-      <script>
+      <script async>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -47,7 +44,7 @@
       <div class="row">
         <div id="logo" class="col-lg-3 col-sm-2" align="center" style="padding-left: 20px;">
           <a target="_blank" href="http://www.iitp.ac.in">
-            <img src="{% static 'images/iitp-logo.jpg' %}" alt="IIT Patna LOGO" width="100px" height="100px">
+            <img src="{% static 'images/iitp-logo.png' %}" alt="IIT Patna LOGO" width="110px" height="110px">
           </a>
         </div>
         <div class="col-lg-7 col-sm-10 visible-lg-block" align="center">
@@ -241,9 +238,11 @@
   </div>
   <!-- Footer -->
 <div class="container">
-  <footer class="footer-distributed" style="margin:0;">
-			<div class="footer-left">
-				<a target="_blank" href="http://www.iitp.ac.in"><img class="img img-responsive img-circle" src="{% static 'images/iitp-logo.jpg' %}" alt="IIT Patna LOGO" width="101px" style="padding-top:10px;"></a>
+  <footer class="footer-distributed" style="margin-top:0;">
+			<div class="footer-left" id="iitp-logo">
+				<a target="_blank" href="http://www.iitp.ac.in">
+          <img class="img img-responsive" src="{% static 'images/iitp-logo.png' %}" alt="IIT Patna LOGO" width="110px">
+        </a>
 			</div>
 			<div class="footer-center">
 				<div>
@@ -258,18 +257,11 @@
 					<a href="https://twitter.com/iitpatna"><i class="fa fa-twitter"></i></a>
 					<a href="https://plus.google.com/+iitpatna"><i class="fa fa-google-plus"></i></a>
 				</div>
-
 			</div>
-
-
-
-      <p class="footer-company-name text-center" style="margin-top: 5px;margin-left: 5px;">Copyright &copy; IIT Patna. All rights reserved. | <a href="{% url 'sitemap' %}" style="color: darkgray">SiteMap</a> |
-      <a href="mailto:aagrawal207@gmail.com,kshitijsjauhri@gmail.com" style="color: darkgray">Webmasters</a></p>
-
+      <p class="footer-company-name text-center">Copyright &copy; IIT Patna. All rights reserved. |
+        <a href="{% url 'sitemap' %}" style="color: darkgray">SiteMap</a> |
+        <a href="mailto:aagrawal207@gmail.com,kshitijsjauhri@gmail.com" style="color: darkgray">Webmasters</a></p>
 		</footer>
-
   </div>
-
 </body>
-
 </html>

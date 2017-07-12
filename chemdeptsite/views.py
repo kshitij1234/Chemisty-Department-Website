@@ -22,7 +22,9 @@ def error_404(request):
 
 
 def sitemap(request):
-    return render(request, 'sitemap.html')
+    new_article = News.objects.order_by("-date")
+    object_list = {'news': new_article}
+    return render(request, 'sitemap.html', object_list)
 
 
 def head_msg(request):

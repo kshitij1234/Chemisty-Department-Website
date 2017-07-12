@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-<title>Head's Message | Chemical Engineering | IIT Patna</title>
+<title>Head's Profile | Chemical Engineering | IIT Patna</title>
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
 <div class="main">
   <div class="jumbotron" style="margin-bottom: 10px; background-color:white;">
     <h3>Head's Profile</h3>
-    <img class="img img-responsive" id="head-pic" src="{% static headsdesk.0.get_image_url %}" alt="Head's Profile Picture" width="150px" height="auto">
+    <img class="img img-responsive" id="head-pic" src="{% static headsdesk.0.get_image_url %}" alt="{{ headsdesk.0.name }}" width="150px" height="auto">
     <div>
       {{ headsdesk.0.profile|linebreaks }}
     </div>
