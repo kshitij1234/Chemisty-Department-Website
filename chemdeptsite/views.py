@@ -3,6 +3,13 @@ from .models import NoticeBoard, News, QuickLinks, HeadsDesk
 from research.models import ResearchAreas
 from Events.models import Events
 
+def individual_news(request, pk=1):
+    try:
+        news = News.objects.get(pk=pk)
+    except News.DoesNotExist:
+        return render(request, 'error_404.html')
+    return render(request, 'individual_news.html', {'news':news})
+
 def index(request):
     notice = NoticeBoard.objects.all().order_by("-date")
     new_article = News.objects.order_by("-date")[:5]

@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic import DetailView
 from .models import News
 from . import views
 
@@ -23,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name="home"),
     url(r'^news/$', views.news, name="news"),
-    url(r'^news/(?P<pk>\d+)$', DetailView.as_view(model=News, template_name="new_individual.html")),
+    url(r'^news/(?P<pk>\d+)$', views.individual_news, name="individual_news.html"),
     url(r'^sitemap/$', views.sitemap, name="sitemap"),
     url(r'^head-message/$', views.head_msg, name="head_msg"),
     url(r'^head-profile/$', views.head_profile, name="head_profile"),
