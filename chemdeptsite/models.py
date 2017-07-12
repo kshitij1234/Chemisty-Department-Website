@@ -36,6 +36,9 @@ class HeadsDesk(models.Model):
     def get_image_url(self):
         return str(self.picture.url)[19:]
 
+    def __str__(self):
+        return 'Entry : ' + str(self.id)
+
     # def clean(self):
     #     validate_only_one_instance(self)
 
