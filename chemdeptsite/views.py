@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import NoticeBoard, News, QuickLinks
+from .models import NoticeBoard, News, QuickLinks, HeadsDesk
 from research.models import ResearchAreas
 from Events.models import Events
 
@@ -26,7 +26,12 @@ def sitemap(request):
 
 
 def head_msg(request):
-    return render(request, 'head_msg.html')
+    headsdesk = HeadsDesk.objects.all().order_by("-id")
+    return render(request, 'head_msg.html', {'headsdesk': headsdesk})
+
+def head_profile(request):
+    headsdesk = HeadsDesk.objects.all().order_by("-id")
+    return render(request, 'head_profile.html', {'headsdesk': headsdesk})
 
 
 def news(request):

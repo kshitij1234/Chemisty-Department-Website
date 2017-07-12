@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^news/(?P<pk>\d+)$', DetailView.as_view(model=News, template_name="new_individual.html")),
     url(r'^sitemap/$', views.sitemap, name="sitemap"),
     url(r'^head-message/$', views.head_msg, name="head_msg"),
+    url(r'^head-profile/$', views.head_profile, name="head_profile"),
     url(r'^facilities/$', views.facilities, name="facilities"),
     url(r'^directory/', include('directory.urls')),
     url(r'^people/', include('PeopleApp.urls')),
