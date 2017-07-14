@@ -42,8 +42,12 @@
           Ph : +91-612-302-{{faculty.phone}}<br>
           {% if faculty.fax != None %}Fax : {{faculty.fax}}<br>{% endif %}
           {{faculty.email}}[AT]iitp.ac.in<br>
-          <a href="{{faculty.google_scholar}}" target="_blank">Google Scholar Link</a>
-          <!-- <a href="https://www.facebook.com/iitp.ac.in/" style="float:right;"><i class="fa fa-facebook"></i></a> -->
+          {% if faculty.google_scholar != None %}
+            <a href="{{faculty.google_scholar}}" target="_blank">Google Scholar Link</a><br>
+          {% endif %}
+          {% if faculty.webpage != None %}
+            <a href="{{faculty.webpage}}" target="_blank">Webpage</a><br>
+          {% endif %}
         </td>
       </tr>
       <tr>
@@ -64,6 +68,12 @@
         <td>{{ faculty.awards_honors|safe }}</td>
       </tr>
       {% endif %}
+      {% if faculty.member_of_professional_bodies != None %}
+      <tr>
+        <td><strong>Member Of Professional Bodies</strong></td>
+        <td>{{ faculty.member_of_professional_bodies|safe }}</td>
+      </tr>
+      {% endif %}
 
       {% if faculty.sponsored_projects != None %}
       <tr>
@@ -75,7 +85,7 @@
       {% if faculty.teaching != None %}
       <tr>
         <td><strong>Teaching</strong></td>
-        <td>{{ faculty.teaching|safe|linebreaks }}</td>
+        <td>{{ faculty.teaching|safe }}</td>
       </tr>
       {% endif %}
 
@@ -90,6 +100,13 @@
       <tr>
         <td><strong>Selected Publications</strong></td>
         <td>{{ faculty.publications|safe }}</td>
+      </tr>
+      {% endif %}
+
+      {% if faculty.conference_presentations != None %}
+      <tr>
+        <td><strong>Presentations</strong></td>
+        <td>{{ faculty.conference_presentations|safe }}</td>
       </tr>
       {% endif %}
 
