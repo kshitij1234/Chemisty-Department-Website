@@ -28,6 +28,7 @@ class Faculty(models.Model):
     profile_link = models.CharField(max_length=200, default="#")
     profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     research_areas = models.TextField(max_length=300, blank=True, null=True)
+    list_position = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name

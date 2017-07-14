@@ -5,7 +5,7 @@ from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStude
 # Create your views here.
 
 def faculty_list(request):
-    faculty = Faculty.objects.all().order_by('name')
+    faculty = Faculty.objects.all().order_by('list_position')
     return render(request, 'PeopleApp/FacultyList.html', {'faculty': faculty})
 
 
