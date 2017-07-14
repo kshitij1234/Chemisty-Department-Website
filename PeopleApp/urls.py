@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^faculty/$', views.faculty_list, name='faculty_list'),
+    url(r'^faculty/(?P<pk>.+)$', views.individual_profile, name="individual_profile.html"),
     url(r'^staff/$', views.staff_list, name='staff_list'),
     url(r'^students/UG$', views.undergraduate_list, name="undergraduate_list"),
     url(r'^students/Msc$', views.msc_list, name="msc_list"),

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-<title>Faculty | Chemical Engineering | IIT Patna</title>
+<title>Faculty | Department of Chemistry | IIT Patna</title>
 {% endblock %}
 
 {% block content %}
@@ -31,7 +31,7 @@
                 <script>
                     document.write('<button class="btn btn-info btn-xs prof-btn info-btn" id=info'+i+'>More info</button>');
                 </script>
-                 <a href="{{f.profile_link}}" target="_blank"><button class="btn btn-primary btn-xs prof-btn">View Profile</button></a>
+                 <a href="{% url 'faculty_list' %}{{ f.pk }}"><button class="btn btn-primary btn-xs prof-btn">View Profile</button></a>
             </div>
 
 

@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'chemiitp.pythonanywhere.com', 'cryptic-bayou-9386
 # Application definition
 
 INSTALLED_APPS = [
+    'courses',
     'research',
     'directory',
     'chemdeptsite',

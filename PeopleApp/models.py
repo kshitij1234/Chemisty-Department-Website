@@ -2,8 +2,6 @@ from django.db import models
 import os
 import shutil
 
-
-# Create your models here.
 def get_image_path_phd(instance, filename):
     return os.path.join("PeopleApp", "static", "UserImages", type(instance).__name__, filename)
 

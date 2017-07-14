@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .models import News
 from . import views
 
 urlpatterns = [
@@ -31,6 +30,7 @@ urlpatterns = [
     url(r'^people/', include('PeopleApp.urls')),
     url(r'^events/', include('Events.urls')),
     url(r'^research/', include('research.urls')),
+    url(r'^academics/', include('courses.urls')),
 
     # please keep this url at the end, this needs to be last in the list
     url(r'^', views.error_404, name="error_404"),

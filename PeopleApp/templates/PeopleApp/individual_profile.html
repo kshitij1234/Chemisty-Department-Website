@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>{{ faculty.name }} | Department of Chemistry | IIT Patna</title>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      margin-top: 10px;
+  }
+  #head-pic {
+    border-radius: 5px;
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+  .jumbotron p {
+    font-size:17px;
+  }
+  .borderless td, .borderless th {
+      border: none;
+  }
+  .table>tbody>tr>td {
+    border:0;
+  }
+</style>
+<div class="main">
+  <div style="height:20px;"></div>
+  <!-- Table -->
+  <table class="table table-responsive borderless" style="width:90%; margin:0 auto;">
+    <col width="15%">
+    <col width="85%">
+    <tbody>
+      <tr>
+        <td><img class="img img-responsive" id="head-pic" src="{% static faculty.get_image_path %}" alt="{{ faculty.name }}" width="120px" height="auto">
+        </td>
+        <td><strong>{{ faculty.name }}</strong><br>{{ faculty.designation }}<br>Ph : +91-612-302-{{faculty.phone}}<br>{{faculty.email}}[AT]iitp.ac.in
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Research Areas</strong></td>
+        <td>{{ faculty.research_areas }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

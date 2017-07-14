@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents, PhdAlumni
 
-
-# Create your views here.
+def individual_profile(request, pk):
+    try:
+        faculty = Faculty.objects.get(pk=pk)
+    except Faculty.DoesNotExist:
+        return render(request, 'error_404.html')
+    return render(request, 'PeopleApp/individual_profile.html', {'faculty':faculty})
 
 def faculty_list(request):
     faculty = Faculty.objects.all().order_by('list_position')

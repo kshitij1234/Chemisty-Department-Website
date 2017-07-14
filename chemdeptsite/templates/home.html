@@ -58,7 +58,7 @@
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
-    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <!-- <li data-target="#myCarousel" data-slide-to="4"></li> -->
   </ol>
 
   <!-- Wrapper for slides -->
@@ -79,9 +79,9 @@
       <img src="static/images/carousel/4.jpg" alt="Student discussions">
     </div>
 
-    <div class="item" align="center">
+    <!-- <div class="item" align="center">
       <img src="static/images/carousel/platina.jpg" alt="Research - Platina">
-    </div>
+    </div> -->
   </div>
 
   <!-- Left and right controls -->
@@ -109,7 +109,7 @@
       <ul style="height: 129px; overflow: auto;">
         {% for event in events %}
           {% if event.status != 'PA' %}
-            <li><a target="_blank" href="{{ event.link }}">{{ event.topic }}</a> - {{ event.date }}</li>
+            <li>{{ event.topic }} - {{ event.date }}</li>
           {% endif %}
         {% endfor %}
       </ul>
@@ -162,7 +162,7 @@
       <ul style="height: 129px; overflow: auto;">
         {% for event in events %}
           {% if event.status != 'PA' %}
-            <li><a target="_blank" href="{{ event.link }}">{{ event.topic }}</a> - {{ event.date }}</li>
+            <li>{{ event.topic }} - {{ event.date }}</li>
           {% endif %}
         {% endfor %}
       </ul>
