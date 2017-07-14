@@ -25,8 +25,19 @@ class Faculty(models.Model):
     phone = models.CharField(max_length=12, blank=True, null=True)
     profile_link = models.CharField(max_length=200, default="#")
     profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
-    research_areas = models.TextField(max_length=300, blank=True, null=True)
+    research_areas = models.TextField(blank=True, null=True)
     list_position = models.IntegerField(default=1)
+    phd = models.CharField(max_length=100, blank=True, null=True)
+    fax = models.CharField(max_length=12, blank=True, null=True)
+    google_scholar = models.CharField(max_length=200, default="#")
+    professional_experience = models.TextField(blank=True, null=True)
+    awards_honors = models.TextField(blank=True, null=True)
+    publications = models.TextField(blank=True, null=True)
+    invited_talks = models.TextField(blank=True, null=True)
+    conference_presentations = models.TextField(blank=True, null=True)
+    conference_attended = models.TextField(blank=True, null=True)
+    sponsored_projects = models.TextField(blank=True, null=True)
+    teaching = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name

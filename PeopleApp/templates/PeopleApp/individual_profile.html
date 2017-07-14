@@ -36,14 +36,60 @@
       <tr>
         <td><img class="img img-responsive" id="head-pic" src="{% static faculty.get_image_path %}" alt="{{ faculty.name }}" width="120px" height="auto">
         </td>
-        <td><strong>{{ faculty.name }}</strong><br>{{ faculty.designation }}<br>Ph : +91-612-302-{{faculty.phone}}<br>{{faculty.email}}[AT]iitp.ac.in
+        <td><strong>{{ faculty.name }}</strong><br>
+          {{ faculty.designation }}<br>
+          {{faculty.phd}}<br>
+          Ph : +91-612-302-{{faculty.phone}}<br>
+          {{faculty.email}}[AT]iitp.ac.in<br>
+          <a href="{{faculty.google_scholar}}" target="_blank">Google Scholar Link</a>
         </td>
       </tr>
       <tr>
         <td><strong>Research Areas</strong></td>
-        <td>{{ faculty.research_areas }}
-        </td>
+        <td>{{ faculty.research_areas|safe|linebreaks }}</td>
       </tr>
+
+      {% if faculty.professional_experience != None %}
+      <tr>
+        <td><strong>Professional Experience</strong></td>
+        <td>{{ faculty.professional_experience|safe|linebreaks }}</td>
+      </tr>
+      {% endif %}
+
+      {% if faculty.awards_honors != None %}
+      <tr>
+        <td><strong>Awards and Honours</strong></td>
+        <td>{{ faculty.awards_honors|safe|linebreaks }}</td>
+      </tr>
+      {% endif %}
+
+      {% if faculty.sponsored_projects != None %}
+      <tr>
+        <td><strong>Sponsored Projects</strong></td>
+        <td>{{ faculty.sponsored_projects|safe|linebreaks }}</td>
+      </tr>
+      {% endif %}
+
+      {% if faculty.teaching != None %}
+      <tr>
+        <td><strong>Teaching</strong></td>
+        <td>{{ faculty.teaching|safe|linebreaks }}</td>
+      </tr>
+      {% endif %}
+
+      {% if faculty.publications != None %}
+      <tr>
+        <td><strong>Selected Publications</strong></td>
+        <td>{{ faculty.publications|safe|linebreaks }}</td>
+      </tr>
+      {% endif %}
+
+      {% if faculty.conference_attended != None %}
+      <tr>
+        <td><strong>Conference Attended</strong></td>
+        <td>{{ faculty.conference_attended|safe|linebreaks }}</td>
+      </tr>
+      {% endif %}
     </tbody>
   </table>
 </div>
