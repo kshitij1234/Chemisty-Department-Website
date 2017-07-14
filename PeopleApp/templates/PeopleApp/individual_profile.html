@@ -40,12 +40,12 @@
           {{ faculty.designation }}<br>
           {{faculty.phd}}<br>
           Ph : +91-612-302-{{faculty.phone}}<br>
-          {% if faculty.fax != None %}Fax : {{faculty.fax}}<br>{% endif %}
+          {% if faculty.fax %}Fax : {{faculty.fax}}<br>{% endif %}
           {{faculty.email}}[AT]iitp.ac.in<br>
-          {% if faculty.google_scholar != None %}
+          {% if faculty.google_scholar %}
             <a href="{{faculty.google_scholar}}" target="_blank">Google Scholar Link</a><br>
           {% endif %}
-          {% if faculty.webpage != None %}
+          {% if faculty.webpage %}
             <a href="{{faculty.webpage}}" target="_blank">Webpage</a><br>
           {% endif %}
         </td>
@@ -55,62 +55,62 @@
         <td>{{ faculty.research_areas|safe|linebreaks }}</td>
       </tr>
 
-      {% if faculty.professional_experience != None %}
+      {% if faculty.professional_experience %}
       <tr>
         <td><strong>Professional Experience</strong></td>
         <td>{{ faculty.professional_experience|safe|linebreaks }}</td>
       </tr>
       {% endif %}
 
-      {% if faculty.awards_honors != None %}
+      {% if faculty.awards_honors %}
       <tr>
         <td><strong>Awards and Honours</strong></td>
         <td>{{ faculty.awards_honors|safe }}</td>
       </tr>
       {% endif %}
-      {% if faculty.member_of_professional_bodies != None %}
+      {% if faculty.member_of_professional_bodies %}
       <tr>
         <td><strong>Member Of Professional Bodies</strong></td>
         <td>{{ faculty.member_of_professional_bodies|safe }}</td>
       </tr>
       {% endif %}
 
-      {% if faculty.sponsored_projects != None %}
+      {% if faculty.sponsored_projects %}
       <tr>
         <td><strong>Sponsored Projects</strong></td>
         <td>{{ faculty.sponsored_projects|safe }}</td>
       </tr>
       {% endif %}
 
-      {% if faculty.teaching != None %}
+      {% if faculty.teaching %}
       <tr>
         <td><strong>Teaching</strong></td>
         <td>{{ faculty.teaching|safe }}</td>
       </tr>
       {% endif %}
 
-      {% if faculty.patents != None %}
+      {% if faculty.patents %}
       <tr>
         <td><strong>Patents</strong></td>
         <td>{{ faculty.patents|safe }}</td>
       </tr>
       {% endif %}
 
-      {% if faculty.publications != None %}
+      {% if faculty.publications %}
       <tr>
         <td><strong>Selected Publications</strong></td>
         <td>{{ faculty.publications|safe }}</td>
       </tr>
       {% endif %}
 
-      {% if faculty.conference_presentations != None %}
+      {% if faculty.conference_presentations %}
       <tr>
         <td><strong>Presentations</strong></td>
         <td>{{ faculty.conference_presentations|safe }}</td>
       </tr>
       {% endif %}
 
-      {% if faculty.conference_attended != None %}
+      {% if faculty.conference_attended %}
       <tr>
         <td><strong>Conference Attended</strong></td>
         <td>{{ faculty.conference_attended|safe }}</td>
