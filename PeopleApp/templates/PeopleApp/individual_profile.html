@@ -61,7 +61,7 @@
       {% if faculty.awards_honors != None %}
       <tr>
         <td><strong>Awards and Honours</strong></td>
-        <td>{{ faculty.awards_honors|safe|linebreaks }}</td>
+        <td>{{ faculty.awards_honors|safe }}</td>
       </tr>
       {% endif %}
 
@@ -76,6 +76,13 @@
       <tr>
         <td><strong>Teaching</strong></td>
         <td>{{ faculty.teaching|safe|linebreaks }}</td>
+      </tr>
+      {% endif %}
+
+      {% if faculty.patents != None %}
+      <tr>
+        <td><strong>Patents</strong></td>
+        <td>{{ faculty.patents|safe }}</td>
       </tr>
       {% endif %}
 
