@@ -26,7 +26,7 @@
     border:0;
   }
 </style>
-<div class="main">
+<div class="main" style="overflow-x:auto;">
   <div style="height:20px;"></div>
   <!-- Table -->
   <table class="table table-responsive borderless" style="width:90%; margin:0 auto;">
@@ -40,8 +40,10 @@
           {{ faculty.designation }}<br>
           {{faculty.phd}}<br>
           Ph : +91-612-302-{{faculty.phone}}<br>
+          {% if faculty.fax != None %}Fax : {{faculty.fax}}<br>{% endif %}
           {{faculty.email}}[AT]iitp.ac.in<br>
           <a href="{{faculty.google_scholar}}" target="_blank">Google Scholar Link</a>
+          <!-- <a href="https://www.facebook.com/iitp.ac.in/" style="float:right;"><i class="fa fa-facebook"></i></a> -->
         </td>
       </tr>
       <tr>
@@ -66,7 +68,7 @@
       {% if faculty.sponsored_projects != None %}
       <tr>
         <td><strong>Sponsored Projects</strong></td>
-        <td>{{ faculty.sponsored_projects|safe|linebreaks }}</td>
+        <td>{{ faculty.sponsored_projects|safe }}</td>
       </tr>
       {% endif %}
 
@@ -80,17 +82,18 @@
       {% if faculty.publications != None %}
       <tr>
         <td><strong>Selected Publications</strong></td>
-        <td>{{ faculty.publications|safe|linebreaks }}</td>
+        <td>{{ faculty.publications|safe }}</td>
       </tr>
       {% endif %}
 
       {% if faculty.conference_attended != None %}
       <tr>
         <td><strong>Conference Attended</strong></td>
-        <td>{{ faculty.conference_attended|safe|linebreaks }}</td>
+        <td>{{ faculty.conference_attended|safe }}</td>
       </tr>
       {% endif %}
     </tbody>
   </table>
 </div>
+<div style="height:10px;"></div>
 {% endblock %}

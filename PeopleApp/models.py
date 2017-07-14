@@ -28,7 +28,7 @@ class Faculty(models.Model):
     research_areas = models.TextField(blank=True, null=True)
     list_position = models.IntegerField(default=1)
     phd = models.CharField(max_length=100, blank=True, null=True)
-    fax = models.CharField(max_length=12, blank=True, null=True)
+    fax = models.CharField(max_length=20, blank=True, null=True)
     google_scholar = models.CharField(max_length=200, default="#")
     professional_experience = models.TextField(blank=True, null=True)
     awards_honors = models.TextField(blank=True, null=True)
