@@ -116,6 +116,15 @@
         <td>{{ faculty.conference_attended|safe }}</td>
       </tr>
       {% endif %}
+
+      {% if faculty.invited_talks %}
+      <tr>
+        <td><strong>Invited Talks</strong></td>
+        <td>{{ faculty.invited_talks|safe }}</td>
+      </tr>
+      {% endif %}
+
+
     </tbody>
   </table>
 </div>
