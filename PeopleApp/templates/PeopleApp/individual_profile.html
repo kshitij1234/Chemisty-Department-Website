@@ -36,7 +36,7 @@
       <tr>
         <td><img class="img img-responsive" id="head-pic" src="{% static faculty.get_image_path %}" alt="{{ faculty.name }}" width="120px" height="auto">
         </td>
-        <td><strong>{{ faculty.name }}</strong><br>
+        <td style="padding-left:30px;"><strong>{{ faculty.name }}</strong><br>
           {{ faculty.designation }}<br>
           {{faculty.phd}}<br>
           Ph : +91-612-302-{{faculty.phone}}<br>
@@ -52,7 +52,7 @@
       </tr>
       <tr>
         <td><strong>Research Areas</strong></td>
-        <td>{{ faculty.research_areas|safe|linebreaks }}</td>
+        <td style="padding-left:30px;">{{ faculty.research_areas|safe|linebreaks }}</td>
       </tr>
 
       {% if faculty.professional_experience %}
@@ -78,7 +78,7 @@
       {% if faculty.sponsored_projects %}
       <tr>
         <td><strong>Sponsored Projects</strong></td>
-        <td>{{ faculty.sponsored_projects|safe }}</td>
+        <td style="padding-left:30px;">{{ faculty.sponsored_projects|safe }}</td>
       </tr>
       {% endif %}
 
