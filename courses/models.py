@@ -13,12 +13,12 @@ class BtechCourses(models.Model):
     second_semester = models.TextField()
     third_semester = models.TextField()
     fourth_semester = models.TextField()
-    fiveth_semester = models.TextField()
+    fifth_semester = models.TextField()
     sixth_semester = models.TextField()
     seventh_semester = models.TextField()
     seventh_department_elective_semester = models.TextField()
-    eigth_semester = models.TextField()
-    eigth_department_elective_semester = models.TextField()
+    eighth_semester = models.TextField()
+    eighth_department_elective_semester = models.TextField()
 
     def __str__(self):
         return "Btech Courses"
