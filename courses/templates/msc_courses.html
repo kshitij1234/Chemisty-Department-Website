@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>M.Sc. Courses | Department of Chemistry | IIT Patna</title>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 30px;
+  }
+</style>
+<div class="main">
+  <h4 class="text-center" style="padding: 20px;font-size: 30px">M.Sc. Courses</h4>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width: 80%; margin: 0 auto;">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Course Cirriculum
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">{{ msc_courses.0.course_cirriculum|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            First Semester
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">{{ msc_courses.0.first_semester|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Second Semester
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">{{ msc_courses.0.second_semester|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            Third Semester
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">{{ msc_courses.0.third_semester|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFive">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            Fourth Semester
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+        <div class="panel-body">{{ msc_courses.0.fourth_semester|safe }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

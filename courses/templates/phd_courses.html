@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>PhD Courses | Department of Chemistry | IIT Patna</title>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+  .main{
+      background-color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 30px;
+  }
+</style>
+<div class="main">
+  <h4 class="text-center" style="padding: 20px;font-size: 30px">PhD Courses</h4>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width: 80%; margin: 0 auto;">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Supramolecular Chemistry
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">{{ phd_courses.0.supermolecular_chemistry|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            New Reagents For Organic Synthesis
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">{{ phd_courses.0.new_reagents_for_organic_synthesis|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Spectroscopic Techniques in Chemistry
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">{{ phd_courses.0.spectroscopic_techniques|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            Art in Organic Synthesis
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">{{ phd_courses.0.art_in_organic_synthesis|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFive">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            Bioanalytical Techniques
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+        <div class="panel-body">{{ phd_courses.0.bioanalytical_techniques|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingSix">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+            Introduction to Computation Chemistry
+          </a>
+        </h4>
+      </div>
+      <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+        <div class="panel-body">{{ phd_courses.0.computation_chemistry|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingSeven">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+            Introduction to Polymer Science and Technology
+          </a>
+        </h4>
+      </div>
+      <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+        <div class="panel-body">{{ phd_courses.0.polymer_science_technology|safe }}</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingEight">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+            Application of Glycochemistry in Modern Technology
+          </a>
+        </h4>
+      </div>
+      <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+        <div class="panel-body">{{ phd_courses.0.application_glycochemistry|safe }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
