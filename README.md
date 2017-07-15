@@ -39,3 +39,6 @@ You can visit the website at [cryptic-bayou-93861](https://cryptic-bayou-93861.h
 
 ### Pages facilties.html and sitemap.html(needs to be changed every time a link is added) are hard coded.
 ### Head's profile link on home page is hard coded
+### Dr. Subrata Chattopadhyay's profile page have a hard coded image in patent section.
+### To minifiy the HTML use this website : [HTML Minifier](http://www.willpeavy.com/minifier/)
+### To convert HTML to readable format : [Uncompress HTML Code](http://www.textfixer.com/html/uncompress-html-code.php)
