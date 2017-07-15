@@ -15,7 +15,6 @@ class HeadsDesk(models.Model):
     name = models.CharField(max_length=100, blank=False) # need for alt tag of image
     picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     message = models.TextField()
-    profile = models.TextField()
 
     def save(self, *args, **kwargs):
         # object is possibly being updated, if so, clean up.
