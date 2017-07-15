@@ -25,7 +25,13 @@
       <li><a href="{% url 'home' %}">Home</a></li>
       <li>People
         <ul>
-          <li><a href="{% url 'faculty_list' %}">Faculty</a></li>
+          <li><a href="{% url 'faculty_list' %}">Faculty</a>
+            <ul>
+              {% for f in faculty %}
+                <li><a href="{% url 'faculty_list' %}{{ f.email }}">{{ f.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
           <li><a href="{% url 'msc_list' %}">M.Sc. Students</a></li>
           <li><a href="{% url 'phd_alumni_list' %}">Ph.D. Alumni</a></li>
           <li><a href="{% url 'phd_list' %}">Ph.D. Students</a></li>
@@ -37,6 +43,14 @@
         <ul>
           <li><a href="{% url 'areas' %}">Research Areas</a></li>
           <li><a href="{% url 'projects' %}">Sponsored Projects</a></li>
+          <li><a href="{% url 'publications' %}">Recent Publications</a></li>
+        </ul>
+      </li>
+      <li>Academics
+        <ul>
+          <li><a href="{% url 'btech_courses' %}">B.Tech. Courses</a></li>
+          <li><a href="{% url 'msc_courses' %}">M.Sc. Courses</a></li>
+          <li><a href="{% url 'phd_courses' %}">Ph.D. Courses</a></li>
         </ul>
       </li>
       <li><a href="{% url 'facilities' %}">Facilities</a></li>

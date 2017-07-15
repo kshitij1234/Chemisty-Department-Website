@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import NoticeBoard, News, QuickLinks, HeadsDesk
 from research.models import ResearchAreas
 from Events.models import Events
+from PeopleApp.models import Faculty
 
 def individual_news(request, pk=1):
     try:
@@ -30,7 +31,8 @@ def error_404(request):
 
 def sitemap(request):
     new_article = News.objects.order_by("-date")
-    object_list = {'news': new_article}
+    faculty = Faculty.objects.all().order_by("list_position")
+    object_list = {'news': new_article, 'faculty': faculty}
     return render(request, 'sitemap.html', object_list)
 
 
