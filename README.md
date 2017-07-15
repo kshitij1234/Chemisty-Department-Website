@@ -38,3 +38,4 @@ You can visit the website at [cryptic-bayou-93861](https://cryptic-bayou-93861.h
 ### While developing the project, keep checking search bar position in different browsers.
 
 ### Pages facilties.html and sitemap.html(needs to be changed every time a link is added) are hard coded.
+### Head's profile link on home page is hard coded
