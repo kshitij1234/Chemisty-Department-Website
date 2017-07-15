@@ -6,122 +6,128 @@
 
 {% block content %}
 {% load staticfiles %}
-<link rel="stylesheet" href="{% static 'events.css' %}" type = "text/css"/>
-<div class="panel panel-default" style="margin: 10px 0 10px 0;">
-  <div class="panel-heading">Ongoing</div>
-  <!-- <div class="panel-body">
-    <p></p>
-  </div> -->
+<style>
+  .main{
+      background-color: white;
+      margin-top: 10px;
+  }
+  .table {
+   display: block !important;
+  }
+</style>
+<div class="main" style="overflow-x:auto;padding-top:20px;">
+  <div class="panel panel-default" style="width:96%; margin:0 auto;margin-bottom:10px;">
+    <div class="panel-heading">Ongoing</div>
+    <table class="table table-responsive">
+      <col width="120px">
+      <col width="180px">
+      <col width="440px">
+      <col width="100px">
+      <col width="300px">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Speaker</th>
+          <th>Topic</th>
+          <th>S/W</th>
+          <!-- <th>Status</th> -->
+          <th>Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in events %}
+          {% if event.status == 'ON' %}
+            <tr>
+              <td>{{event.date|date}}</td>
+              <td>{{event.speaker}}</td>
+              <td>{{event.topic}}</td>
+              <td>{% if event.s_w == 'SM'%}Seminar{% else %}Workshop{% endif %}</td>
+              <!-- <td>{{event.status}}</td> -->
+              <td>{{event.additional_info}}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="panel panel-default" style="width:96%; margin:0 auto;margin-bottom:10px;">
+    <div class="panel-heading">Upcoming</div>
+    <!-- <div class="panel-body">
+      <p>...</p>
+    </div> -->
 
-  <!-- Table -->
-  <table class="table table-responsive">
-    <col width="120px">
-    <col width="180px">
-    <col width="440px">
-    <col width="100px">
-    <col width="300px">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Speaker</th>
-        <th>Topic</th>
-        <th>S/W</th>
-        <!-- <th>Status</th> -->
-        <th>Info</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for event in events %}
-        {% if event.status == 'ON' %}
-          <tr>
-            <td>{{event.date|date}}</td>
-            <td>{{event.speaker}}</td>
-            <td>{{event.topic}}</td>
-            <td>{% if event.s_w == 'SM'%}Seminar{% else %}Workshop{% endif %}</td>
-            <!-- <td>{{event.status}}</td> -->
-            <td>{{event.additional_info}}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-<div class="panel panel-default" style="margin: 10px 0 10px 0;">
-  <div class="panel-heading">Upcoming</div>
-  <!-- <div class="panel-body">
-    <p>...</p>
-  </div> -->
+    <!-- Table -->
+    <table class="table table-responsive">
+      <col width="120px">
+      <col width="180px">
+      <col width="440px">
+      <col width="100px">
+      <col width="300px">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Speaker</th>
+          <th>Topic</th>
+          <th>S/W</th>
+          <!-- <th>Status</th> -->
+          <th>Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in events %}
+          {% if event.status == 'UP' %}
+            <tr>
+              <td>{{event.date|date}}</td>
+              <td>{{event.speaker}}</td>
+              <td>{{event.topic}}</td>
+              <td>{% if event.s_w == 'SM'%}Seminar{% else %}Workshop{% endif %}</td>
+              <!-- <td>{{event.status}}</td> -->
+              <td>{{event.additional_info}}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="panel panel-default" style="width:96%; margin:0 auto;margin-bottom:20px;">
+    <div class="panel-heading">Past</div>
+    <!-- <div class="panel-body">
+      <p>...</p>
+    </div> -->
 
-  <!-- Table -->
-  <table class="table table-responsive">
-    <col width="120px">
-    <col width="180px">
-    <col width="440px">
-    <col width="100px">
-    <col width="300px">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Speaker</th>
-        <th>Topic</th>
-        <th>S/W</th>
-        <!-- <th>Status</th> -->
-        <th>Info</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for event in events %}
-        {% if event.status == 'UP' %}
-          <tr>
-            <td>{{event.date|date}}</td>
-            <td>{{event.speaker}}</td>
-            <td>{{event.topic}}</td>
-            <td>{% if event.s_w == 'SM'%}Seminar{% else %}Workshop{% endif %}</td>
-            <!-- <td>{{event.status}}</td> -->
-            <td>{{event.additional_info}}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </tbody>
-  </table>
+    <!-- Table -->
+    <table class="table table-responsive">
+      <col width="120px">
+      <col width="180px">
+      <col width="440px">
+      <col width="100px">
+      <col width="300px">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Speaker</th>
+          <th>Topic</th>
+          <th>S/W</th>
+          <!-- <th>Status</th> -->
+          <th>Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in events %}
+          {% if event.status == 'PA' %}
+            <tr>
+              <td>{{event.date|date}}</td>
+              <td>{{event.speaker}}</td>
+              <td>{{event.topic}}</td>
+              <td>{% if event.s_w == 'SM'%}Seminar{% else %}Workshop{% endif %}</td>
+              <!-- <td>{{event.status}}</td> -->
+              <td>{{event.additional_info}}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
-<div class="panel panel-default" style="margin: 10px 0 10px 0;">
-  <div class="panel-heading">Past</div>
-  <!-- <div class="panel-body">
-    <p>...</p>
-  </div> -->
-
-  <!-- Table -->
-  <table class="table table-responsive">
-    <col width="120px">
-    <col width="180px">
-    <col width="440px">
-    <col width="100px">
-    <col width="300px">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Speaker</th>
-        <th>Topic</th>
-        <th>S/W</th>
-        <!-- <th>Status</th> -->
-        <th>Info</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for event in events %}
-        {% if event.status == 'PA' %}
-          <tr>
-            <td>{{event.date|date}}</td>
-            <td>{{event.speaker}}</td>
-            <td>{{event.topic}}</td>
-            <td>{% if event.s_w == 'SM'%}Seminar{% else %}Workshop{% endif %}</td>
-            <!-- <td>{{event.status}}</td> -->
-            <td>{{event.additional_info}}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+<div style="height:10px;"></div>
 {% endblock %}
