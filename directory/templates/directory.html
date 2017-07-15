@@ -26,12 +26,27 @@
   .student-tab{
       background-color: #bce8f1;
   }
-
-  .table{
-      border-radius: 5px;
-      width: 70%;
-      margin: 0px auto;
-      float: none;
+  @media (min-width: 768px) {
+    .table{
+        border-radius: 5px;
+        margin:0 auto;
+        width:70%;
+        display: block !important;
+    }
+    #lab > .table {
+        border-radius: 5px;
+        margin:0 auto;
+        width:50%;
+        display: block !important;
+    }
+  }
+  @media (max-width: 768px) {
+    .table{
+        border-radius: 5px;
+        margin:0 auto;
+        width:96%;
+        display: block !important;
+    }
   }
 </style>
 <div class="main" style="padding:0;">
@@ -43,9 +58,9 @@
   </ul>
 
   <div class="tab-content">
-    <div id="lab" class="tab-pane fade" style="padding: 20px 0 20px 0; margin: 0;">
+    <div id="lab" class="tab-pane fade" style="padding: 20px 0 20px 0; margin:0;">
       <!-- Laboratory & Offices table -->
-      <table class="table table-hover text-centered table-responsive" style="width: 50%">
+      <table class="table table-hover table-responsive">
         <thead>
           <tr>
             <th>Laboratory &amp; Offices</th>
