@@ -24,7 +24,7 @@
 
                 <div class="student-info">
                     <div class="row">
-                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile" alt="{{ student.name }}" src="{% static student.get_image_path %}" style="margin-top: 13px;">
                         <div class="col-md-4 col-xs-5">
                             <h4 class="name"><a>{{student.name}}</a></h4>
                             <p class="designation">Roll No.: {{student.rollno}}<br>

@@ -15,7 +15,7 @@
     {% for a in alumni %}
         <div class="alumni-info">
             <div class="row">
-                <img class="img img-responsive col-md-1 col-xs-2 col-md-offset-1 col-xs-offset-1 profile"  src="{% static a.get_image_path %}" style="margin-top: 20px;">
+                <img class="img img-responsive col-md-1 col-xs-2 col-md-offset-1 col-xs-offset-1 profile" alt="{{ a.name }}" src="{% static a.get_image_path %}" style="margin-top: 20px;">
                 <div class="col-md-2 col-xs-5">
                     <h4 class="name"><a>{{a.name}}</a></h4>
                     <p class="contact-info">
