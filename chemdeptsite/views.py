@@ -62,3 +62,7 @@ def admissions_postgraduate(request):
 
 def admissions_doctoral(request):
     return render(request, 'doctoral_admissions.html')
+
+
+def admissions_faq(request):
+    return render(request, 'faq_admissions.html')
