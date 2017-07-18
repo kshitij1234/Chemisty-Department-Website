@@ -5,4 +5,11 @@ $(document).ready(function () {
       $("#home").addClass("active");
     else
       $("#" + str).addClass("active");
+    $('.carousel').carousel({
+          dist:0,
+          shift:0,
+          padding:100,
+
+    });
+    $('.carousel').carousel('next');
 });

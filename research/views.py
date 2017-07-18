@@ -9,7 +9,7 @@ def projects(request):
 
 
 def areas(request):
-    area = ResearchAreas.objects.all().order_by("title")
+    area = ResearchAreas.objects.all().order_by("object_no")
     object_list = {'areas': area}
     return render(request, 'areas.html', object_list)
 
