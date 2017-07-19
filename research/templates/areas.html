@@ -21,16 +21,17 @@
   .area-detail{
       padding-bottom: 10px;
   }
+  .carousel .carousel-item {
+    height:auto;
+  }
 </style>
 <div style="height: 10px"></div>
 <div class="main">
   <h3 class="research-area-title text-center">Areas of Research</h3>
-  <div class="carousel" style="background-color:#d9edf7;">
-    <script src="{% static 'js/materialize.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/carousel.css' %}" type = "text/css" media="screen,projection"/>
-    <script type="text/javascript" src="{% static 'js/carousel.js' %}"></script>
+  <div class="carousel" style="background-color:#d9edf7;height:300px;">
+    <!-- <script type="text/javascript" src="{% static 'js/carousel.js' %}"></script> -->
     {% for area in areas %}
-    <a class="carousel-item" href="#{{ area.int_to_en }}!"><img src="{% static area.get_image_url %}" style="width:290px;height:auto;"></a>
+    <a class="carousel-item" href="#{{ area.int_to_en }}!"><img src="{% static area.get_image_url %}" style="width:350px;vertical-align:top;"></a>
     {% endfor %}
   </div>
   {% for area in areas %}
