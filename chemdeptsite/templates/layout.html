@@ -114,9 +114,13 @@
           <li class="dropdown" style="margin-right:5px;">
             <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Admissions <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Program 1</a></li>
+              <li><a href="http://jee.iitd.ac.in/" target="_blank">Undergraduate</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Program 2</a></li>
+              <li><a href="{% url 'postgraduate_admissions' %}">Postgraduate</a></li>
+                <li role="separator" class="divider"></li>
+              <li><a href="{% url 'doctoral_admissions' %}">Doctoral</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{% url 'faq_admissions' %}">FAQ</a></li>
             </ul>
           </li>
           <!-- Facilities -->
@@ -203,9 +207,13 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" id="admissions" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admissions <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Program 1</a></li>
+                <li><a href="http://jee.iitd.ac.in/" target="_blank">Undergraduate</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Program 2</a></li>
+                <li><a href="{% url 'postgraduate_admissions' %}">Postgraduate</a></li>
+                  <li role="separator" class="divider"></li>
+                <li><a href="{% url 'doctoral_admissions' %}">Doctoral</a></li>
+                  <li role="separator" class="divider"></li>
+                <li><a href="{% url 'faq_admissions' %}">FAQ</a></li>
               </ul>
             </li>
             <!-- Facilities -->

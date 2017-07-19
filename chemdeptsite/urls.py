@@ -22,6 +22,9 @@ urlpatterns = [
     url(r'^$', views.index, name="home"),
     url(r'^news/$', views.news, name="news"),
     url(r'^news/(?P<pk>\d+)$', views.individual_news, name="individual_news.html"),
+    url(r'^admissions/postgraduate/$', views.admissions_postgraduate, name="postgraduate_admissions"),
+    url(r'^admissions/doctoral/$', views.admissions_doctoral, name="doctoral_admissions"),
+    url(r'^admissions/FAQ/$', views.admissions_faq, name="faq_admissions"),
     url(r'^sitemap/$', views.sitemap, name="sitemap"),
     url(r'^head-message/$', views.head_msg, name="head_msg"),
     url(r'^head-profile/$', views.head_profile, name="head_profile"),
@@ -31,6 +34,7 @@ urlpatterns = [
     url(r'^events/', include('Events.urls')),
     url(r'^research/', include('research.urls')),
     url(r'^academics/', include('courses.urls')),
+
 
     # please keep this url at the end, this needs to be last in the list
     url(r'^', views.error_404, name="error_404"),

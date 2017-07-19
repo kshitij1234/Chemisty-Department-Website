@@ -1,0 +1,142 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Admissions - FAQ | Department of Chemistry | IIT Patna</title>
+{% endblock %}
+
+{% block content %}
+
+    {% load staticfiles %}
+
+    <style>
+        .page-title{font-size: 30px;padding: 20px;margin-top: 0;}
+        .main{background-color: white;padding-bottom: 10px;}
+        .question{font-size: 18px;}
+        .answer{font-style: italic;padding-bottom: 20px;}
+    </style>
+
+    <div style="height: 10px"></div>
+    <div class="main">
+        <h3 class="page-title text-center">FAQ</h3>
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width: 80%; margin: 0 auto;">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    General Information
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <h3><strong class="question">Where is IIT Patna located?</strong></h3>
+                    <p class="answer">IIT Patna has shifted in his own permanent campus which is spread in 500 Acres.
+                        It is situated at N25˚32’ 0.18” (Latitude) E 084˚51’ 16.08” (Longitude) at Globe i.e. at Bihta
+                        (Satellite Town of Patna) which is 35 KM west of Patna. The Nearest Railway station is Bihta distance
+                        from the campus is 3KM as well as the Nearest airport is at Patna which is 35 KM from the campus.
+                        The Climate of campus is Humid subtropical. </p>
+                    <h3><strong class="question">How to reach IIT Patna, Bihta from Patna airport or Patna Junction railway station?</strong></h3>
+                    <p class="answer">The Govt. of Bihar - BSRTC, bus services has been started round-a-clock to IIT Patna, Bihta campus
+                        from Patna Junction. Local train facility is also available from Patna Junction to Bihta railway station.
+                        Taxi is available from the Patna airport to reach campus. </p>
+                    <h3><strong class="question">Do you have necessary facilities like a post office, banks and others at your Institute?</strong></h3>
+                    <p class="answer">The campus post office is going to start very soon, however the nearest post office is Amhara, Bihta. There are two banks
+                        functioning in the campus. Both of the banks Canara Bank and State Bank of India provide all the banking facilities in the
+                        campus. In addition to these, both of banks operate their special counters during Semester Registration, Fee deposition
+                        process and for any need of the Institute. There are good canteens as well as necessary shops are available in the premises. </p>
+                    <h3><strong class="question">What about computer terminals and Internet Facility?</strong></h3>
+                    <p class="answer">The campus is fully Wi Fi surrounded. There are numerous terminals and a computer laboratory operating within the Institute and
+                        all the computers are connected through LAN/WiFi. The laptops issued to the faculty members are equipped with data card for
+                        internet facility at any place.</p>
+                    <h3><strong class="question">What about the climate in Patna? Is it too hot during summer?</strong></h3>
+                    <p class="answer">Possibly, Patna is the most comfortable place in North India. The holy Ganga and Son river is few kilometer away from the Institute.
+                        Apart from the monsoon months of June to September, the city is least humid compared to many other parts of India.
+                        The period March to June is hot summer with average maximum temperature of about 40 degree while the rest of the year is having
+                        temperature ranging between 12 degree to 28 degree , which may drop to 4 degree at winter.</p>
+                    <h3><strong class="question">Well! I am afraid of Patna / Bihar. Shall I visit IIT Patna?</strong></h3>
+                    <p class="answer">You are safe in all respects in IIT Patna. Well trained security guards are deployed in the whole campus.
+                        Presently, Patna/Bihar has improved a lot in the context of law and order. The Academics is not affected in any respect by
+                        the law and order situation of the surrounding locality.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    Academic
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    <h3><strong class="question">What are the departments presently existing at IIT Patna?</strong></h3>
+                    <p class="answer">There are ten (10) departments namely, Department of Computer Science and Engineering, Department of Electrical Engineering,
+                        Department of Mechanical Engineering, Department of Civil and Environmental Engineering, Department of Chemical and Biochemical Engineering,
+                        Department of Materials Science and Engineering, Department of Chemistry, Department of Mathematics, Department of Physics, Department of Humanities and Social Sciences.
+                        In addition to above there are three (03) centers in IIT Patna namely Centre for Energy & Environment, Centre for Strategic Materials Centre of Excellence on Advanced Systems Engineering </p>
+                    <h3><strong class="question">What are the departments where B.Tech programmes are offered?</strong></h3>
+                    <p class="answer">Presently five (05) departments are offering B.Tech programme at IIT Patna. Students qualified in IIT-JEE exam only can enroll in the Department of Computer Science and
+                        Engineering or in the Department of Electrical Engineering or in the Department of Mechanical Engineering or in the Department of Civil and Infrastructure Engineering, or in the
+                        Department of Chemical Science and Technology depending on his/her All India Rank.</p>
+                    <h3><strong class="question">Does IIT Patna presently offering any PhD programme?</strong></h3>
+                    <p class="answer">Yes, the students have already enrolled for their PhD programme in all the departments and centers.</p>
+                    <h3><strong class="question">Does IIT Patna have faculty to teach?</strong></h3>
+                    <p class="answer">Yes, IIT Patna has already recruited outstanding young, energetic and dynamic faculty members. Recently, senior Visiting Professors have also been appointed.</p>
+                    <h3><strong class="question">What about the class room teaching?</strong></h3>
+                    <p class="answer">Each class room is well equipped with LCD, white screen, white board and audio-visual facilities.</p>
+                    <h3><strong class="question">What about laboratories?</strong></h3>
+                    <p class="answer">All the research laboratories / major laboratories are well equipped and fully functioning.</p>
+                    <h3><strong class="question">Does IIT Patna have central library?</strong></h3>
+                    <p class="answer">Yes, text books and reference books for B. Tech students and research scholars are in sufficient numbers and the Central library has quite good reference section where E-books are also available.</p>
+                    <h3><strong class="question">Does IIT Patna have registered journals, especially online journals?</strong></h3>
+                    <p class="answer">Yes, IIT Patna has subscription of online journals for each of the department like other established IITs.</p>
+                    <h3><strong class="question">Does IIT Patna have computer center?</strong></h3>
+                    <p class="answer">Yes, it has a computer center with fast internet facility. The computer lab is equipped with 63 desktops and the lab operates from
+                        9 AM till 12:00 PM on all seven days. In addition there are nine UNIX based servers that caters to the students' academic requirements. A local area network is catering to
+                        the needs of students as well as faculty members. The institute is having two 2 Mbps (1:1) Internet connection, one 45 Mbps (1:1) Internet connection, one 12 Mbps (1:1) Internet
+                        connection and one 1 Gbps Internet connection. The whole institute has been wired and Internet facility has been provided to all members of the institute.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    Living
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <h3><strong class="question">What about hostel facilities?</strong></h3>
+                    <p class="answer">Well furnished accommodation facilities for all the students are available in the hostels in the premises.</p>
+                    <h3><strong class="question">Is there accommodation for girl students?</strong></h3>
+                    <p class="answer">Yes. Accommodation for girl students is also available.</p>
+                    <h3><strong class="question">What is the arrangement for food?</strong></h3>
+                    <p class="answer">Boys Hostel has the provision of mess, run by caterer. Food services have been outsourced from the boys’ hostel mess to the girls’ hostel. The Institute ensures that healthy food is provided at a reasonable rate.</p>
+                    <h3><strong class="question">Does the institute take care of the students’ progress?</strong></h3>
+                    <p class="answer">Yes, institute has appointed faculty members to mentor the students in group.</p>
+                    <h3><strong class="question">What will be the living expenditure?</strong></h3>
+                    <p class="answer">The expenditure pattern is similar to that of other big cities. Apart from the Institute fees which are payable every semester, the anticipated expense per month should be about Rs 2400 (at present) including messing charges.</p>
+                    <h3><strong class="question">Is the institute running any cultural programme?</strong></h3>
+                    <p class="answer">Yes, cultural programmes as well as spiritual programme at the institute premises are being run. Yoga Rishis are invited for such spiritual programme. In addition to these, the Institute organizes Cultural Fest in the month of October and Annual Fest in the month of April. Students organize programme for Teach ers’ Day, Freshers’ Day, Diwali, Ganesh Puja etc. The Institute organizes Yoga and Music classes. The Institute has Literary Club, Environmental Club, Robotics Club etc. </p>
+                    <h3><strong class="question">Are there recreational facilities?</strong></h3>
+                    <p class="answer">Grounds are available for Cricket, Football, volleyball and basketball, Badminton. Table tennis is also available. A modern multi-purpose gym is also functioning in the hostel premises.</p>
+                    <h3><strong class="question">What about the sports activity?</strong></h3>
+                    <p class="answer">Student activity center organizes sports activities among the students in each year and participants are awarded certificates.</p>
+                    <h3><strong class="question">What about medical facilities?</strong></h3>
+                    <p class="answer">Twenty four hours 24x7 primary medical facilities along with medical ambulance (fully equipped with all medical equipments such as Oxygen, Stretcher etc) are available in the institute campus. In the campus Hospital (with collaboration of Ruban Memorial Hospital Pvt. Ltd) OPD/IPD is provided and the well trained Para medical staffs and the doctor is available for any medical needs of students and staff members of the IIT Patna. The Institute has also made suitable arrangements with Mahavir Vatsalya Hospital, Ruban Memorial Hospital and Paras Hospital in Patna in the case of emergency hospitalization.</p>
+                    <h3><strong class="question">What about the security system of the institute campus and student hostels?</strong></h3>
+                    <p class="answer">Top cadre security staff has been out sourced. Securities are engaged for twenty four hours in the premises.</p>
+                    <h3><strong class="question">I need more information.</strong></h3>
+                    <p class="answer">Please send an Email to: info@iitp.ac.in<br>Phone No: 91-612- 3028103 </p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="height: 10px"></div>
+{% endblock %}
