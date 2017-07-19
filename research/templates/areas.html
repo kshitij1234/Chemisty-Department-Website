@@ -25,16 +25,16 @@
 <div style="height: 10px"></div>
 <div class="main">
   <h3 class="research-area-title text-center">Areas of Research</h3>
-  <div class="carousel" style="background-color:#d9edf7;height:170px;">
+  <div class="carousel" style="background-color:#d9edf7;">
     <script src="{% static 'js/materialize.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/carousel.css' %}" type = "text/css" media="screen,projection"/>
     <script type="text/javascript" src="{% static 'js/carousel.js' %}"></script>
     {% for area in areas %}
-    <a class="carousel-item" href="#{{ area.int_to_en }}!"><img src="{% static area.get_image_url %}" style="height:170px;width:auto;"></a>
+    <a class="carousel-item" href="#{{ area.int_to_en }}!"><img src="{% static area.get_image_url %}" style="width:290px;height:auto;"></a>
     {% endfor %}
   </div>
   {% for area in areas %}
-      <div class="research-area">
+      <div class="research-area" style="margin-top:20px;">
           <div class="row">
               <div class="col-md-4 col-md-offset-1">
                   <figure>
