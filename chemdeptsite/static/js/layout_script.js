@@ -5,5 +5,4 @@ $(document).ready(function () {
       $("#home").addClass("active");
     else
       $("#" + str).addClass("active");
-    $('.carousel').carousel();
 });
