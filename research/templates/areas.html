@@ -34,7 +34,7 @@
   <div class="carousel" style="background-color:#d9edf7;height:300px;">
     <!-- <script type="text/javascript" src="{% static 'js/carousel.js' %}"></script> -->
     {% for area in areas %}
-    <a class="carousel-item" href="#{{ area.int_to_en }}!"><img src="{% static area.get_image_url %}" style="width:350px;"></a>
+    <a class="carousel-item" href="#{{ area.int_to_en }}!"><img src="{% static area.get_image_url %}" style="width:350px;margin-top: -75px;"></a>
     {% endfor %}
   </div>
   {% for area in areas %}
