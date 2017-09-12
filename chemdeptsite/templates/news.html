@@ -17,7 +17,7 @@
         <div class="news-list col-xs-12 col-md-offset-3">
             <ul id="news-list">
             {% for n in news %}
-                <li><a href="{% url 'news' %}{{ n.id }}">{{ n.title }}</a> - {{ n.date|date:"F d Y" }}</li>
+                <li><a href="{% url 'news' %}/{{ n.id }}">{{ n.title }}</a> - {{ n.date|date:"F d Y" }}</li>
             {% endfor %}
             </ul>
         </div>

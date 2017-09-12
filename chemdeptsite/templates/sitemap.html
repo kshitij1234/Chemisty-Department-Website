@@ -28,7 +28,7 @@
           <li><a href="{% url 'faculty_list' %}">Faculty</a>
             <ul>
               {% for f in faculty %}
-                <li><a href="{% url 'faculty_list' %}{{ f.email }}">{{ f.name }}</a></li>
+                <li><a href="{% url 'faculty_list' %}/{{ f.email }}">{{ f.name }}</a></li>
               {% endfor %}
             </ul>
           </li>
@@ -67,7 +67,7 @@
       <li><a href="{% url 'news' %}">All News</a>
         <ul>
           {% for n in news %}
-            <li><a href="{% url 'news' %}{{ n.id }}">{{ n.title }}</a></li>
+            <li><a href="{% url 'news' %}/{{ n.id }}">{{ n.title }}</a></li>
           {% endfor %}
         </ul>
       </li>
