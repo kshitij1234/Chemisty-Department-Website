@@ -20,7 +20,7 @@ def index(request):
     quicklinks = QuickLinks.objects.all().order_by("date")
     events = Events.objects.all().order_by("date")
     object_list = {'notice': notice, 'news': new_article, 'research': research, 'quicklinks': quicklinks,
-                   'events': events}
+                   'events': events, 'areas': research}
     return render(request, 'home.html', object_list)
 
 
