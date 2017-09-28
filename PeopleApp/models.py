@@ -44,6 +44,7 @@ class Faculty(models.Model):
     sponsored_projects = models.TextField(blank=True, null=True)
     teaching = models.TextField(blank=True, null=True)
     patents = models.TextField(blank=True, null=True)
+    current_research = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name

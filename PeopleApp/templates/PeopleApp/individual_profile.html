@@ -50,6 +50,14 @@
           {% endif %}
         </td>
       </tr>
+
+      {% if faculty.current_research %}
+      <tr>
+        <td><strong>Current Research</strong></td>
+        <td>{{ faculty.current_research|safe }}</td>
+      </tr>
+      {% endif %}
+
       <tr>
         <td><strong>Research Areas</strong></td>
         <td style="padding-left:30px;">{{ faculty.research_areas|safe|linebreaks }}</td>
