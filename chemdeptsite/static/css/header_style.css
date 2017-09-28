@@ -1,7 +1,7 @@
 html,
 body,
 div{border:0;margin:0;padding:0;}
-#grad{background:#92c1dc;background:-webkit-linear-gradient(#92c1dc, #ffffff);background:-o-linear-gradient(#92c1dc, #ffffff);background:-moz-linear-gradient(#92c1dc, #ffffff);background:linear-gradient(#92c1dc, #ffffff);background-repeat:no-repeat;background-attachment:fixed;}
+#grad{background:#92c1dc;background:-webkit-linear-gradient(#92c1dc, #ffffff);background:-o-linear-gradient(#92c1dc, #ffffff);background:-moz-linear-gradient(#92c1dc, #ffffff);background:linear-gradient(#285090,#289990,#285090);background-repeat:no-repeat;background-attachment:fixed;}
 #header{border-radius:0px;padding-top:10px;padding-bottom:10px;background-color:#ffffff;color:#145f80;margin:0px;}
 #footer{border-radius:0px;margin:0px;}
 .navbar-toggle.navbar-left{float:left;margin-left:10px;}
