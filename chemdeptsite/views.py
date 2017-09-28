@@ -16,7 +16,7 @@ def individual_news(request, pk=1):
 def index(request):
     notice = NoticeBoard.objects.all().order_by("-date")
     new_article = News.objects.order_by("-date")[:5]
-    research = ResearchAreas.objects.all().order_by("title")
+    research = ResearchAreas.objects.all().order_by("-object_no")
     quicklinks = QuickLinks.objects.all().order_by("date")
     events = Events.objects.all().order_by("date")
     object_list = {'notice': notice, 'news': new_article, 'research': research, 'quicklinks': quicklinks,

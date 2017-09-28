@@ -30,9 +30,9 @@ class ResearchAreas(models.Model):
 
     object_no = models.IntegerField(unique=False, default=number)
     title = models.CharField(max_length=300)
-    detail = models.TextField(max_length=600)
+    detail = models.TextField(max_length=5000)
     picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
-    picture_text = models.CharField(max_length=100)
+    picture_text = models.CharField(max_length=500)
 
     def __str__(self):
         return self.title
