@@ -73,7 +73,6 @@
       </div><!-- row ends -->
     </div><!-- jumbotron ends -->
   </div><!-- container ends -->
-  <div style="height: 1px"></div>
   <!-- Navbar -->
   <div class="container visible-lg-block visible-md-block visible-sm-block" style="position: relative; height: 50px; z-index: 999;">
     <nav class="navbar navbar-light bg-info" style="border: 0px; border-radius:0; color: #ffffff;">
@@ -145,9 +144,13 @@
           <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'events' %}" id="events">Events<span class="sr-only">(current)</span></a></li>
           <!-- Directory -->
           <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'directory' %}" id="directory">Directory<span class="sr-only">(current)</span></a></li>
-          <li>
+          <li class="visible-sm-block">
+             <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+              <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span> Search</span>
+            </a>
+          </li>
             <!-- Search Bar -->
-            <div class="navbar-form hidden-md" style="border: none; padding-right: 0px; margin-right: 0px; padding-left: 0px;">
+            <!-- <div class="navbar-form hidden-md" style="border: none; padding-right: 0px; margin-right: 0px; padding-left: 0px;">
               <form class="navbar-form navbar-left" style="margin:0;padding:0;" action="https://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search for..." name="query">
@@ -159,9 +162,15 @@
                   <span class="input-group-btn"><button class="btn btn-default" type="submit">Go!</button></span>
                 </div>
               </form>
-            </div>
-          </li>
+            </div> -->
         </ul>
+        <ul class="nav navbar-nav navbar-right hidden-sm" style="margin-right:5px;">
+         <li>
+           <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+            <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span> Search</span>
+          </a>
+         </li>
+       </ul>
       </div><!-- /.container-fluid -->
     </nav>
   </div>
@@ -171,10 +180,21 @@
       <div class="container-fluid">
         <!-- Toggle navbar for mobile devices -->
         <button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target=".navbar-collapse" style="margin-left:0px;">
-              <span class="icon-bar" style="background-color: #0f0f0f"></span>
-              <span class="icon-bar" style="background-color: #0f0f0f"></span>
-              <span class="icon-bar" style="background-color: #0f0f0f"></span>
+              <span class="icon-bar" style="background-color: #ffffff"></span>
+              <span class="icon-bar" style="background-color: #ffffff"></span>
+              <span class="icon-bar" style="background-color: #ffffff"></span>
         </button>
+        <style>
+        #search-btn {
+            background-color: #285690;
+            border: none;
+            margin-top:10px;
+          }
+        </style>
+         <a id="search-btn" href="#modalSearch" data-toggle="modal" data-target="#modalSearch" class="btn btn-info">
+          <span id="searchGlyph" class="glyphicon glyphicon-search">  </span>
+          <span class="hidden-sm hidden-md hidden-lg" style="font-family: Arial, Helvetica, sans-serif;">   Search</span>
+        </a>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-right: 0px;">
           <ul class="nav navbar-nav">
@@ -238,10 +258,15 @@
             <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'events' %}" id="events">Events<span class="sr-only">(current)</span></a></li>
             <!-- Directory -->
             <li class="menu-item" style="margin-right:5px;"><a class="navigator" href="{% url 'directory' %}" id="directory">Directory<span class="sr-only">(current)</span></a></li>
+            <!-- <li>
+             <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+              <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
+            </a>
+            </li> -->
           </ul>
         </div><!-- /.navbar-collapse -->
         <!-- Search Bar -->
-        <div class="navbar-form visible-xs-block" style="border: none; padding-top:0; padding-bottom:0; margin:0;">
+        <!-- <div class="navbar-form visible-xs-block" style="border: none; padding-top:0; padding-bottom:0; margin:0;">
           <form class="navbar-form navbar-left" style="margin:0;" action="https://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search for..." name="query">
@@ -253,7 +278,7 @@
               <span class="input-group-btn"><button class="btn btn-default" type="submit">Go!</button></span>
             </div>
           </form>
-        </div>
+        </div> -->
       </div><!-- /.container-fluid -->
     </nav>
   </div>
@@ -293,6 +318,47 @@
         <a href="{% url 'sitemap' %}" style="color: darkgray">SiteMap</a> |
         <a href="mailto:aagrawal207@gmail.com,kshitijsjauhri@gmail.com" style="color: darkgray">Webmasters</a></p>
 		</footer>
+  </div>
+  <!-- Search Modal -->
+  <div id="modalSearch" class="modal fade" role="dialog">
+     <div class="modal-dialog" style="z-index:10000;">
+         <!-- Modal content-->
+         <div class="modal-content">
+             <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">Search Department of Chemistry IIT Patna</h4>
+             </div>
+             <div class="modal-body">
+               <script>
+                (function() {
+                  var cx = '015680469555954337071:wvl-nzyym_g';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search enableAutoComplete="true"></gcse:search>
+              <!-- These styles fix CSE and Bootstrap 3 conflict -->
+              <style type="text/css">
+                  .reset-box-sizing, .reset-box-sizing *, .reset-box-sizing *:before, .reset-box-sizing *:after,  .gsc-inline-block{
+                      -webkit-box-sizing: content-box;
+                      -moz-box-sizing: content-box;
+                      box-sizing: content-box;
+                  }
+                  input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button{
+                      box-sizing: content-box;
+                      line-height: normal;
+                  }
+              </style>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             </div>
+         </div>
+     </div>
   </div>
 </body>
 </html>
