@@ -19,7 +19,7 @@ div{border:0;margin:0;padding:0;}
 #mainnav.nav > li > ul > li > a{color: #fff;font-family: Arial, Helvetica, sans-serif;}
 #mainnav.nav > li > ul> li>a:hover{background-color:#fff; color:#285690 !important;font-family: Arial, Helvetica, sans-serif;}
 .active{background-color:#fff;color:#285690 !important;}
-#mainnav.nav.navbar-nav>li.dropdown>a:focus{background-color:#92c1dc;color:#0f0f0f;}
+#mainnav.nav.navbar-nav>li.dropdown>a:focus{background-color:#fff;color:#285690;}
 #mainnav.navbar1 .dropdown:hover .dropdown-menu{display:block;margin-top:0;}
 .navbar-light{background-color: #285690;}
 #search-button{background-color: #285690; color: #fff;}
