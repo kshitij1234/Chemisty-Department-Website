@@ -17,7 +17,36 @@
     list-style-type: none;
     padding: 10px 20px;
   }
+  #news-section>ul>li>a{
+    color: #01579b;
+    text-decoration: none;
+  }
+  #news-section>ul>li>a:link{
+    color: #01579b;
+    text-decoration: none;
+  }
+  #news-section>ul>li>a:visited{
+    color: #01579b;
+    text-decoration: none;
+  }
+  #news-section>ul>li>a:hover{
+    color: #01579b;
+    text-decoration: none;
+  }
+  #news-section>ul>li>a:focus{
+    color: #01579b;
+    text-decoration: none;
+  }
+  #news-section>ul>li>a:active{
+    color: #01579b;
+    text-decoration: none;
+  }
 </style>
+<script>
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+  });
+</script>
 <div class="main">
   <h4 class="text-center" style="padding: 20px;font-size: 30px">SiteMap</h4>
   <div class="jumbotron" style="background-color: white; margin-bottom:10px; padding-top:0;">
@@ -64,10 +93,13 @@
       <li><a href="{% url 'facilities' %}">Facilities</a></li>
       <li><a href="{% url 'events' %}">Events</a></li>
       <li><a href="{% url 'directory' %}">Directory</a></li>
-      <li><a href="{% url 'news' %}">All News</a>
+      <li id="news-section"><a href="{% url 'news' %}">All News</a>
         <ul>
           {% for n in news %}
-            <li><a href="{% url 'news' %}/{{ n.id }}">{{ n.title }}</a></li>
+          <li>
+            <a href="#" onclick="return false;" data-toggle="popover" data-trigger="hover" title="{{n.title}}" data-content="{{n.more_info}}">
+            {{ n.title }}</a>
+          </li>
           {% endfor %}
         </ul>
       </li>

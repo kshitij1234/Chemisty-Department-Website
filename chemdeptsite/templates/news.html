@@ -9,15 +9,47 @@
 <style>
 .page-title{font-size: 30px;padding: 20px;margin-top: 0;}
 .main{background-color: white;padding-bottom: 10px;}
+#news-section>ul>li>a{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:link{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:visited{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:hover{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:focus{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:active{
+  color: #01579b;
+  text-decoration: none;
+}
 </style>
+<script>
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+  });
+</script>
 <div style="height: 10px"></div>
 <div class="main">
     <h3 class="page-title text-center">News</h3>
     <div class="row">
-        <div class="news-list col-xs-12 col-md-offset-3">
+        <div class="news-list col-xs-12 col-md-offset-3" id="news-section">
             <ul id="news-list">
             {% for n in news %}
-                <li><a href="{% url 'news' %}/{{ n.id }}">{{ n.title }}</a> - {{ n.date|date:"F d Y" }}</li>
+            <li>
+              <a href="#" onclick="return false;" data-toggle="popover" data-trigger="hover" title="{{n.title}}" data-content="{{n.more_info}}">
+              {{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}
+            </li>
             {% endfor %}
             </ul>
         </div>

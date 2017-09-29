@@ -21,7 +21,6 @@ urlpatterns = [
     url(r'^(?i)admin/', admin.site.urls),
     url(r'^(?i)$', views.index, name="home"),
     url(r'^(?i)news/?$', views.news, name="news"),
-    url(r'^(?i)news/(?P<pk>\d+)/?$', views.individual_news, name="individual_news.html"),
     url(r'^(?i)admissions/postgraduate/?$', views.admissions_postgraduate, name="postgraduate_admissions"),
     url(r'^(?i)admissions/doctoral/?$', views.admissions_doctoral, name="doctoral_admissions"),
     url(r'^(?i)admissions/FAQ/?$', views.admissions_faq, name="faq_admissions"),

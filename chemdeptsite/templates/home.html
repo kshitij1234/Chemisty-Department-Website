@@ -200,13 +200,48 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+#news-section>ul>li>a{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:link{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:visited{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:hover{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:focus{
+  color: #01579b;
+  text-decoration: none;
+}
+#news-section>ul>li>a:active{
+  color: #01579b;
+  text-decoration: none;
+}
+</style>
 <div class="row" style="margin:0;">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:0;">
-    <div style="background-color: #fff; color: #01579b; height:230px;">
+    <div style="background-color: #fff; color: #01579b; height:230px;" id="news-section">
       <h4 style="padding: 10px 0 0 10px">News</h4><hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
       <ul style="height: 136px; overflow: auto;">
         {% for n in news %}
-        <li><a href="{% url 'news' %}/{{ n.id }}">{{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}</li>
+        <!-- <li><a href="{% url 'news' %}/{{ n.id }}">{{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}</li> -->
+        <li>
+          <a href="#" onclick="return false;" data-toggle="popover" data-trigger="hover" title="{{n.title}}" data-content="{{n.more_info}}">
+          {{ n.title }}</a> - {{ n.date|date:"d-m-Y" }}
+        </li>
         {% endfor %}
       </ul>
       <hr style="margin: 0 10px 10px 10px; border-color:#337ab7; background-color: #337ab7;">
