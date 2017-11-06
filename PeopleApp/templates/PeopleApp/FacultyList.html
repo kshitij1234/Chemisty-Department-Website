@@ -29,15 +29,13 @@
                         Phone: {{f.phone}}
                     {% endif %}</p>
                 <script>
-                    document.write('<button class="btn btn-info btn-xs prof-btn info-btn" id=info'+i+'>More info</button>');
+                    document.write('<button class="btn btn-info btn-xs prof-btn info-btn" id=info'+i+'>Current Research</button>');
                 </script>
                  <a href="{% url 'faculty_list' %}/{{ f.pk }}"><button class="btn btn-primary btn-xs prof-btn">View Profile</button></a>
             </div>
 
 
-            <div class="col-md-5 col-xs-11 research-areas hidden">
-
-
+            <!-- <div class="col-md-5 col-xs-11 research-areas hidden">
                 {% if f.research_areas != None %}
                     <h4><strong>Research Areas</strong></h4>
                     <p >{{ f.research_areas }}</p>
@@ -45,6 +43,32 @@
                     <p>No more info to show</p>
                 {% endif %}
 
+            </div> -->
+            <div class="modalResearch modal fade" role="dialog">
+               <div class="modal-dialog" style="z-index:10000;">
+                   <!-- Modal content-->
+                   <div class="modal-content">
+
+                       <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           <h4 class="modal-title">Research Areas</h4>
+                       </div>
+
+                       <div class="modal-body">
+                           {% if f.research_areas != None %}
+                               <h4><strong>Research Areas</strong></h4>
+                               <p >{{ f.research_areas }}</p>
+                           {% else %}
+                               <p>No more info to show</p>
+                           {% endif %}
+                       </div>
+
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </div>
+
+                   </div>
+               </div>
             </div>
 
          </div>
