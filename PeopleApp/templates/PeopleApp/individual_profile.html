@@ -32,6 +32,12 @@
   .borderless td, .borderless th {
       border: none;
   }
+  .area-title{
+      font-size: 20px;
+  }
+  .area-detail{
+      padding-bottom: 10px;
+  }
   .table>tbody>tr>td {
     border:0;
   }
@@ -61,17 +67,36 @@
         </td>
       </tr>
 
-      {% if faculty.current_research %}
-      <tr>
-        <td><strong>Current Research</strong></td>
-        <td>{{ faculty.current_research|safe }}</td>
-      </tr>
-      {% endif %}
-
       <tr>
         <td><strong>Research Areas</strong></td>
         <td style="padding-left:30px;">{{ faculty.research_areas|safe|linebreaks }}</td>
       </tr>
+
+      {% if faculty.current_research.all %}
+      <tr>
+        <td><strong>Current Research</strong></td>
+        <!-- <td>{{ faculty.current_research|safe }}</td> -->
+        <td>
+          {% for research in faculty.current_research.all %}
+            <div class="research-area" style="margin-top:20px;">
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                  <figure>
+                  <img class="img-responsive area-pic" src="{% static research.get_image_url %}">
+                    <figcaption class="area-pic-title" style="color: #00aced">{{ research.picture_text }}</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-6" style="padding-left: 20px;">
+                  <h5 class="area-title"><strong>{{ research.title }}</strong></h5>
+                  <p class="area-detail">{{ research.detail }}</p>
+                </div>
+              </div>
+            </div>
+            {% if not forloop.last %}<hr>{% endif %}
+          {% endfor %}
+        </td>
+      </tr>
+      {% endif %}
 
       {% if faculty.phd_students %}
       <tr>

@@ -1,6 +1,7 @@
 from django.db import models
 import os
 import shutil
+from research.models import CurrentResearch
 
 def get_image_path_phd(instance, filename):
     return os.path.join("PeopleApp", "static", "UserImages", type(instance).__name__, filename)
@@ -44,7 +45,7 @@ class Faculty(models.Model):
     sponsored_projects = models.TextField(blank=True, null=True)
     teaching = models.TextField(blank=True, null=True)
     patents = models.TextField(blank=True, null=True)
-    current_research = models.TextField(blank=True, null=True)
+    current_research = models.ManyToManyField(CurrentResearch)
 
     def __str__(self):
         return self.name
@@ -75,6 +76,9 @@ class Faculty(models.Model):
 
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
+
+    class Meta:
+        ordering = ('name',)
 
 
 class Staff(models.Model):
