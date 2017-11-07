@@ -17,6 +17,9 @@ class Designations(models.Model):
     def __str__(self):
         return self.designation
 
+    class Meta:
+        verbose_name_plural = "Designations"
+
 
 class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=False)
@@ -79,6 +82,7 @@ class Faculty(models.Model):
 
     class Meta:
         ordering = ('name',)
+        verbose_name_plural = "Faculty"
 
 
 class Staff(models.Model):
@@ -118,12 +122,18 @@ class Staff(models.Model):
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
 
+    class Meta:
+        verbose_name_plural = "Staff"
+
 
 class Batch(models.Model):
     batch = models.CharField(max_length=20, blank=False)
 
     def __str__(self):
         return self.batch
+
+    class Meta:
+        verbose_name_plural = "Batch"
 
 
 class UndergraduateStudents(models.Model):
@@ -133,6 +143,9 @@ class UndergraduateStudents(models.Model):
 
     def __str__(self):
         return self.rollno
+
+    class Meta:
+        verbose_name_plural = "UndergraduateStudents"
 
 
 class MscStudents(models.Model):
@@ -171,6 +184,9 @@ class MscStudents(models.Model):
 
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
+
+    class Meta:
+        verbose_name_plural = "MscStudents"
 
 
 class PhdStudents(models.Model):
@@ -215,6 +231,9 @@ class PhdStudents(models.Model):
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
 
+    class Meta:
+        verbose_name_plural = "PhdStudents"
+
 
 class PhdAlumni(models.Model):
     name = models.CharField(max_length=100, blank=False)
@@ -252,3 +271,6 @@ class PhdAlumni(models.Model):
 
     def get_image_path(self):
         return str(self.profile_picture.url)[16:]
+
+    class Meta:
+        verbose_name_plural = "PhdAlumni"

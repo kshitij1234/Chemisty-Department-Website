@@ -4,12 +4,11 @@ from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStude
 
 # Register your models here.
 
-admin.site.register(Designations)
-admin.site.register(Faculty)
-admin.site.register(Staff)
-admin.site.register(Batch)
-admin.site.register(UndergraduateStudents)
-admin.site.register(MscStudents)
-admin.site.register(PhdStudents)
-admin.site.register(PhdAlumni)
-x = 0
+admin.site.register(Designations, verbose_name_plural="Designations")
+admin.site.register(Faculty, verbose_name_plural="Faculty")
+admin.site.register(Staff, verbose_name_plural="Staff")
+admin.site.register(Batch, verbose_name_plural="Batch")
+admin.site.register(UndergraduateStudents, verbose_name_plural="UndergraduateStudents")
+admin.site.register(MscStudents, verbose_name_plural="MscStudents")
+admin.site.register(PhdStudents, verbose_name_plural="PhdStudents")
+admin.site.register(PhdAlumni, verbose_name_plural="PhdAlumni")
