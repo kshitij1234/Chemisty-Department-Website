@@ -12,3 +12,4 @@ admin.site.register(UndergraduateStudents)
 admin.site.register(MscStudents)
 admin.site.register(PhdStudents)
 admin.site.register(PhdAlumni)
+x = 0
