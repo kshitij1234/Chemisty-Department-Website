@@ -29,7 +29,7 @@
                         {% if a.date_defended != None %}
                         Date defended : {{ a.date_defended }}<br><br>
                         {% endif %}
-                        Supervisor : <a href="{{ a.phd_supervisor_link }}">{{ a.phd_supervisor }}</a>
+                        Supervisor : <a href="{% url 'faculty_list' %}/{{ a.supervisor.pk }}">{{ a.supervisor.name }}</a>
                     </p>
                 </div>
                 <div class="col-md-3 col-xs-10 col-xs-offset-1">
