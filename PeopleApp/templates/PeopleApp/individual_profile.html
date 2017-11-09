@@ -55,9 +55,9 @@
         <td style="padding-left:30px;"><strong>{{ faculty.name }}</strong><br>
           {{ faculty.designation }}<br>
           {{faculty.phd}}<br>
-          Ph : +91-612-302-{{faculty.phone}}<br>
+          Ph : +91-612-302-{{faculty.directory.phone}}<br>
           {% if faculty.fax %}Fax : {{faculty.fax}}<br>{% endif %}
-          {{faculty.email}}[AT]iitp.ac.in<br>
+          {{faculty.directory.email}}[AT]iitp.ac.in<br>
           {% if faculty.google_scholar %}
             <a href="{{faculty.google_scholar}}" target="_blank">Google Scholar Link</a><br>
           {% endif %}

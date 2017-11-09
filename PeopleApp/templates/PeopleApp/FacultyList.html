@@ -24,9 +24,9 @@
                           {{f.additional_info}}
                       {% endif %}
                   </h5>
-                <p class="contact-info">Email: {{f.email}}<br>
-                    {% if f.phone != None %}
-                        Phone: {{f.phone}}
+                <p class="contact-info">Email: {{f.directory.email}}<br>
+                    {% if f.directory.phone != None %}
+                        Phone: {{f.directory.phone}}
                     {% endif %}</p>
                 <script>
                     document.write('<button class="btn btn-info btn-xs prof-btn info-btn" id=info'+i+'>Current Research</button>');

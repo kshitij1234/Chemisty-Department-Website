@@ -2,6 +2,7 @@ from django.db import models
 import os
 import shutil
 from research.models import CurrentResearch
+from directory.models import Faculty as Fac
 
 def get_image_path_phd(instance, filename):
     return os.path.join("PeopleApp", "static", "UserImages", type(instance).__name__, filename)
@@ -25,8 +26,8 @@ class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=False)
     designation = models.ForeignKey('Designations')
     additional_info = models.CharField(max_length=200, blank=True, null=True)
+    directory = models.ForeignKey(Fac, on_delete=models.SET_NULL, blank=True, null=True)
     email = models.CharField(primary_key=True, max_length=50)
-    phone = models.CharField(max_length=12, blank=True, null=True)
     profile_link = models.CharField(max_length=200, default="#")
     profile_picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     research_areas = models.TextField(blank=True, null=True)
@@ -48,7 +49,7 @@ class Faculty(models.Model):
     sponsored_projects = models.TextField(blank=True, null=True)
     teaching = models.TextField(blank=True, null=True)
     patents = models.TextField(blank=True, null=True)
-    current_research = models.ManyToManyField(CurrentResearch)
+    current_research = models.ManyToManyField(CurrentResearch, blank=True)
 
     def __str__(self):
         return self.name
@@ -242,6 +243,7 @@ class PhdAlumni(models.Model):
     thesis_title = models.TextField(max_length=400, blank=True)
     thesis_link = models.CharField(max_length=200, blank=True, default="#")
     date_defended = models.DateField(blank=True, null=True)
+    supervisor = models.ForeignKey('Faculty', on_delete=models.SET_NULL, blank=True, null=True)
     phd_supervisor = models.CharField(max_length=100, blank=True)
     phd_supervisor_link = models.CharField(max_length=200, blank=True, default="#")
     current_position = models.TextField(max_length=400, blank=True)
