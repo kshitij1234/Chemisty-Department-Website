@@ -13,10 +13,114 @@
     <h4 class="text-center" style="padding: 20px;font-size: 30px">M.Sc. Students</h4>
     <p class="text-center" id="head-info">Please append Email with "@iitp.ac.in" .</p>
     <ul class="nav nav-tabs" style="margin-top: 10px;">
+        {% if students20 %}
+        <li class="student-tab"><a data-toggle="tab" href="#msc20">M.Sc. 2020</a></li>
+        {% endif %}
+        {% if students19 %}
+        <li class="student-tab"><a data-toggle="tab" href="#msc19">M.Sc. 2019</a></li>
+        {% endif %}
+        {% if students18 %}
+        <li class="student-tab"><a data-toggle="tab" href="#msc18">M.Sc. 2018</a></li>
+        {% endif %}
+        {% if students17 %}
+        <li class="student-tab"><a data-toggle="tab" href="#msc17">M.Sc. 2017</a></li>
+        {% endif %}
         <li class="active student-tab"><a data-toggle="tab" href="#msc16">M.Sc. 2016</a></li>
     </ul>
 
     <div class="tab-content">
+
+    {% if students20 %}
+        <div id="msc20" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students20 %}
+
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile" alt="{{ student.name }}" src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">Roll No.: {{student.rollno}}<br>
+                                Email: {{student.email}}</p>
+                        </div>
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+    {% endif %}
+
+
+    {% if students19 %}
+        <div id="msc19" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students19 %}
+
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile" alt="{{ student.name }}" src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">Roll No.: {{student.rollno}}<br>
+                                Email: {{student.email}}</p>
+                        </div>
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+    {% endif %}
+
+
+    {% if students18 %}
+        <div id="msc18" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students18 %}
+
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile" alt="{{ student.name }}" src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">Roll No.: {{student.rollno}}<br>
+                                Email: {{student.email}}</p>
+                        </div>
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+    {% endif %}
+
+
+    {% if students17 %}
+        <div id="msc17" class="tab-pane fade in">
+            <!-- Content goes here. Similar to faculty -->
+
+            {% for student in students17 %}
+
+                <div class="student-info">
+                    <div class="row">
+                        <img class="img img-responsive col-md-2 col-xs-2 col-md-offset-1 col-xs-offset-1 profile" alt="{{ student.name }}" src="{% static student.get_image_path %}" style="margin-top: 13px;">
+                        <div class="col-md-4 col-xs-5">
+                            <h4 class="name"><a>{{student.name}}</a></h4>
+                            <p class="designation">Roll No.: {{student.rollno}}<br>
+                                Email: {{student.email}}</p>
+                        </div>
+                    </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+    {% endif %}
+
         <div id="msc16" class="tab-pane fade in active">
             <!-- Content goes here. Similar to faculty -->
 

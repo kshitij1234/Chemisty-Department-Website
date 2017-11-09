@@ -13,15 +13,131 @@
       <h4 class="text-center" style="padding: 20px;font-size: 30px">UG Students</h4>
 
     <ul class="nav nav-tabs" data-tabs="tabs" style="margin-top: 10px;">
-       <!-- <li class="active student-tab"><a data-toggle="tab" href="#btech16">B.Tech 2016</a></li>-->
-        <li class="student-tab active"><a data-toggle="tab" href="#btech15">B.Tech 2015</a></li>
+        {% if students20 %}
+        <li class="student-tab"><a data-toggle="tab" href="#btech20">B.Tech 2020</a></li>
+        {% endif %}
+        {% if students19 %}
+        <li class="student-tab"><a data-toggle="tab" href="#btech19">B.Tech 2019</a></li>
+        {% endif %}
+        {% if students18 %}
+        <li class="student-tab"><a data-toggle="tab" href="#btech18">B.Tech 2018</a></li>
+        {% endif %}
+        {% if students17 %}
+        <li class="student-tab"><a data-toggle="tab" href="#btech17">B.Tech 2017</a></li>
+        {% endif %}
+        {% if students16 %}
+        <li class="student-tab"><a data-toggle="tab" href="#btech16">B.Tech 2016</a></li>
+        {% endif %}
+        <li class="student-tab"><a data-toggle="tab" href="#btech15">B.Tech 2015</a></li>
         <li class="student-tab"><a data-toggle="tab" href="#btech14">B.Tech 2014</a></li>
-        <li class="student-tab"><a data-toggle="tab" href="#btech13">B.Tech 2013</a></li>
+        <li class="student-tab active"><a data-toggle="tab" href="#btech13">B.Tech 2013</a></li>
     </ul>
 
     <div class="tab-content">
-<!--
-        <div id="btech16" class="tab-pane fade in active">
+
+    {% if students20 %}
+        <div id="btech20" class="tab-pane fade in">
+            <table class="table table-striped text-centered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students20 %}
+
+
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    {% if students19 %}
+        <div id="btech19" class="tab-pane fade in">
+            <table class="table table-striped text-centered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students19 %}
+
+
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    {% if students18 %}
+        <div id="btech18" class="tab-pane fade in">
+            <table class="table table-striped text-centered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students18 %}
+
+
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+    {% if students17 %}
+        <div id="btech17" class="tab-pane fade in">
+            <table class="table table-striped text-centered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students17 %}
+
+
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.rollno }}</td>
+                            </tr>
+
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    {% if students16 %}
+        <div id="btech16" class="tab-pane fade in">
             <table class="table table-striped text-centered table-responsive">
                 <thead>
                     <tr>
@@ -43,8 +159,9 @@
                 </tbody>
             </table>
         </div>
-        -->
-        <div id="btech15" class="tab-pane fade in active">
+    {% endif %}
+
+        <div id="btech15" class="tab-pane fade in">
             <table class="table table-striped text-centered table-responsive">
                 <thead>
                     <tr>
@@ -90,7 +207,7 @@
             </table>
         </div>
 
-        <div id="btech13" class="tab-pane fade in">
+        <div id="btech13" class="tab-pane fade in active">
             <table class="table table-striped text-centered table-responsive">
                 <thead>
                     <tr>
