@@ -4,9 +4,12 @@ from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStude
 def individual_profile(request, pk):
     try:
         faculty = Faculty.objects.get(pk=pk)
+        currentphd = PhdStudents.objects.filter(supervisor=faculty)
     except Faculty.DoesNotExist:
         return render(request, 'error_404.html')
-    return render(request, 'PeopleApp/individual_profile.html', {'faculty':faculty})
+    return render(request, 'PeopleApp/individual_profile.html', {'faculty': faculty,
+                                                                 'currentphd': currentphd,
+                                                                 })
 
 def faculty_list(request):
     faculty = Faculty.objects.all().order_by('list_position')

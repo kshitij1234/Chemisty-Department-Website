@@ -98,12 +98,33 @@
       </tr>
       {% endif %}
 
-      {% if faculty.phd_students %}
+      {% if currentphd %}
+
+      <tr>
+        <td><strong>Phd Students</strong></td>
+        <td style="padding-left:30px;">
+        <div class="row">
+          {% for student in currentphd %}
+                <div class="col-md-3" style="padding-bottom: 20px;">
+                  <figure>
+                  <img class="img-responsive" src="{% static student.get_image_path %}" style="width:120px;height:100px;">
+                    <figcaption  style="color: #00aced;padding-top: 5px">{{ student.name }}</figcaption>
+                  </figure>
+                </div>
+          {% endfor %}
+        </div>
+        </td>
+      </tr>
+
+      {% endif %}
+
+      <!--{% if faculty.phd_students %}
       <tr>
         <td><strong>PhD Students</strong></td>
         <td style="padding-left:30px;">{{ faculty.phd_students|safe|linebreaks }}</td>
       </tr>
       {% endif %}
+        -->
 
       {% if faculty.research_group %}
       <tr>
