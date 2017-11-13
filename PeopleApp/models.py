@@ -286,7 +286,7 @@ for r in range(1980, 2031):
 
 class Publication(models.Model):
     year = models.IntegerField(choices=YEAR_CHOICES, default=datetime.datetime.now().year)
-    faculty = models.ManyToManyField('Faculty', blank=False)
+    faculty = models.ManyToManyField(Faculty, blank=False)
     matter = models.TextField(max_length=5000)
 
     def __str__(self):
