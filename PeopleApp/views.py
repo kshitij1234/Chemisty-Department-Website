@@ -5,7 +5,15 @@ def individual_profile(request, pk):
     try:
         faculty = Faculty.objects.get(pk=pk)
         currentphd = PhdStudents.objects.filter(supervisor=faculty)
-        publications = Publication.objects.all()
+        all_publications = Publication.objects.all()
+        publication_years = {}
+        publications = {}
+
+        for p in all_publications:
+            if p.faculty==faculty:
+                
+
+
     except Faculty.DoesNotExist:
         return render(request, 'error_404.html')
     return render(request, 'PeopleApp/individual_profile.html', {'faculty': faculty,
