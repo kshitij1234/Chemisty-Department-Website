@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Designations, Batch
-from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents, PhdAlumni
+from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents, PhdAlumni, Publication
 
 # Register your models here.
 
@@ -12,3 +12,5 @@ admin.site.register(UndergraduateStudents, verbose_name_plural="UndergraduateStu
 admin.site.register(MscStudents, verbose_name_plural="MscStudents")
 admin.site.register(PhdStudents, verbose_name_plural="PhdStudents")
 admin.site.register(PhdAlumni, verbose_name_plural="PhdAlumni")
+admin.site.register(Publication, verbose_name_plural="Publication")
+

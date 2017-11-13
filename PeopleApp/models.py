@@ -1,8 +1,9 @@
 from django.db import models
-import os
+import os, datetime
 import shutil
 from research.models import CurrentResearch
 from directory.models import Faculty as Fac
+
 
 def get_image_path_phd(instance, filename):
     return os.path.join("PeopleApp", "static", "UserImages", type(instance).__name__, filename)
@@ -36,7 +37,7 @@ class Faculty(models.Model):
     fax = models.CharField(max_length=20, blank=True, null=True)
     google_scholar = models.CharField(max_length=200, blank=True, null=True)
     webpage = models.CharField(max_length=200, blank=True, null=True)
-    phd_students = models.TextField(blank=True, null=True)
+    # phd_students = models.TextField(blank=True, null=True)
     research_group = models.TextField(blank=True, null=True)
     former_research_group = models.TextField(blank=True, null=True)
     professional_experience = models.TextField(blank=True, null=True)
@@ -276,3 +277,20 @@ class PhdAlumni(models.Model):
 
     class Meta:
         verbose_name_plural = "PhdAlumni"
+
+
+YEAR_CHOICES = []
+for r in range(1980, 2031):
+    YEAR_CHOICES.append((r, r))
+
+
+class Publication(models.Model):
+    year = models.IntegerField(choices=YEAR_CHOICES, default=datetime.datetime.now().year)
+    faculty = models.ManyToManyField('Faculty', blank=False)
+    matter = models.TextField(max_length=5000)
+
+    def __str__(self):
+        return "Entry "+str(self.id)
+
+    class Meta:
+        verbose_name_plural = "Publications"
