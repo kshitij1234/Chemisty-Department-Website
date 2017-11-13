@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents, PhdAlumni
+from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents, PhdAlumni, Publication
 
 def individual_profile(request, pk):
     try:
         faculty = Faculty.objects.get(pk=pk)
         currentphd = PhdStudents.objects.filter(supervisor=faculty)
+        publications = Publication.objects.all()
     except Faculty.DoesNotExist:
         return render(request, 'error_404.html')
     return render(request, 'PeopleApp/individual_profile.html', {'faculty': faculty,
                                                                  'currentphd': currentphd,
+                                                                 'publications': publications,
                                                                  })
 
 def faculty_list(request):
