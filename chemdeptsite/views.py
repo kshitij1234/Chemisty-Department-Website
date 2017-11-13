@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from .models import NoticeBoard, News, QuickLinks, HeadsDesk
+from .models import NoticeBoard, News, QuickLinks, HeadsDesk, Facilities
 from research.models import ResearchAreas
 from Events.models import Events
 from PeopleApp.models import Faculty
-
 
 def individual_news(request, pk=1):
     try:
@@ -25,7 +24,9 @@ def index(request):
 
 
 def facilities(request):
-    return render(request, 'facilities.html')
+    facilities = Facilities.objects.all().order_by("-id")
+    object_list = {'facilities': facilities}
+    return render(request, 'facilities.html', object_list)
 
 
 def error_404(request):
