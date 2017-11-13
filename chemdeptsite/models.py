@@ -80,3 +80,34 @@ class QuickLinks(models.Model):
 
     class Meta:
         verbose_name_plural = "QuickLinks"
+
+class Facilities(models.Model):
+    name = models.CharField(max_length=500, blank=False)
+    text = models.TextField(max_length=2000, blank=True)
+    picture = models.ImageField(upload_to=get_image_path, blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        # object is possibly being updated, if so, clean up.
+        self.remove_on_image_update()
+        return super(Facilities, self).save(*args, **kwargs)
+
+    def remove_on_image_update(self):
+        try:
+            # is the object in the database yet?
+            obj = Facilities.objects.get(pk=self.pk)
+        except Facilities.DoesNotExist:
+            # object is not in db, nothing to worry about
+            return
+        # is the save due to an update of the actual image file?
+        if obj.picture and self.picture and obj.picture != self.picture:
+            # delete the old image file from the storage in favor of the new file
+            obj.picture.delete()
+
+    def get_image_url(self):
+        return str(self.picture.url)[19:]
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Facilities"

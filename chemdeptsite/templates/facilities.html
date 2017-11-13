@@ -22,6 +22,30 @@
       All these labs are equipped with state of the art equipment for high quality research.
       There is a separate Lab for B-Tech Chemistry laboratory for freshmen B-Tech students. </p>
   </div>
+
+  <div class="panel-group" style="width: 80%; margin: 0 auto; margin-bottom: 20px;">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#new-facilities">New facilities</a>
+        </h4>
+      </div>
+      <div id="new-facilities" class="panel-collapse collapse">
+        <div class="panel-body">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+              {% for facility in facilities %}
+                  <td align="left" valign="top" width="80%"><strong>{{ facility.name }}: </strong>{{ facility.text|safe|linebreaks }}</td>
+                  <td align="right" valign="top" width="20%"><img src="{% static facility.get_image_url %}" style="width:170px; margin-bottom: 20px;border-radius:10px;"/></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table cellpadding="0" cellspacing="0" border="0" width="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width: 80%; margin: 0 auto;">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
