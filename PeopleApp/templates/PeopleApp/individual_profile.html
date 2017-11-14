@@ -186,25 +186,22 @@
 
       <tr>
           <td><strong>Selected Publications</strong></td>
-          <td>
-          <!-- code for tabs -->
-          <div class="tab">
-              {% for key,value in publications.items %}
-                  <button class="tablinks" onclick="showPublications(event, {{ key }})">{{ key }}</button>
-              {% endfor %}
-          </div>
-
-          {% for key,value in publications.items %}
-          <div class="tabcontent" id={{ key }}>
-          <ul>
-             {% for pub in value %}
-                 <li>{{ pub }}</li>
-             {% endfor %}
-          </ul>
-          </div>
-
-          {% endfor %}
-
+          <td style="padding-left:20px;">
+            <!-- code for tabs -->
+            <div class="tab">
+                {% for key,value in publications.items %}
+                    <button class="tablinks" onclick="showPublications(event, {{ key }})">{{ key }}</button>
+                {% endfor %}
+            </div>
+            {% for key,value in publications.items %}
+              <div class="tabcontent" id={{ key }}>
+                <ul>
+                   {% for pub in value %}
+                      <li>{{ pub.matter|safe }}</li>
+                   {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
           </td>
       </tr>
 

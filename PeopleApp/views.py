@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Faculty, Staff, UndergraduateStudents, MscStudents, PhdStudents, PhdAlumni, Publication
-
+import collections
 
 def individual_profile(request, pk):
     try:
@@ -18,12 +18,11 @@ def individual_profile(request, pk):
             for f in p.faculty.all():
                 if f == faculty:
                     publications[str(p.year)].append(p)
-
     except Faculty.DoesNotExist:
         return render(request, 'error_404.html')
     return render(request, 'PeopleApp/individual_profile.html', {'faculty': faculty,
                                                                  'currentphd': currentphd,
-                                                                 'publications': publications,
+                                                                 'publications': collections.OrderedDict(sorted(publications.items(), reverse=True)),
                                                                  })
 
 
