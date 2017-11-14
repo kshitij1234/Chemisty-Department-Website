@@ -42,6 +42,8 @@
     border:0;
   }
 </style>
+    <link rel="stylesheet" href="{% static 'css/tabstyle.css' %}" type="text/css"/>
+    <script src="{% static 'scripts/tabscript.js' %}"></script>
 <div class="main" style="overflow-x:auto;">
   <div style="height:20px;"></div>
   <!-- Table -->
@@ -181,30 +183,30 @@
       </tr>
       {% endif %}
 
-      <!--{% if faculty.publications %}
+
       <tr>
-         <ul class="nav nav-tabs" >
-          <li class="active"><a data-toggle="tab" href="#2017">2017</a></li>
-          <li><a data-toggle="tab" href="#2016">2016</a></li>
-          <li><a data-toggle="tab" href="#2015">2015</a></li>
-          <li><a data-toggle="tab" href="#2014">2014</a></li>
-          <li><a data-toggle="tab" href="#2013">2013</a></li>
-          <li><a data-toggle="tab" href="#2012">2012</a></li>
-          <li><a data-toggle="tab" href="#2011">2011</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div id="2017" class="tab-pane fade">
-            jsdalkjflk
+          <td><strong>Selected Publications</strong></td>
+          <td>
+          <!-- code for tabs -->
+          <div class="tab">
+              {% for key,value in publications.items %}
+                  <button class="tablinks" onclick="showPublications(event, {{ key }})">{{ key }}</button>
+              {% endfor %}
           </div>
-        </div>
-        <td><strong>Selected Publications</strong></td>
-        <td>{{ faculty.publications|safe }}</td>
+
+          {% for key,value in publications.items %}
+          <div class="tabcontent" id={{ key }}>
+          <ul>
+             {% for pub in value %}
+                 <li>{{ pub }}</li>
+             {% endfor %}
+          </ul>
+          </div>
+
+          {% endfor %}
+
+          </td>
       </tr>
-
-      {% endif %}-->
-
-
 
       {% if faculty.conference_presentations %}
       <tr>
