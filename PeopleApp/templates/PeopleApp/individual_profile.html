@@ -54,7 +54,11 @@
       <tr>
         <td><img class="img img-responsive" id="head-pic" src="{% static faculty.get_image_path %}" alt="{{ faculty.name }}" width="120px" height="auto">
         </td>
-        <td style="padding-left:30px;"><strong>{{ faculty.name }}</strong><br>
+        <td style="padding-left:30px;"><strong>{{ faculty.name }}</strong>
+        {% if faculty.personal_cv_link %}
+            | <a href="{{ faculty.personal_cv_link }}" target="_blank">Personal CV</a>
+        {% endif %}
+            <br>
           {{ faculty.designation }}<br>
           {{faculty.phd}}<br>
           Ph : +91-612-302-{{faculty.directory.phone}}<br>
