@@ -11,13 +11,15 @@ def individual_profile(request, pk):
 
         for p in all_publications:
             for f in p.faculty.all():
-                if f == faculty:
+                if f == faculty and str(p.year) > "2012":
                     publications[str(p.year)] = []
-
+        publications["-2012"] = []
         for p in all_publications:
             for f in p.faculty.all():
-                if f == faculty:
+                if f == faculty and str(p.year) > "2012":
                     publications[str(p.year)].append(p)
+                elif f == faculty and str(p.year) <= "2012":
+                    publications["-2012"].append(p)
     except Faculty.DoesNotExist:
         return render(request, 'error_404.html')
     return render(request, 'PeopleApp/individual_profile.html', {'faculty': faculty,
