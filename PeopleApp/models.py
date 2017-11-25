@@ -3,6 +3,7 @@ import os, datetime
 import shutil
 from research.models import CurrentResearch
 from directory.models import Faculty as Fac
+from django.conf import settings
 
 
 def get_image_path_phd(instance, filename):
@@ -51,6 +52,7 @@ class Faculty(models.Model):
     teaching = models.TextField(blank=True, null=True)
     patents = models.TextField(blank=True, null=True)
     current_research = models.ManyToManyField(CurrentResearch, blank=True)
+    personal_cv_link = models.TextField(blank=True, null=True, max_length=500)
 
     def __str__(self):
         return self.name
@@ -290,7 +292,7 @@ class Publication(models.Model):
     matter = models.TextField(max_length=5000)
 
     def __str__(self):
-        return "Entry "+str(self.id)
+        return "Entry " + str(self.id)
 
     class Meta:
         verbose_name_plural = "Publications"

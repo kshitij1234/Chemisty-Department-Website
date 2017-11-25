@@ -78,5 +78,10 @@
       </div>
     </div>
   </div>
+{% if msc_courses.0.new_courses_pdf_link %}
+<div class="text-center" style="padding: 20px;">
+<a href="{{ msc_courses.0.new_courses_pdf_link }}" target="_blank" style="font-size: 27px">New Courses</a>
+</div>
+{% endif %}
 </div>
 {% endblock %}

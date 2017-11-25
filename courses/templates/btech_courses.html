@@ -150,5 +150,10 @@
       </div>
     </div>
   </div>
+    {% if btech_courses.0.elective_courses_pdf_link %}
+<div class="text-center" style="padding: 20px;">
+<a href="{{ btech_courses.0.elective_courses_pdf_link }}" target="_blank" style="font-size: 27px">Elective Courses</a>
+</div>
+{% endif %}
 </div>
 {% endblock %}
